@@ -64,6 +64,7 @@ let fetchdata = async () => {
     putCardLogo3(response.result[3].logo)
     putCardLogo4(response.result[4].logo)
     putCardLogo5(response.result[5].logo)
+    console.log(response);
 }
 fetchdata();
 let show =true;

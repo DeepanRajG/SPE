@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import "../index.css"
 import {
   
@@ -17,6 +18,7 @@ import Option from "./option";
 // import Option from "./option";
 export const Cardd = (props) => {
  
+  const navigate = useNavigate();
   const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -35,9 +37,24 @@ export const Cardd = (props) => {
   }
  
   const style={ "opacity":"0.5"}
+
+  let cardclk = ()=>{
+    if (props.int===0){
+      navigate("/enter");
+    }
+    if (props.int===1){
+      window.open("https://ipmo.dev.ainqaplatform.in/");
+    }
+    if (props.int===2){
+      window.open("https://avcprimarycare.dev.ainqaplatform.in/");
+  
+    }
+
+  }
+
   //console.log(props.images);
   return (
-    <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" , }}   >
+    <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" , }}  onClick={cardclk}  >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid
           sx={{
