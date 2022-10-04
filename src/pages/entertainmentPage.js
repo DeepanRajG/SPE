@@ -40,10 +40,10 @@ function  Entertaincomp() {
       <Grid container >
         <Entertainhead/>
           </Grid>
-          <Grid container  direction="row" spacing={2} sx={{padding:"20px 10px 20px 10px"}}>
+          <Grid container  direction="row" spacing={2} sx={{padding:"20px 20px 20px 30px"}}>
    <Grid item md={12} sx={{ height: "200px" }}>
              <Grid container direction="row" spacing={1} >
-             <Grid container item  direction="row" spacing={2} sx={{padding:"20px 10px 20px 10px"}}>
+             <Grid container item  direction="row" spacing={2} sx={{padding:"20px 20px 20px 30px"}}>
              {Array.from(Array(LOGO.length)).map((_, index) => (
             <Grid item xs={3} sm={3} md={3} lg={3} key={index} >
               <Entertain src={LOGO} int={index} url={URL}/>

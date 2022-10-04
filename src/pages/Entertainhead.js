@@ -12,10 +12,10 @@ function Entertainhead() {
       setValue(newValue);
     };
     return (
-<Grid container sx={{marginTop:"30px"}}>
-        <Grid container item md={7} direction="row" sx={{padding:"10px"}} >
+<Grid container sx={{marginTop:"10px"}}>
+        <Grid container item md={7} direction="row" sx={{padding:"10px",paddingBottom:"0px"}} >
           <Grid>
-            <WestIcon sx={{ margin: "10px" }} />
+            <WestIcon sx={{ margin: "10px 10px 10px 20px" }} />
           </Grid>
           <Grid>
             <Typography
@@ -30,7 +30,7 @@ function Entertainhead() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={5} sx={{padding:"10px",}}>
+        <Grid item md={5} sx={{padding:"10px",paddingBottom:"0px"}}>
             <Grid  container >
             <Tabs value={value} onChange={handleChange} TabIndicatorProps={{style:{background:"black"}}} textColor="Black" >
             <Tab sx={{minWidth: "100px"}} value="one" label="All" />
