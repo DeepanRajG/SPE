@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+
+    font-family: 'Poppins', sans-serif;
+   
+}
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+    outline: none !important;
+   
+}
+#background{
+   
+    background-repeat: no-repeat;
+    width: 700;
+    height: 700;
+    background-color: aqua;
+}
+.avatar{
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    
+  }
