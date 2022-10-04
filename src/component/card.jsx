@@ -27,12 +27,17 @@ export const Cardd = (props) => {
     }),
   }));
   const [expanded, setExpanded] = useState(false);
+  let show =true;
   const handleExpandClick = () => {
     setExpanded(!expanded);
+ 
+   
   }
+ 
+  const style={ "opacity":"0.5"}
   //console.log(props.images);
   return (
-    <Card sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" }}>
+    <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" , }}   >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid
           sx={{
@@ -44,9 +49,11 @@ export const Cardd = (props) => {
             display: "flex", justifyContent: "center",
             borderRadius: "8px"
           }}>
-          <Box component="img" src={props.images[props.int]} style={{
+          <Box component="img" src={props.images[props.int]}   style={{
             height: 86,
-            width: 89, alignSelf: "center"
+            width: 89, alignSelf: "center",
+           
+            
           }} />
         </Grid>
         <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "10px" }}>{props.title[props.int]}</Grid>
@@ -59,8 +66,10 @@ export const Cardd = (props) => {
         onClick={handleExpandClick}
         aria-expanded={expanded}
         aria-label="show more">
-        <ExpandMoreIcon />
+          { show ? <ExpandMoreIcon /> : null }
+        
       </ExpandMore>
     </Card>
   )
+ 
 }

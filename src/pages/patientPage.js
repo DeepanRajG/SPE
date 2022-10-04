@@ -15,10 +15,10 @@ import {Cardd}  from "../component/card.jsx"
 function Patient() {
     
     let options = ["Option 1","Option 1","Option 1"]
-    let options1 = ["Laboratory","Radiology","Documents"]
-    let options2 = ["Device", "Apps", "Bed / Rooms"]
-    let options3 =["Order Meal / Status","My Diet Plan","Attender Plan"]
-    let options4 =["Calls","Patient Schedules","Patient Care Team"]
+    let options1 = ["Order Meal / Status","My Diet Plan","Attender Plan"]
+    let options2 = ["Join Calls","Scheduled Calls","Option 3"]
+    let options3 =[]
+    let options4 =["Laboratory","Radiology","Documents"]
     let options5 =["Scheduled Visits","Scheduled Activities","Option 3"]
 /////////////////////////////
     let [cardName, putCardName] = React.useState("Loading");
@@ -66,6 +66,8 @@ let fetchdata = async () => {
     putCardLogo5(response.result[5].logo)
 }
 fetchdata();
+let show =true;
+
 return (
     <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
         <Header name="Dolly Tan" profile={tolly} displayP="flex" />
