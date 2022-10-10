@@ -23,3 +23,10 @@
     justify-content: center ;
     
   }
+ 
+.slick-prev:before{
+    font-size: 30px !important;
+}
+.slick-next:before {
+    font-size: 30px !important;
+}

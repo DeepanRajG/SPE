@@ -1,21 +1,16 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../index.css"
 import {
-  
   Grid,
   Box,
   Card,
- 
   CardContent,
   Collapse,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-// import Unionpng from "../css/img/Unionpng.png";
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import Option from "./option";
-// import Option from "./option";
 export const Cardd = (props) => {
  
   const navigate = useNavigate();
@@ -32,12 +27,8 @@ export const Cardd = (props) => {
   let show =true;
   const handleExpandClick = () => {
     setExpanded(!expanded);
- 
-   
-  }
- 
-  const style={ "opacity":"0.5"}
-
+}
+   //const style={ "opacity":"0.5"}
   let cardclk = ()=>{
     if (props.int===0){
       navigate("/enter");
@@ -49,10 +40,8 @@ export const Cardd = (props) => {
       window.open("https://avcprimarycare.dev.ainqaplatform.in/");
   
     }
-
-  }
-
-  //console.log(props.images);
+ }
+  // console.log("loop agithu");
   return (
     <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" , }}  onClick={cardclk}  >
       <CardContent sx={{ paddingBottom: "0px" }}>
@@ -69,8 +58,6 @@ export const Cardd = (props) => {
           <Box component="img" src={props.images[props.int]}   style={{
             height: 86,
             width: 89, alignSelf: "center",
-           
-            
           }} />
         </Grid>
         <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "10px" }}>{props.title[props.int]}</Grid>
@@ -84,9 +71,7 @@ export const Cardd = (props) => {
         aria-expanded={expanded}
         aria-label="show more">
           { show ? <ExpandMoreIcon /> : null }
-        
-      </ExpandMore>
+        </ExpandMore>
     </Card>
-  )
- 
+)
 }

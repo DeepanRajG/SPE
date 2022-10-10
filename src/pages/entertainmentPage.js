@@ -1,9 +1,6 @@
 import React from "react";
 import "../index.css";
-import {
-    Container,
-    Grid,
-} from "@mui/material";
+import {Container,Grid,} from "@mui/material";
 import { makeAPIpost } from '../component/api.js';
 import Entertainhead from './Entertainhead.js'
 import Entertain from './Entertainbody.js'
@@ -41,7 +38,7 @@ function  Entertaincomp() {
         <Entertainhead/>
           </Grid>
           <Grid container  direction="row" spacing={2} sx={{padding:"20px 20px 20px 30px"}}>
-   <Grid item md={12} sx={{ height: "200px" }}>
+          <Grid item md={12} sx={{ height: "200px" }}>
              <Grid container direction="row" spacing={1} >
              <Grid container item  direction="row" spacing={2} sx={{padding:"20px 20px 20px 30px"}}>
              {Array.from(Array(LOGO.length)).map((_, index) => (

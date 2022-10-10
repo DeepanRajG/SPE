@@ -26,14 +26,20 @@ function App() {
     console.log(raw)
     const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
 
+
+
+
     let response = await makeAPIpost(raw, url)
     if (response.Result === "Valid user!") {
-      navigate("/admin")
+      navigate("/page")
       localStorage.setItem('access_token', response.tokenDetails.access_token );
       localStorage.setItem('keyclkId', response.keyclkId);
+    }
+    else{
 
     }
     console.log(response)
+
   }
   const [username, setusername] = useState('')
   const _handleTextFieldChange = e => {
