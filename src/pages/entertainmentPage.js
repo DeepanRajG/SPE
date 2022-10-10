@@ -1,4 +1,5 @@
 import React from "react";
+import {useEffect} from "react";
 import "../index.css";
 import {Container,Grid,} from "@mui/material";
 import { makeAPIpost } from '../component/api.js';
@@ -19,7 +20,9 @@ function  Entertaincomp() {
         "sort": "spe_application.dfltsequence"
     }
     const url1 = "https://arangodbservice.dev.ainqaplatform.in/api/read_documents"
-    let fetchdata = async () => {
+
+    useEffect(() => {
+      const getData = async () => {
         let response = await makeAPIpost(raw, url1)
         for (let i = 0; i < response.result.length; i++) {
             logo[i]= response.result[i].applogo
@@ -28,9 +31,9 @@ function  Entertaincomp() {
         putdat(logo)
         puturl(url)
     }
-    if(one){
-        fetchdata();
-    }
+    getData();
+  }, [])
+   
     return (
         <Container maxWidth="xl" style={{ height: "10%", padding: "0px" }}>
         <Header name ="Dolly Tan" profile={tolly}/>

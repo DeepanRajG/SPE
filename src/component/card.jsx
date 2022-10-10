@@ -43,9 +43,9 @@ export const Cardd = (props) => {
  }
   // console.log("loop agithu");
   return (
-    <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" , }}  onClick={cardclk}  >
+    <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" , }}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
-        <Grid
+        <Grid onClick={cardclk}
           sx={{
             height: 200,
             width: 180,

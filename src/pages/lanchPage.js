@@ -12,7 +12,9 @@ import selec from '../img/selec.svg'
 
 
 
+
 const LanchPage = () => {
+    
 
 
     

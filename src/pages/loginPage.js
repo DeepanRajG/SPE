@@ -21,26 +21,7 @@ import logo from '../img/logo.png'
 
 function App() {
   const navigate = useNavigate();
-  let login = async () => {
-    let raw = { username: username, password: password }
-    console.log(raw)
-    const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
 
-
-
-
-    let response = await makeAPIpost(raw, url)
-    if (response.Result === "Valid user!") {
-      navigate("/page")
-      localStorage.setItem('access_token', response.tokenDetails.access_token );
-      localStorage.setItem('keyclkId', response.keyclkId);
-    }
-    else{
-
-    }
-    console.log(response)
-
-  }
   const [username, setusername] = useState('')
   const _handleTextFieldChange = e => {
     let Username = e.target.value
@@ -53,6 +34,83 @@ function App() {
     setpassword(pass)
     console.log(password)
   }
+ 
+  let login = async () => {
+
+  
+
+
+    let raw = { username: username, password: password }
+ 
+    const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
+
+
+    let response = await makeAPIpost(raw, url)
+    if (response.Result === "Valid user!") {
+      
+      localStorage.setItem('access_token', response.tokenDetails.access_token );
+      localStorage.setItem('keyclkId', response.keyclkId);
+    
+    }
+    else{
+
+    }
+    console.log(response)
+    /////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+    let filterid= "Person.keycloackid=='" + localStorage.getItem('keyclkId')  +"'"
+ 
+ 
+
+    let raws = {
+      "db_name": "ipmo",
+      "entity": "Person",
+      "filter": filterid ,
+      "return_fields": "Person"
+    }
+    //console.log(raw)
+    const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/read_documents'
+  
+    let responses = await makeAPIpost(raws, urls)
+    console.log(responses)
+   
+    let roll_id= responses.result[0].roleid[0].roleid
+    let roll_name= responses.result[0].roleid[0].rolename
+
+    localStorage.setItem('roll_id', roll_id );
+    localStorage.setItem('roll_name', roll_name);
+
+
+    
+
+    //////////////////////////////////////////////////////////////////////////
+
+    let raw1 = {
+      "db_name": "ipmo",
+      "roleid": roll_id
+  }
+   // console.log(raw)
+    const url1 = 'https://idmservices.dev.ainqaplatform.in/GetPermissionforRoles'
+  
+    let response1 = await makeAPIpost(raw1, url1)
+
+    let perrolepermsnid=response1.Result[0].perrolepermsnid[0]
+
+    console.log(perrolepermsnid)
+    localStorage.setItem('perrolepermsnid', perrolepermsnid);
+    navigate("/page")
+
+ 
+    ///////////////////////////////////////////////////////////////////////////
+
+  
+
+  }
+ 
 
 
 
@@ -85,8 +143,8 @@ function App() {
           height: 60
         }}
       />
-      <Box sx={{ bgcolor: '#F5F7FA', height: '100vh', width: '100wh' }}>
-        <Grid container>
+      <Box sx={{ bgcolor: '#F5F7FA', height: '100vh', width: '100wh' ,borderRadius:"30px" }}>
+        <Grid container >
           <Grid item xs={6}>
             <Box
               component='img'
@@ -94,12 +152,12 @@ function App() {
                 height: 900,
                 width: 700,
                 maxHeight: { xs: 300, md: 650 },
-                maxWidth: { xs: 340, md: 600 }
+                maxWidth: { xs: 340, md: 500 }
               }}
               src={doctor}
             />
           </Grid>
-          <Grid
+          <Grid container
             item
             xs={6}
             sx={{
@@ -109,7 +167,7 @@ function App() {
               maxWidth: { xs: 200, md: 600 }
             }}
           >
-            <Container mt={15}>
+            <Container container mt={15}>
               <Grid>
                 <Typography style={log}>Login</Typography>
                 <Typography style={enter}>

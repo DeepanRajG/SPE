@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../css/App.css";
-
+import { useNavigate } from "react-router-dom";
 import dollytan from "../img/afrin.png";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
@@ -17,9 +17,13 @@ import {
   Typography,
 
 } from "@mui/material";
+import { Login } from "@mui/icons-material";
 
-export default function tolly() {
-   
+export default function Tolly() {
+  const navigate=useNavigate();
+   const HandleLogin=()=>{
+           navigate("/login")
+   }
   return (
     <body sx={{ bgcolor: "yellow" }}>
       <Container maxWidth="xl" sx={{ marginTop: "60px" }}>
@@ -136,6 +140,7 @@ export default function tolly() {
                           </Button>
 
                           <Button
+                          
                             sx={{
                               bgcolor: "#FFE3E7",
                               color: "#FA273E",
@@ -147,8 +152,10 @@ export default function tolly() {
 
                               "&:hover": { backgroundColor: "#FFE3E7" },
                             }}
+                         
                             variant="outline"
                             startIcon={<ExitToAppIcon />}
+                            onClick={HandleLogin}
                           >
                             Logout
                           </Button>
