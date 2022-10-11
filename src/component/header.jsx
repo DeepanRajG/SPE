@@ -53,14 +53,14 @@ class Header extends Component {
                     <NotificationsIcon sx={{ padding: "10px",marginTop:"10px" }}></NotificationsIcon>
                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px", marginLeft: "0px", }} />
                     <Avatar src={this.props.profile} style={{ width: 40, height: 40,marginLeft:"10px" ,marginTop:"10px"}} />
-                    <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: 'bold', color: "#0D224C" ,marginTop:"10px"}} onClick={() => this.setState({  count: this.state.count =true })}>{this.props.name}</Typography>
+                    <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: 'bold', color: "#0D224C" ,marginTop:"10px"}} onClick={() => this.setState({  count: this.props.count =true })}>{this.props.name}</Typography>
                     <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px' }}></KeyboardArrowDownRoundedIcon>
                     </Grid>
                 </Grid>
             </Grid>
             <Backdrop  maxWidth="xl"  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 open={this.state.count}
-                onClick={() => this.setState({ count: this.state.count =false })}
+                onClick={() => this.setState({ count: this.props.count =false })}
             >
                 <Profile></Profile>
             </Backdrop>

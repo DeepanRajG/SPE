@@ -9,21 +9,11 @@ import nur from '../img/nur.png'
 import pat from '../img/pat.png'
 import selec from '../img/selec.svg'
 
-
-
-
-
 const LanchPage = () => {
-    
-
-
-    
 const navigate = useNavigate();
-
   const [showSelectDoctor, setSelectDoctor] = useState(false)
   const [showSelectNurse,setSelectNurse] = useState(false)
   const [showSelectPatient,setSelectPatient] = useState(false)
-
 
   const showselectDoctor = () =>{
     localStorage.setItem('user', "doctor");
@@ -33,9 +23,7 @@ const navigate = useNavigate();
     setTimeout(function () {
      navigate("/login");
     }, 500);
- 
-
-  }
+   }
  const showselectNurse = () =>{
     localStorage.setItem('user', "nurse");
     setSelectDoctor(false)
@@ -59,12 +47,8 @@ const navigate = useNavigate();
    //window.location.replace("https://ipmo.dev.ainqaplatform.in/");
    window.open("https://ipmo.dev.ainqaplatform.in/", "/login");
   }
-
-
-
     const header = {
         height: "60px",
-
     }
     const doco = {
         width: "70vh",
@@ -86,7 +70,6 @@ const navigate = useNavigate();
         color: "#CDCED0",
         marginTop: "0px",
         marginBottom: "50px"
-
     }
     const center = {
         alignSelf: "center"
@@ -95,46 +78,31 @@ const navigate = useNavigate();
         height: "200px",
         backgroundColor: "#F5F7FA",
         borderRadius: "20px",
-        
     }
     const persona = {
         height: "auto",
         color: "white"
     }
-
- 
-
-
-
     return (
         <div>
             <Container maxWidth="xl" sx={{ padding: "30px", backgroundColor: "#F5F7FA" }}>
-
                 <Container maxWidth="xl" sx={{ backgroundColor: "white", borderRadius: "20px" }}>
-
                     <Grid item container>
                         <Grid item md={12} style={header}>
                             <Avatar src={logo} style={{ width: 60, height: 60, }}  onClick={admin}/>
                         </Grid>
-
                         <Grid item md={5} lg={6} sx={{ padding: "0px", margin: "0px" }}>
                             <Box style={doco} component="img" src={doctor} />
                         </Grid>
-
                         <Grid item md={7} lg={6} style={center}>
                             <Grid container direction="column">
-
                                 <p style={Heading}>Select your Profile</p>
                                 <p style={subHeading}>Select your appropriate profile to login into SPE</p>
                                 <Grid item container spacing={3} direction='row' md={12}>
-
                                     <Grid item md={4} lg={3}>
-
                                         <Grid item container sx={{cursor:"pointer"}} direction="column" style={minibox} onClick={showselectDoctor}  {...showSelectDoctor ? {border:"0.5px solid #277FFE", opacity: "50%"} :null}>
-                                           
                                             <Grid item md={3} >
                                             { showSelectDoctor ? <SelectComponent/>: null }
-                                              
                                             </Grid>
                                             <Grid item md={6} sx={{ alignSelf: "center" }} >
                                                 <Avatar src={doc} style={{ width: 80, height: 80,}} {...showSelectDoctor ? {opacity: "0.5"} : {opacity:"1"}}/>
@@ -145,11 +113,8 @@ const navigate = useNavigate();
                                                 </Container>
                                             </Grid>
                                         </Grid>
-
                                     </Grid>
-
                                     <Grid item md={4} lg={3}>
-
                                         <Grid item container sx={{cursor:"pointer"}} direction="column" style={minibox} onClick={showselectNurse} {...showSelectNurse ? {border:"0.5px solid #277FFE"} :null} >
                                             <Grid item md={3} >
                                             { showSelectNurse ? <SelectComponent/>: null }
@@ -163,11 +128,8 @@ const navigate = useNavigate();
                                                 </Container>
                                             </Grid>
                                         </Grid>
-
                                     </Grid>
-
                                     <Grid item md={4} lg={3}>
-
                                         <Grid item container sx={{cursor:"pointer"}} direction="column" style={minibox} onClick={showselectPatient} {...showSelectPatient ? {border:"0.5px solid #277FFE"} :null}>
                                             <Grid item md={3}>
                                             { showSelectPatient ? <SelectComponent/>: null }
@@ -181,30 +143,20 @@ const navigate = useNavigate();
                                                 </Container>
                                             </Grid>
                                         </Grid>
-
                                     </Grid>
-
                                 </Grid>
-
                             </Grid>
                         </Grid>
-
                     </Grid>
-
-
-
                 </Container>
             </Container>
-
         </div>
     )
 }
-
 const SelectComponent = () => (
     <Grid item container direction="row">
         <Avatar src={selec} style={{ width: 20, height: 20, margin: "15px 0 0 15px" }} />
         <Typography sx={{ fontSize: "13px", fontFamily: "poppins",fontWeight:'500', margin: "15px 0 0 10px", color: "#277FFE" }}>Selected</Typography>
     </Grid>
 )
-
 export default LanchPage

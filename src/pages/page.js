@@ -5,15 +5,9 @@ import Nurse from './nursePage'
 import{makeAPIpost} from '../component/api'
 import {useEffect} from 'react'
 
-
-
-
-
 export default function Page() {
     const items = localStorage.getItem('user')
     console.log(items);
-
-
     useEffect(() => {
       let id=localStorage.getItem('perrolepermsnid')
       const getData = async () => {
@@ -30,21 +24,12 @@ export default function Page() {
     getData();
   }, [])
 
-
-   
-   
-  
-
-
-
-
     if(localStorage.getItem('roll_id')==="15"){
       return (
         <div>
            <Patient></Patient>
         </div>
       )
-    
     }
     if(localStorage.getItem('roll_id')==="113"){
       return (
@@ -57,9 +42,7 @@ export default function Page() {
       return (
         <div>
            <Nurse/>
-          
         </div>
       )
     }
- 
 }

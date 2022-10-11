@@ -1,6 +1,5 @@
 import React from "react";
 import {useEffect} from "react";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,11 +16,6 @@ import { makeAPIpost } from '../component/api.js';
 import { Cardd } from "../component/card.jsx"
 
 export default  function Patient() {
-
-
-
-
-
     let options = ["Option 1", "Option 1", "Option 1"]
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
     let options2 = ["Join Calls", "Scheduled Calls", "Option 3"]
@@ -29,36 +23,20 @@ export default  function Patient() {
     let options4 = ["Laboratory", "Radiology", "Documents"]
     let options5 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
     /////////////////////////////
-
     let cardname=[]
     let cardlogo=[]
-   
-
     let [LOGO, putlogo] = React.useState("Loading");
     let [TITLE, puttitle] = React.useState("Loading");
-    let [response, putresponse] = React.useState("Loading");
-
- 
-
     const raw = {
         "db_name": "ipmo",
         "entity": "spe_category",
         "return_fields": "keep(spe_category,'_id','_key','name','logo','url','status','appcredentials','dfltseq')",
         "sort": "spe_category._key"
     }
-
     const url = "https://arangodbservice.dev.ainqaplatform.in/api/read_documents"
-  
-
-
-   
-
-    
     useEffect(() => {
         const getData = async () => {
             let responseData =  await makeAPIpost(raw, url)
-        
-         
             for (let i = 0; i < responseData.result.length; i++) {
                 cardname[i]= responseData.result[i].name
                 cardlogo[i]= responseData.result[i].logo
@@ -70,25 +48,7 @@ export default  function Patient() {
         getData();
       }, [])
      
-    
-   
- 
-    
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const settings = {
         dots: false,
         slidesToShow: 5,
@@ -107,7 +67,6 @@ export default  function Patient() {
           />
         );
       }
-      
       function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -118,10 +77,7 @@ export default  function Patient() {
           />
         );
       }
-      
-      
-
-    return (
+return (
         <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
             <Grid direction="column" container marginTop="20px" >
@@ -155,7 +111,6 @@ export default  function Patient() {
                             }} >
                                 <Grid item md={6} >
                                     <Grid direction="column">
-
                                         <Grid item md={3}>
                                             <Typography sx={{ fontSize: "32px", color: "white", fontWeight: "600", paddingTop: "40px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
                                             <Grid sx={{ paddingTop: "10px" }}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "140px", fontFamily: "poppins", maxWidth: "150px" }}>View More</Button></Grid>

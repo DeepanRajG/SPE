@@ -7,7 +7,6 @@ import Entertainhead from './Entertainhead.js'
 import Entertain from './Entertainbody.js'
 import Header from "../component/header";
 import tolly from "../img/dolly.png";
-var one=true;
 function  Entertaincomp() {
     let [LOGO, putdat] = React.useState("Loading");
     let [URL, puturl] = React.useState("Loading");
