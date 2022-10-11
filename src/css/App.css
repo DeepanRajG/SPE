@@ -10,6 +10,13 @@
     outline: none !important;
    
 }
+.TextField-without-border-radius fieldset{
+    border-radius: 50px;
+  }
+  input[type=password]::-ms-reveal,
+  input[type=password]::-ms-clear {
+    display: none;
+  }
 #background{
    
     background-repeat: no-repeat;

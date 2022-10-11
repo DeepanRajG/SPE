@@ -31,7 +31,7 @@ export const Cardd = (props) => {
    //const style={ "opacity":"0.5"}
   let cardclk = ()=>{
     if (props.int===0){
-      navigate("/enter");
+      navigate(props.navigate);
     }
     if (props.int===1){
       window.open("https://ipmo.dev.ainqaplatform.in/");

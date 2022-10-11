@@ -24,11 +24,11 @@ export default  function Patient() {
 
     let options = ["Option 1", "Option 1", "Option 1"]
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
-    let options2 = ["Join Calls", "Scheduled Calls", "Option 3"]
-    let options3 = []
-    let options4 = ["Laboratory", "Radiology", "Documents"]
+    let options2 = ["Calls","patient schedules","patient Care Team",]
+    let options3 = ["Laboratory", "Radiology", "Documents"]
+    let options4 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
     let options5 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
-    /////////////////////////////
+   
 
     let cardname=[]
     let cardlogo=[]
@@ -212,7 +212,7 @@ export default  function Patient() {
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
                                         <Grid item key={index} sx={{marginLeft:"30px"}} >
-                                            <Cardd title={TITLE} int={index} optionName={options1} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
                                         </Grid>
                                     </Grid>
                                 ))}
