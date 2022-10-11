@@ -1,7 +1,7 @@
 import React from "react";
 import {useEffect} from "react";
 import {
-  Grid,
+  Grid, Typography,
   } from "@mui/material";
 import Rakin from '../img/profile.png'
 import { Cardd } from '../component/card.jsx'
@@ -109,7 +109,7 @@ function App() {
           backgroundPosition: "center",
           }}> 
         <Grid item style={{margin:"20px 0px 0px 20px",fontSize:"20px"}}>
-          <h3>Logged In as Dotor</h3>
+          <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"20px"}}>Logged In As Dr.Rakin</Typography>
         </Grid>
         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
           {Array.from(Array(TITLE.length)).map((_, index) => (

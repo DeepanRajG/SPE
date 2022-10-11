@@ -16,7 +16,7 @@ import '../css/App.css'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
-import doctor from '../img/doctor.png'
+import doctor from '../img/doctor1.png'
 import logo from '../img/logo.png'
 import CustomizedSnackbars from '../component/Toast.jsx';
 
@@ -29,6 +29,19 @@ function App() {
     let Username = e.target.value
     setusername(Username)
     console.log(username)
+}
+const header = {
+  height: "60px",
+
+}
+
+const doco = {
+  width: "70vh",
+  height: "82vh",
+  maxHeight: { xs: 200, md: 650 },
+  maxWidth: { xs: 250, md: 600 },
+  padding: "0px",
+  margin: "0px"
 }
   const [password, setpassword] = useState('')
   const _handleTextFieldChange1 = e => {
@@ -107,7 +120,7 @@ function App() {
   }
    const user = { paddingTop: '10px', width: '300px', paddingBottom: '20px' }
   const enter = { color: '#CDCED0', paddingBottom: '20px' }
-  const log = { fontWeight: 'bold', fontSize: '32px', paddingBottom: '10px' }
+  const log = { fontWeight: 'bold',   fontSize: "40px", paddingBottom: '10px',color:"#223144" }
   const titl = { color: '#324D70', fontWeight: 'bold' }
   const blue = { color: '#277FFE' }
   const [showPassword, setShowPassword] = useState(false)
@@ -125,126 +138,115 @@ function App() {
   // };
 
   return (
-    <Container maxWidth='xl'>
-       { showtoast ?   <CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>: null }
-         <Avatar
-        src={logo}
-        style={{
-          width: 60,
-          height: 60
+    <div>
+        <Container maxWidth="xl" sx={{ padding: "30px", backgroundColor: "#F5F7FA" }}>
+            <Container maxWidth="xl" sx={{ backgroundColor: "white", borderRadius: "20px" }}>
+                <Grid item container>
+                    <Grid item md={12} style={header}>
+                        <Avatar src={logo} style={{ width: 60, height: 60, }} />
+                    </Grid>
+                    <Grid item md={5} lg={6} sx={{ padding: "0px", margin: "0px" }}>
+                        <Box style={doco} component="img" src={doctor} />
+                    </Grid>
+                    <Grid
+        item
+        xs={6}
+        sx={{
+          height: 900,
+          width: 700,
+          maxHeight: { xs: 200, md: 800 },
+          maxWidth: { xs: 200, md: 600 },
+          marginTop:10,
         }}
-      />
-      <Box sx={{ bgcolor: '#F5F7FA', height: '100vh', width: '100wh' ,borderRadius:"30px" }}>
-        <Grid container >
-          <Grid item xs={6}>
-            <Box
-              component='img'
-              sx={{
-                height: 900,
-                width: 700,
-                maxHeight: { xs: 300, md: 650 },
-                maxWidth: { xs: 340, md: 500 }
-              }}
-              src={doctor}
-            />
+      >
+        <Container mt={15}>
+          <Grid>
+            <Typography style={log}>Login</Typography>
+            <Typography style={enter}>
+              Enter your credentials to access your Account
+            </Typography>
           </Grid>
-          <Grid container
-            item
-            xs={6}
-            sx={{
-              height: 900,
-              width: 700,
-              maxHeight: { xs: 200, md: 800 },
-              maxWidth: { xs: 200, md: 600 }
+          <Typography style={titl}>User ID / Bed No.</Typography>
+          <TextField
+            onChange={e => {
+              _handleTextFieldChange(e)
             }}
-          >
-            <Container container mt={15}>
-              <Grid>
-                <Typography style={log}>Login</Typography>
-                <Typography style={enter}>
-                  Enter your credentials to access your Account
-                </Typography>
-              </Grid>
-              <Typography style={titl}>User ID / Bed No.</Typography>
-              <TextField
-                onChange={e => {
-                  _handleTextFieldChange(e)
-                }}
-                value={username}
-                className='TextField-without-border-radius'
-                variant='outlined'
-                size='small'
-                id='user'
-                style={user}
-              />
-              <Typography style={titl}>Password</Typography>
-              <TextField
-                onChange={e => {
-                  _handleTextFieldChange1(e)
-                }}
-                value={password}
-                id='pass'
-                className='TextField-without-border-radius'
-                variant='outlined'
-                type={showPassword ? 'text' : 'password'} // <-- This is where the magic happens
-                //   onChange={handleChange('password')}
-                InputProps={{
-                  // <-- This is where the toggle button is added.
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <IconButton
-                        aria-label='toggle password visibility'
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        style={blue}
-                      >
-                        {showPassword ? (
-                          <VisibilityOutlinedIcon />
-                        ) : (
-                          <VisibilityOffOutlinedIcon />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  )
-                }}
-                size='small'
-                style={user}
-              />
-              <Grid>
-                <Typography
-                  sx={{
-                    float: 'center',
-                    color: '#277FFE',
-                    textDecoration: 'none',
-                    marginLeft: '160px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  Forgot Password?
-                </Typography>
-              </Grid>
-              <Grid>
-                <Button
-                  onClick={login}
-                  type='submit'
-                  variant='contained'
-                  sx={{
-                    textTransform: 'capitalize',
-                    width: '200px',
-                    alignSelf: 'center',
-                    borderRadius: '20px',
-                    marginLeft: '50px'
-                  }}
-                >
-                  Log in
-                </Button>
-              </Grid>
-
-            </Container>
+            value={username}
+            className='TextField-without-border-radius'
+            variant='outlined'
+            size='small'
+            id='user'
+            style={user}
+          />
+          <Typography style={titl}>Password</Typography>
+          <TextField
+            onChange={e => {
+              _handleTextFieldChange1(e)
+            }}
+            value={password}
+            id='pass'
+            className='TextField-without-border-radius'
+            variant='outlined'
+            type={showPassword ? 'text' : 'password'} // <-- This is where the magic happens
+            //   onChange={handleChange('password')}
+            InputProps={{
+              // <-- This is where the toggle button is added.
+              endAdornment: (
+                <InputAdornment position='end'>
+                  <IconButton
+                    aria-label='toggle password visibility'
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    style={blue}
+                  >
+                    {showPassword ? (
+                      <VisibilityOutlinedIcon />
+                    ) : (
+                      <VisibilityOffOutlinedIcon />
+                    )}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+            size='small'
+            style={user}
+          />
+          <Grid>
+            <Typography
+              sx={{
+                float: 'center',
+                color: '#277FFE',
+                textDecoration: 'none',
+                marginLeft: '160px',
+                marginBottom: '20px'
+              }}
+            >
+              Forgot Password?
+            </Typography>
           </Grid>
-        </Grid>
-      </Box>
-    </Container>
-  )
+          <Grid>
+            <Button
+              onClick={login}
+              type='submit'
+              variant='contained'
+              sx={{
+                textTransform: 'capitalize',
+                width: '200px',
+                alignSelf: 'center',
+                borderRadius: '20px',
+                marginLeft: '50px'
+              }}
+            >
+              Log in
+            </Button>
+          </Grid>
+
+        </Container>
+      </Grid>
+                </Grid>
+            </Container>
+        </Container>
+    </div>
+)
 }
 export default App
