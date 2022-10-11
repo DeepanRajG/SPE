@@ -15,36 +15,80 @@ import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
 import { Cardd } from "../component/card.jsx"
 
-export default  function Patient() {
+
+export default  function Patient(props) {
+
+
+
     let options = ["Option 1", "Option 1", "Option 1"]
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
-    let options2 = ["Join Calls", "Scheduled Calls", "Option 3"]
-    let options3 = []
-    let options4 = ["Laboratory", "Radiology", "Documents"]
+    let options2 = ["Calls","patient schedules","patient Care Team",]
+    let options3 = ["Laboratory", "Radiology", "Documents"]
+    let options4 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
     let options5 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
-    /////////////////////////////
     let cardname=[]
     let cardlogo=[]
     let [LOGO, putlogo] = React.useState("Loading");
     let [TITLE, puttitle] = React.useState("Loading");
-    const raw = {
-        "db_name": "ipmo",
-        "entity": "spe_category",
-        "return_fields": "keep(spe_category,'_id','_key','name','logo','url','status','appcredentials','dfltseq')",
-        "sort": "spe_category._key"
-    }
-    const url = "https://arangodbservice.dev.ainqaplatform.in/api/read_documents"
+    let [response, putresponse] = React.useState("Loading");
+
+ 
+
+
+
+   
+
+    
     useEffect(() => {
+        
+        let id=localStorage.getItem('perrolepermsnid')
+        console.log(id);
         const getData = async () => {
-            let responseData =  await makeAPIpost(raw, url)
-            for (let i = 0; i < responseData.result.length; i++) {
-                cardname[i]= responseData.result[i].name
-                cardlogo[i]= responseData.result[i].logo
-            }
-            console.log(responseData)
-            putlogo(cardlogo)
-            puttitle(cardname)
-        };
+        let raw = {
+  
+          "db_name": "ipmo",
+      
+          "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+      
+      }
+        console.log(raw)
+        const url = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+      
+        let response = await makeAPIpost(raw, url)
+       
+        console.log(response[0].permsn_repo)
+  
+  
+       
+          let raw1 = {
+  
+            "db_name": "ipmo",
+        
+            "query": "for doc in spe_category filter doc.rep_id IN ["+response[0].permsn_repo.map(x => "'" + x + "'").toString()+"] return doc"
+        
+        }
+          console.log(raw1)
+          const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+        
+          let response1 = await makeAPIpost(raw1, url1)
+          console.log(response1)
+          let responseData=response1
+    
+          for (let i = 0; i < responseData.length; i++) {
+            cardname[i]= responseData[i].name
+            cardlogo[i]= responseData[i].logo
+        }
+        console.log(responseData)
+        putlogo(cardlogo)
+        puttitle(cardname)
+  
+  
+      
+  
+      }
+  
+
+
         getData();
       }, [])
      
@@ -167,7 +211,7 @@ return (
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
                                         <Grid item key={index} sx={{marginLeft:"30px"}} >
-                                            <Cardd title={TITLE} int={index} optionName={options1} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
                                         </Grid>
                                     </Grid>
                                 ))}

@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../css/App.css";
 import { useNavigate } from "react-router-dom";
 import dollytan from "../img/afrin.png";
@@ -125,6 +126,7 @@ export default function Tolly() {
                               height: "50px",
                               textTransform: "capitalize",
                               alignSelf: "center",
+
                               "&:hover": { backgroundColor: "#E3F4FF" },
                             }}
                             variant="outline"
@@ -132,8 +134,10 @@ export default function Tolly() {
                           >
                             Switch User
                           </Button>
+
                           <Button
-                                sx={{
+                          
+                            sx={{
                               bgcolor: "#FFE3E7",
                               color: "#FA273E",
                               fontWeight: "bold",
@@ -141,8 +145,10 @@ export default function Tolly() {
                               height: "50px",
                               textTransform: "capitalize",
                               alignSelf: "center",
+
                               "&:hover": { backgroundColor: "#FFE3E7" },
                             }}
+                         
                             variant="outline"
                             startIcon={<ExitToAppIcon />}
                             onClick={HandleLogin}

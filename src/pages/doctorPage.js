@@ -1,4 +1,5 @@
 import React from "react";
+import {useEffect} from "react";
 import {
   Grid,
   } from "@mui/material";
@@ -18,37 +19,85 @@ function App() {
   let options1 = ["Calls","My Appointments","My Care Team",]
   let options2 = ["Schedule Visits", "Schedules Activities", "Option 3"]
 
-  let [cardName, putCardName] = React.useState("Loading");
-  let [cardNamea, putCardNamea] = React.useState("Loading");
-  let [cardNameb, putCardNameb] = React.useState("Loading");
+  let cardname=[]
+  let cardlogo=[]
+ 
 
-  let [cardLogo0, putCardLogo0] = React.useState("Loading");
-  let [cardLogo1, putCardLogo1] = React.useState("Loading");
-  let [cardLogo2, putCardLogo2] = React.useState("Loading");
+  let [LOGO, putlogo] = React.useState("Loading");
+  let [TITLE, puttitle] = React.useState("Loading");
 
-  let title = [cardName, cardNamea, cardNameb]
-  let images = [cardLogo0, cardLogo1, cardLogo2]
-  const raw = {
-    "db_name": "ipmo",
-    "entity": "spe_category",
-    "return_fields": "keep(spe_category,'_id','_key','name','logo','url','status','appcredentials','dfltseq')",
-    "sort": "spe_category._key"
-}
 
-const url = "https://arangodbservice.dev.ainqaplatform.in/api/read_documents"
-let fetchdata = async () => {
-let response = await makeAPIpost(raw, url)
-    putCardName(response.result[9].name)
-    putCardNamea(response.result[2].name)
-    putCardNameb(response.result[13].name)
+  useEffect(() => {
+        
+    let id=localStorage.getItem('perrolepermsnid')
+    console.log(id);
+    const getData = async () => {
+    let raw = {
+
+      "db_name": "ipmo",
   
-    putCardLogo0(response.result[9].logo)
-    putCardLogo1(response.result[2].logo)
-    putCardLogo2(response.result[13].logo)
+      "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+  
+  }
+    console.log(raw)
+    const url = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+  
+    let response = await makeAPIpost(raw, url)
    
-    console.log(response);
-}
-fetchdata();
+    console.log(response[0].permsn_repo)
+
+
+   
+      let raw1 = {
+
+        "db_name": "ipmo",
+    
+        "query": "for doc in spe_category filter doc.rep_id IN ["+response[0].permsn_repo.map(x => "'" + x + "'").toString()+"] return doc"
+    
+    }
+      console.log(raw1)
+      const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+    
+      let response1 = await makeAPIpost(raw1, url1)
+      console.log(response1)
+      let responseData=response1
+
+      for (let i = 0; i < responseData.length; i++) {
+        cardname[i]= responseData[i].name
+        cardlogo[i]= responseData[i].logo
+    }
+    console.log(responseData)
+    putlogo(cardlogo)
+    puttitle(cardname)
+
+
+  
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+      
+   
+   
+    getData();
+  }, [])
+
+
+
+
+
+
+
   return (
     <Grid maxWidth="xl" style={{ height: "100%" }}>
    <Header name ="Rakin" profile={Rakin} displayP="none"/>
@@ -63,9 +112,9 @@ fetchdata();
           <h3>Logged In as Dotor</h3>
         </Grid>
         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
-          {Array.from(Array(title.length)).map((_, index) => (
+          {Array.from(Array(TITLE.length)).map((_, index) => (
             <Grid item xs={2} sm={3} md={3} lg={2} key={index} >
-              <Cardd title={title} int={index} images={images}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
+              <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
             </Grid>
           ))}
         </Grid>

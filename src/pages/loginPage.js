@@ -14,6 +14,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import '../css/App.css'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
+
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import doctor from '../img/doctor.png'
 import logo from '../img/logo.png'
@@ -21,6 +22,7 @@ import CustomizedSnackbars from '../component/Toast.jsx';
 
 function App() {
   const navigate = useNavigate();
+
   const [username, setusername] = useState('')
   const [showtoast, setshowtoast] = useState(false)
   const _handleTextFieldChange = e => {
@@ -36,14 +38,27 @@ function App() {
   }
  
   let login = async () => {
+
+  
+
+
     let raw = { username: username, password: password }
-     const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
-   let response = await makeAPIpost(raw, url)
+ 
+    const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
+
+
+    let response = await makeAPIpost(raw, url)
     if (response.Result === "Valid user!") {
+      
       localStorage.setItem('access_token', response.tokenDetails.access_token );
       localStorage.setItem('keyclkId', response.keyclkId);
+
+      
     let filterid= "Person.keycloackid=='" + localStorage.getItem('keyclkId')  +"'"
-     let raws = {
+ 
+ 
+
+    let raws = {
       "db_name": "ipmo",
       "entity": "Person",
       "filter": filterid ,
@@ -51,13 +66,19 @@ function App() {
     }
     //console.log(raw)
     const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/read_documents'
-     let responses = await makeAPIpost(raws, urls)
+  
+    let responses = await makeAPIpost(raws, urls)
     console.log(responses)
-     let roll_id= responses.result[0].roleid[0].roleid
+   
+    let roll_id= responses.result[0].roleid[0].roleid
     let roll_name= responses.result[0].roleid[0].rolename
 
     localStorage.setItem('roll_id', roll_id );
     localStorage.setItem('roll_name', roll_name);
+
+
+    
+
     //////////////////////////////////////////////////////////////////////////
 
     let raw1 = {
@@ -66,6 +87,7 @@ function App() {
   }
    // console.log(raw)
     const url1 = 'https://idmservices.dev.ainqaplatform.in/GetPermissionforRoles'
+  
     let response1 = await makeAPIpost(raw1, url1)
 
     let perrolepermsnid=response1.Result[0].perrolepermsnid[0]
@@ -73,9 +95,13 @@ function App() {
     console.log(perrolepermsnid)
     localStorage.setItem('perrolepermsnid', perrolepermsnid);
     navigate("/page")
+
+ 
+    
     }
     else{
       {<CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>}
+        
     }
     console.log(response)
   }
@@ -88,12 +114,16 @@ function App() {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
   // const [values, setValues] = React.useState({
+
   //   password: '',
+
   //   showPassword: false,
   // });
   // const handleChange = (prop) => (event) => {
   //   setValues({ ...values, [prop]: event.target.value });
+
   // };
+
   return (
     <Container maxWidth='xl'>
        { showtoast ?   <CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>: null }
@@ -205,9 +235,11 @@ function App() {
                     borderRadius: '20px',
                     marginLeft: '50px'
                   }}
-                > Log in
+                >
+                  Log in
                 </Button>
               </Grid>
+
             </Container>
           </Grid>
         </Grid>

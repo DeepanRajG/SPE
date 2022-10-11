@@ -1,4 +1,5 @@
 import React from "react";
+import {useEffect} from "react";
 import {
     Container,
     Grid,
@@ -22,52 +23,82 @@ function App() {
         height: "90vh",
         // width: '100vw'
     };
-    let [cardName, putCardName] = React.useState("Loading");
-    let [cardNamea, putCardNamea] = React.useState("Loading");
-    let [cardNameb, putCardNameb] = React.useState("Loading");
-    let [cardNamec, putCardNamec] = React.useState("Loading");
-    let [cardNamed, putCardNamed] = React.useState("Loading");
-    let [cardNamee, putCardNamee] = React.useState("Loading");
-    
 
-    let [cardLogo0, putCardLogo0] = React.useState("Loading");
-    let [cardLogo1, putCardLogo1] = React.useState("Loading");
-    let [cardLogo2, putCardLogo2] = React.useState("Loading");
-    let [cardLogo3, putCardLogo3] = React.useState("Loading");
-    let [cardLogo4, putCardLogo4] = React.useState("Loading");
-    let [cardLogo5, putCardLogo5] = React.useState("Loading");
-    
+    let cardname=[]
+    let cardlogo=[]
+   
 
-    let title = [cardName, cardNamea, cardNameb, cardNamec, cardNamed, cardNamee]
-    let images = [cardLogo0, cardLogo1, cardLogo2, cardLogo3, cardLogo4, cardLogo5]
+    let [LOGO, putlogo] = React.useState("Loading");
+    let [TITLE, puttitle] = React.useState("Loading");
 
-    const raw = {
+
+    useEffect(() => {
+        
+      let id=localStorage.getItem('perrolepermsnid')
+      console.log(id);
+      const getData = async () => {
+      let raw = {
+
         "db_name": "ipmo",
-        "entity": "spe_category",
-        "return_fields": "keep(spe_category,'_id','_key','name','logo','url','status','appcredentials','dfltseq')",
-        "sort": "spe_category._key"
+    
+        "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+    
+    }
+      console.log(raw)
+      const url = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+    
+      let response = await makeAPIpost(raw, url)
+     
+      console.log(response[0].permsn_repo)
+
+
+     
+        let raw1 = {
+
+          "db_name": "ipmo",
+      
+          "query": "for doc in spe_category filter doc.rep_id IN ["+response[0].permsn_repo.map(x => "'" + x + "'").toString()+"] return doc"
+      
+      }
+        console.log(raw1)
+        const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+      
+        let response1 = await makeAPIpost(raw1, url1)
+        console.log(response1)
+        let responseData=response1
+  
+        for (let i = 0; i < responseData.length; i++) {
+          cardname[i]= responseData[i].name
+          cardlogo[i]= responseData[i].logo
+      }
+      console.log(responseData)
+      putlogo(cardlogo)
+      puttitle(cardname)
+
+
+    
+
     }
 
-    const url = "https://arangodbservice.dev.ainqaplatform.in/api/read_documents"
-    let fetchdata = async () => {
-    let response = await makeAPIpost(raw, url)
-        putCardName(response.result[9].name)
-        putCardNamea(response.result[10].name)
-        putCardNameb(response.result[11].name)
-        putCardNamec(response.result[12].name)
-        putCardNamed(response.result[2].name)
-        putCardNamee(response.result[13].name)
-    
-        putCardLogo0(response.result[9].logo)
-        putCardLogo1(response.result[10].logo)
-        putCardLogo2(response.result[11].logo)
-        putCardLogo3(response.result[12].logo)
-        putCardLogo4(response.result[2].logo)
-        putCardLogo5(response.result[13].logo)
-       
-        console.log(response);
-    }
-    fetchdata();
+
+
+
+
+
+
+
+
+
+
+
+        
+     
+     
+      getData();
+    }, [])
+
+
+
     const settings = {
         dots: false,
         slidesToShow: 5,
@@ -116,10 +147,10 @@ return (
                 </Grid>
                 <Grid item md={12} sx={{paddingLeft:"10px"}} >
                 <Slider {...settings} >
-                {Array.from(Array(title.length)).map((_, index) => (
+                {Array.from(Array(TITLE.length)).map((_, index) => (
                     <Grid>
             <Grid item  key={index}  sx={{marginLeft:"20px"}}>
-              <Cardd title={title} int={index} images={images}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
+              <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
             </Grid>
             </Grid>
           ))}

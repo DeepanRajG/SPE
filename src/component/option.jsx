@@ -7,7 +7,7 @@ import {
 export default function Option(props) {
   let setoptions=[];
   let hide =false;
-  for (let i = 1; i < props.OptionList.length; i++) {
+  for (let i = 0; i < props.OptionList.length; i++) {
     if (props.cardint === i) {
         let dat = props.OptionList[i]
         setoptions=dat
