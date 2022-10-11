@@ -5,17 +5,22 @@ import {
   Tab,
   Tabs,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import WestIcon from "@mui/icons-material/West";
 function Entertainhead() {
+  const navigate = useNavigate();
     const [value, setValue] = React.useState("one");
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
+    let previous = ()=>{
+      navigate("/page");
+      }
     return (
 <Grid container sx={{marginTop:"10px"}}>
         <Grid container item md={7} direction="row" sx={{padding:"10px",paddingBottom:"0px"}} >
           <Grid>
-            <WestIcon sx={{ margin: "10px 10px 10px 20px" }} />
+            <WestIcon sx={{ margin: "10px 10px 10px 20px" }} onClick={previous} />
           </Grid>
           <Grid>
             <Typography

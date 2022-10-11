@@ -22,7 +22,7 @@ export default  function Patient(props) {
 
 
 
-    let options = ["Option 1", "Option 1", "Option 1"]
+    let options = []
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
     let options2 = ["Calls","patient schedules","patient Care Team",]
     let options3 = ["Laboratory", "Radiology", "Documents"]
@@ -113,8 +113,7 @@ export default  function Patient(props) {
     
    
  
-    
-////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
