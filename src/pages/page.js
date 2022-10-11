@@ -5,10 +5,6 @@ import Nurse from './nursePage'
 import{makeAPIpost} from '../component/api'
 import {useEffect,useState} from 'react'
 
-
-
-
-
 export default function Page() {
   let finaldata;
   let dat =false;
@@ -22,7 +18,7 @@ export default function Page() {
   //     const getData = async () => {
   //     let raw = {
 
-  //       "db_name": "ipmo",
+
     
   //       "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
     
@@ -71,6 +67,7 @@ export default function Page() {
 
 
 
+
    
    
   
@@ -79,12 +76,12 @@ export default function Page() {
 
 
     if(localStorage.getItem('roll_id')==="15" ){
+
       return (
         <div>
            <Patient renderdata={finaldata}></Patient>
         </div>
       )
-    
     }
     if(localStorage.getItem('roll_id')==="113"){
       return (
@@ -97,9 +94,7 @@ export default function Page() {
       return (
         <div>
            <Nurse/>
-          
         </div>
       )
     }
- 
 }

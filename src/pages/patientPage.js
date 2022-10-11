@@ -1,6 +1,5 @@
 import React from "react";
 import {useEffect} from "react";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,24 +15,23 @@ import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
 import { Cardd } from "../component/card.jsx"
 
+
 export default  function Patient(props) {
 
 
 
 
 
+
     let options = []
+
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
     let options2 = ["Calls","patient schedules","patient Care Team",]
     let options3 = ["Laboratory", "Radiology", "Documents"]
     let options4 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
     let options5 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
-   
-
     let cardname=[]
     let cardlogo=[]
-   
-
     let [LOGO, putlogo] = React.useState("Loading");
     let [TITLE, puttitle] = React.useState("Loading");
     let [response, putresponse] = React.useState("Loading");
@@ -95,28 +93,13 @@ export default  function Patient(props) {
   
 
 
-
-
-
-
-
-
-
-
-
-          
-       
-       
         getData();
       }, [])
      
+
     
    
  
-
-
-
-
 
 
 
@@ -146,7 +129,6 @@ export default  function Patient(props) {
           />
         );
       }
-      
       function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -157,10 +139,7 @@ export default  function Patient(props) {
           />
         );
       }
-      
-      
-
-    return (
+return (
         <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
             <Grid direction="column" container marginTop="20px" >
@@ -194,7 +173,6 @@ export default  function Patient(props) {
                             }} >
                                 <Grid item md={6} >
                                     <Grid direction="column">
-
                                         <Grid item md={3}>
                                             <Typography sx={{ fontSize: "32px", color: "white", fontWeight: "600", paddingTop: "40px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
                                             <Grid sx={{ paddingTop: "10px" }}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "140px", fontFamily: "poppins", maxWidth: "150px" }}>View More</Button></Grid>

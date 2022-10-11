@@ -10,14 +10,10 @@ import {
   Avatar,
   Grid,
   Box,
- 
   Button,
- 
   Stack,
   Typography,
-
 } from "@mui/material";
-import { Login } from "@mui/icons-material";
 
 export default function Tolly() {
   const navigate=useNavigate();
@@ -120,7 +116,24 @@ export default function Tolly() {
                         </Stack>
                       </Grid>
                       <Grid sx={{marginTop:"20px"}}>
-                        
+                        <Stack spacing={2}>
+                          <Button
+                            sx={{
+                              bgcolor: "#E3F4FF",
+                              color: "#046EB3",
+                              fontWeight: "bold",
+                              width: "258px",
+                              height: "50px",
+                              textTransform: "capitalize",
+                              alignSelf: "center",
+
+                              "&:hover": { backgroundColor: "#E3F4FF" },
+                            }}
+                            variant="outline"
+                            startIcon={<SwapHorizIcon />}
+                          >
+                            Switch User
+                          </Button>
 
                           <Button
                           
@@ -132,7 +145,7 @@ export default function Tolly() {
                               height: "50px",
                               textTransform: "capitalize",
                               alignSelf: "center",
-                              marginTop:"40px",
+
                               "&:hover": { backgroundColor: "#FFE3E7" },
                             }}
                          
@@ -142,7 +155,7 @@ export default function Tolly() {
                           >
                             Logout
                           </Button>
-                        
+                        </Stack>
                       </Grid>
                     </Grid>
                   </Grid>
