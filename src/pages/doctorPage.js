@@ -23,8 +23,8 @@ function App() {
   let cardlogo=[]
  
 
-  let [LOGO, putlogo] = React.useState("Loading");
-  let [TITLE, puttitle] = React.useState("Loading");
+  let [LOGO, putlogo] = React.useState("");
+  let [TITLE, puttitle] = React.useState("");
 
 
   useEffect(() => {
@@ -45,6 +45,7 @@ function App() {
     let response = await makeAPIpost(raw, url)
    
     console.log(response[0].permsn_repo)
+    localStorage.setItem("permsn_repo",response[0].permsn_repo)
 
 
    

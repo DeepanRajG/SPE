@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import '../css/App.css'
 import logo from '../img/logo.png'
@@ -44,7 +45,7 @@ class Header extends Component {
                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 0px", marginLeft: "0px", }}  />
                     <Avatar src={text} style={{ width: 30, height: 35,padding:"5px 0px 10px 10px",marginTop:"10px" }} />
                     </Grid>
-                    <Grid item container md={6}>
+                    <Grid item container md={6} >
                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px", marginLeft: "0px", }} />
                     <Typography sx={{ padding: "10px", fontSize: "17px", fontFamily: "poppins", fontWeight: '500', color: "#0D224C",marginTop:"10px" }}> <font color="#E62E22">R</font>12</Typography>
                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px", marginLeft: "0px", }} />
@@ -52,15 +53,15 @@ class Header extends Component {
                     <Divider orientation="vertical" sx={{ padding: "0px 0px ", marginLeft: "0px", }} />
                     <NotificationsIcon sx={{ padding: "10px",marginTop:"10px" }}></NotificationsIcon>
                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px", marginLeft: "0px", }} />
-                    <Avatar src={this.props.profile} style={{ width: 40, height: 40,marginLeft:"10px" ,marginTop:"10px"}} />
-                    <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: 'bold', color: "#0D224C" ,marginTop:"10px"}} onClick={() => this.setState({  count: this.props.count =true })}>{this.props.name}</Typography>
-                    <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px' }}></KeyboardArrowDownRoundedIcon>
+                    <Avatar src={this.props.profile} style={{ width: 40, height: 40,marginLeft:"10px" ,marginTop:"10px",cursor:"pointer"}} onClick={() => this.setState({  count: this.state.count =true })}/>
+                    <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: 'bold', color: "#0D224C" ,marginTop:"10px",cursor:"pointer"}} onClick={() => this.setState({  count: this.state.count =true })}>{this.props.name}</Typography>
+                    <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px',cursor:"pointer" }} onClick={() => this.setState({  count: this.state.count =true })}></KeyboardArrowDownRoundedIcon>
                     </Grid>
                 </Grid>
             </Grid>
             <Backdrop  maxWidth="xl"  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 open={this.state.count}
-                onClick={() => this.setState({ count: this.props.count =false })}
+                onClick={() => this.setState({ count: this.state.count =false })}
             >
                 <Profile></Profile>
             </Backdrop>

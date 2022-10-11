@@ -12,20 +12,53 @@ function  Entertaincomp() {
     let [URL, puturl] = React.useState("Loading");
     let logo=[]
     let url=[]
-    const raw = {
-        "db_name": "ipmo_spe",
-        "entity": "spe_application",
-        "return_fields": "merge(keep(spe_application,'_id','_key','appname','applogo','url','status','dfltsequence','sublink'),{categoryid:document(spe_application.categoryid)})",
-        "sort": "spe_application.dfltsequence"
-    }
-    const url1 = "https://arangodbservice.dev.ainqaplatform.in/api/read_documents"
+
+
 
     useEffect(() => {
       const getData = async () => {
+               
+    let id=localStorage.getItem('perrolepermsnid')
+    console.log(id);
+
+
+
+        let raws = {
+
+          "db_name": "ipmo",
+      
+          "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+      
+      }
+        //console.log(raw)
+        const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+      
+        let responses = await makeAPIpost(raws, urls)
+       
+        console.log(responses[0].permsn_repo)
+       // console.log(responses[0].permsn_repo);
+
+
+
+   
+        const raw = {
+          "db_name": "ipmo",
+          "query": "for doc in spe_application filter doc.rep_id IN ["+responses[0].permsn_repo.map(x => "'" + x + "'").toString()+"] return doc",
+          
+      }
+      console.log(raw);
+      const url1 = "https://arangodbservice.dev.ainqaplatform.in/api/execute_aql"
+
+
+
+
+
+
         let response = await makeAPIpost(raw, url1)
-        for (let i = 0; i < response.result.length; i++) {
-            logo[i]= response.result[i].applogo
-            url[i]= response.result[i].url
+        console.log(response);
+        for (let i = 0; i < response.length; i++) {
+            logo[i]= response[i].applogo
+            url[i]= response[i].url
         }
         putdat(logo)
         puturl(url)

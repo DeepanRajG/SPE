@@ -32,8 +32,8 @@ export default  function Patient(props) {
     let options5 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
     let cardname=[]
     let cardlogo=[]
-    let [LOGO, putlogo] = React.useState("Loading");
-    let [TITLE, puttitle] = React.useState("Loading");
+    let [LOGO, putlogo] = React.useState("");
+    let [TITLE, puttitle] = React.useState("");
     let [response, putresponse] = React.useState("Loading");
 
  
@@ -114,7 +114,7 @@ export default  function Patient(props) {
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidestoScroll:5,
+        slidestoScroll:3,
     infinite:false,
         prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />

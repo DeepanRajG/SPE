@@ -1,7 +1,8 @@
+
 import React from "react";
 
 import "../css/App.css";
-import { useNavigate } from "react-router-dom";
+
 import dollytan from "../img/afrin.png";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
@@ -10,16 +11,16 @@ import {
   Avatar,
   Grid,
   Box,
+ 
   Button,
+ 
   Stack,
   Typography,
+
 } from "@mui/material";
 
-export default function Tolly() {
-  const navigate=useNavigate();
-   const HandleLogin=()=>{
-           navigate("/login")
-   }
+export default function tolly() {
+   
   return (
     <body sx={{ bgcolor: "yellow" }}>
       <Container maxWidth="xl" sx={{ marginTop: "60px" }}>
@@ -115,28 +116,9 @@ export default function Tolly() {
                           <Typography color="black">BED</Typography>
                         </Stack>
                       </Grid>
-                      <Grid sx={{marginTop:"20px"}}>
+                      <Grid sx={{marginTop:"50px"}}>
                         <Stack spacing={2}>
                           <Button
-                            sx={{
-                              bgcolor: "#E3F4FF",
-                              color: "#046EB3",
-                              fontWeight: "bold",
-                              width: "258px",
-                              height: "50px",
-                              textTransform: "capitalize",
-                              alignSelf: "center",
-
-                              "&:hover": { backgroundColor: "#E3F4FF" },
-                            }}
-                            variant="outline"
-                            startIcon={<SwapHorizIcon />}
-                          >
-                            Switch User
-                          </Button>
-
-                          <Button
-                          
                             sx={{
                               bgcolor: "#FFE3E7",
                               color: "#FA273E",
@@ -148,10 +130,8 @@ export default function Tolly() {
 
                               "&:hover": { backgroundColor: "#FFE3E7" },
                             }}
-                         
                             variant="outline"
                             startIcon={<ExitToAppIcon />}
-                            onClick={HandleLogin}
                           >
                             Logout
                           </Button>
@@ -168,5 +148,4 @@ export default function Tolly() {
     </body>
   );
 }
-
 
