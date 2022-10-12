@@ -21,6 +21,7 @@ import logo from '../img/logo.png'
 import CustomizedSnackbars from '../component/Toast.jsx';
 
 function App() {
+  localStorage.setItem('roll_id', 0 );
   const navigate = useNavigate();
 
   const [username, setusername] = useState('')
