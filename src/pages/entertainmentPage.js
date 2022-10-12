@@ -18,32 +18,14 @@ function  Entertaincomp() {
     useEffect(() => {
       const getData = async () => {
                
-    let id=localStorage.getItem('perrolepermsnid')
-    console.log(id);
-
-
-
-        let raws = {
-
-          "db_name": "ipmo",
+        let permsn_repo=localStorage.getItem("permsn_repo")
+        let array = permsn_repo.split(',');
       
-          "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
-      
-      }
-        //console.log(raw)
-        const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
-      
-        let responses = await makeAPIpost(raws, urls)
-       
-        console.log(responses[0].permsn_repo)
-       // console.log(responses[0].permsn_repo);
-
-
-
+   
    
         const raw = {
           "db_name": "ipmo",
-          "query": "for doc in spe_application filter doc.rep_id IN ["+responses[0].permsn_repo.map(x => "'" + x + "'").toString()+"] return doc",
+          "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc",
           
       }
       console.log(raw);

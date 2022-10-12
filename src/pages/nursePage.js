@@ -50,17 +50,16 @@ function App() {
     
       let response = await makeAPIpost(raw, url)
      
-      console.log(response[0].permsn_repo)
+      let permsn_repo=localStorage.getItem("permsn_repo")
+      let array = permsn_repo.split(',');
+    
+    let raw1 = {
 
-
-     
-        let raw1 = {
-
-          "db_name": "ipmo",
-      
-          "query": "for doc in spe_category filter doc.rep_id IN ["+response[0].permsn_repo.map(x => "'" + x + "'").toString()+"] return doc"
-      
-      }
+      "db_name": "ipmo",
+  
+      "query": "for doc in spe_category filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc"
+  
+  }
         console.log(raw1)
         const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
       

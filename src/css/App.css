@@ -4,6 +4,7 @@
 *{
 
     font-family: 'Poppins', sans-serif;
+    -webkit-text-fill-color: initial;
    
 }
 .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
@@ -16,6 +17,7 @@
 .TextField-without-border-radius fieldset{
     border-radius: 50px;
     height:53px;
+    
   }
   input[type=password]::-ms-reveal,
   input[type=password]::-ms-clear {
@@ -40,4 +42,8 @@
 }
 .slick-next:before {
     font-size: 30px !important;
+}
+#user{
+  -webkit-text-fill-color: #324D70;
+
 }

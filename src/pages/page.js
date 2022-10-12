@@ -13,6 +13,29 @@ export default function Page() {
     console.log(items);
 
 
+    useEffect(() => {
+        
+      let id=localStorage.getItem('perrolepermsnid')
+      console.log(id);
+      const getData = async () => {
+      let raw = {
+  
+        "db_name": "ipmo",
+    
+        "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+    
+    }
+      console.log(raw)
+      const url = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+    
+      let response = await makeAPIpost(raw, url)
+     
+      console.log(response[0].permsn_repo)
+      localStorage.setItem("permsn_repo",[response[0].permsn_repo])
+  }
+    getData();
+  }, [])
+
   //   useEffect(() => {
   //     let id=localStorage.getItem('perrolepermsnid')
   //     console.log(id);
@@ -75,7 +98,7 @@ export default function Page() {
 
 
 
-
+    // test patient user
     if(localStorage.getItem('roll_id')==="15" ){
 
       return (
@@ -84,6 +107,7 @@ export default function Page() {
         </div>
       )
     }
+      // patient user
     if(localStorage.getItem('roll_id')==="5" ){
 
       return (
@@ -92,6 +116,7 @@ export default function Page() {
         </div>
       )
     }
+      // doctor user
     if(localStorage.getItem('roll_id')==="113"){
       return (
         <div>
@@ -99,6 +124,7 @@ export default function Page() {
         </div>
       )
     }
+    //nurse user
     if(localStorage.getItem('roll_id')==="114"){
       return (
         <div>
@@ -106,6 +132,7 @@ export default function Page() {
         </div>
       )
     }
+    //error page
     if(localStorage.getItem('roll_id')==="0"){
       return (
         <div>
