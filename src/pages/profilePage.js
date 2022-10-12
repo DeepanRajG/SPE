@@ -18,8 +18,13 @@ import {
   Typography,
 
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+export default function Tolly() {
+  const navigate = useNavigate();
 
-export default function tolly() {
+  const logout=()=>{
+    navigate("/login")
+  }
    
   return (
     <body sx={{ bgcolor: "yellow" }}>
@@ -119,6 +124,7 @@ export default function tolly() {
                       <Grid sx={{marginTop:"50px"}}>
                         <Stack spacing={2}>
                           <Button
+                          onClick={logout}
                             sx={{
                               bgcolor: "#FFE3E7",
                               color: "#FA273E",

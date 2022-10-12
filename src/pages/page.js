@@ -4,6 +4,7 @@ import Doctor from './doctorPage'
 import Nurse from './nursePage'
 import{makeAPIpost} from '../component/api'
 import {useEffect,useState} from 'react'
+import ErrorPage from './errorPage'
 
 export default function Page() {
   let finaldata;
@@ -83,6 +84,14 @@ export default function Page() {
         </div>
       )
     }
+    if(localStorage.getItem('roll_id')==="5" ){
+
+      return (
+        <div>
+           <Patient renderdata={finaldata}></Patient>
+        </div>
+      )
+    }
     if(localStorage.getItem('roll_id')==="113"){
       return (
         <div>
@@ -96,5 +105,20 @@ export default function Page() {
            <Nurse/>
         </div>
       )
+    }
+    if(localStorage.getItem('roll_id')==="0"){
+      return (
+        <div>
+           <ErrorPage></ErrorPage>
+        </div>
+      )
+    }
+    else{
+      return (
+        <div>
+           <ErrorPage></ErrorPage>
+        </div>
+      )
+
     }
 }
