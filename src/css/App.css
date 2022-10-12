@@ -15,7 +15,7 @@
 }
 .TextField-without-border-radius fieldset{
     border-radius: 50px;
-    height:55px;
+    height:53px;
   }
   input[type=password]::-ms-reveal,
   input[type=password]::-ms-clear {

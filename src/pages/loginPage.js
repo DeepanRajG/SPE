@@ -28,7 +28,7 @@ function App() {
   const _handleTextFieldChange = e => {
     let Username = e.target.value
     setusername(Username)
-    console.log(username)
+    
 }
 const header = {
   height: "60px",
@@ -47,50 +47,37 @@ const doco = {
   const _handleTextFieldChange1 = e => {
     let pass = e.target.value
     setpassword(pass)
-    console.log(password)
+    
   }
  
   let login = async () => {
-
-  
-
-
     let raw = { username: username, password: password }
  
     const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
 
-
-    let response = await makeAPIpost(raw, url)
+  let response = await makeAPIpost(raw, url)
     if (response.Result === "Valid user!") {
       
       localStorage.setItem('access_token', response.tokenDetails.access_token );
       localStorage.setItem('keyclkId', response.keyclkId);
 
-      
     let filterid= "Person.keycloackid=='" + localStorage.getItem('keyclkId')  +"'"
  
- 
-
     let raws = {
       "db_name": "ipmo",
       "entity": "Person",
       "filter": filterid ,
       "return_fields": "Person"
     }
-    //console.log(raw)
+    
     const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/read_documents'
   
     let responses = await makeAPIpost(raws, urls)
-    console.log(responses)
-   
+       
     let roll_id= responses.result[0].roleid[0].roleid
     let roll_name= responses.result[0].roleid[0].rolename
-
     localStorage.setItem('roll_id', roll_id );
     localStorage.setItem('roll_name', roll_name);
-
-
-    
 
     //////////////////////////////////////////////////////////////////////////
 
@@ -98,29 +85,24 @@ const doco = {
       "db_name": "ipmo",
       "roleid": roll_id
   }
-   // console.log(raw)
+  
     const url1 = 'https://idmservices.dev.ainqaplatform.in/GetPermissionforRoles'
   
     let response1 = await makeAPIpost(raw1, url1)
 
     let perrolepermsnid=response1.Result[0].perrolepermsnid[0]
-
-    console.log(perrolepermsnid)
     localStorage.setItem('perrolepermsnid', perrolepermsnid);
     navigate("/page")
-
- 
-    
-    }
+  }
     else{
       {<CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>}
         
     }
-    console.log(response)
+    
   }
    const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
   const titl = { color: '#324D70', fontWeight: 'bold',fontSize:"15px",paddingTop:"10px" }
-  const blue = { color: '#277FFE',marginTop:"12px" }
+  const blue = { color: '#277FFE',marginTop:"11px" }
   const [showPassword, setShowPassword] = useState(false)
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
@@ -160,7 +142,7 @@ const doco = {
             InputProps={{
               sx: {
                   "& input": {
-                      marginTop:"8px"
+                      marginTop:"6px",fontFamily:"poppins",fontWeight:"500",color:"#324D70"
                   }
               }
           }}
@@ -181,7 +163,8 @@ const doco = {
             InputProps={{
               sx: {
                 "& input": {
-                    marginTop:"8px"
+                    marginTop:"6px",
+                    fontFamily:"poppins",fontWeight:"500",color:"#324D70"
                 }
             },
               // <-- This is where the toggle button is added.
@@ -230,7 +213,7 @@ const doco = {
                 width: '370px',
                 height:"50px",
                 borderRadius: '40px',
-              
+                color:"#FFFFFF",backgroundColor:"#277FFE"
               }}
             >
               Log in
