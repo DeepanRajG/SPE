@@ -120,8 +120,8 @@ const doco = {
     console.log(response)
   }
    const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
-  const titl = { color: '#324D70', fontWeight: 'bold' }
-  const blue = { color: '#277FFE',margin:"30px 0px" }
+  const titl = { color: '#324D70', fontWeight: 'bold',fontSize:"15px",paddingTop:"10px" }
+  const blue = { color: '#277FFE',marginTop:"12px" }
   const [showPassword, setShowPassword] = useState(false)
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
@@ -143,12 +143,13 @@ const doco = {
         
           <Grid>
             <Typography sx={{fontFamily:"poppins",fontWeight: 'bold',   fontSize: "32px", paddingBottom: '10px',color:"#223144"}}>Login</Typography>
-            <Typography sx={{fontFamily:"poppins",color: '#CDCED0', paddingBottom: '20px'}} >
-              Enter your credentials to access your Account
+            <Typography sx={{fontFamily:"poppins",fontWeight:400,color: '#CDCED0', paddingBottom: '20px'}} >
+              Enter your credentials to access your account
             </Typography>
           </Grid>
           <Typography style={titl}>User ID / Bed No.</Typography>
           <TextField
+          sx={{alignSelf:"center"}}
             onChange={e => {
               _handleTextFieldChange(e)
             }}
@@ -157,6 +158,13 @@ const doco = {
             variant='outlined'
             size='small'
             id='user'
+            InputProps={{
+              sx: {
+                  "& input": {
+                      marginTop:"8px"
+                  }
+              }
+          }}
             style={user}
           />
           <Typography style={titl}>Password</Typography>
@@ -164,6 +172,7 @@ const doco = {
             onChange={e => {
               _handleTextFieldChange1(e)
             }}
+          
             value={password}
             id='pass'
             className='TextField-without-border-radius'
@@ -171,6 +180,11 @@ const doco = {
             type={showPassword ? 'text' : 'password'} // <-- This is where the magic happens
             //   onChange={handleChange('password')}
             InputProps={{
+              sx: {
+                "& input": {
+                    marginTop:"8px"
+                }
+            },
               // <-- This is where the toggle button is added.
               endAdornment: (
                 <InputAdornment position='end'>
@@ -204,7 +218,7 @@ const doco = {
                 fontFamily:"poppins"
               }}
             >
-              Forgot Password?
+              Forgot password?
             </Typography>
           </Grid>
           <Grid>
@@ -214,10 +228,10 @@ const doco = {
               variant='contained'
               sx={{
                 textTransform: 'capitalize',
-                width: '250px',
-                alignSelf: 'center',
-                borderRadius: '20px',
-                marginLeft: '50px'
+                width: '370px',
+                height:"50px",
+                borderRadius: '40px',
+              
               }}
             >
               Log in

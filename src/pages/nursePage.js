@@ -75,36 +75,16 @@ function App() {
       console.log(responseData)
       putlogo(cardlogo)
       puttitle(cardname)
-
-
-    
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-        
-     
-     
-      getData();
+    getData();
     }, [])
-
-
 
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidestoScroll:5,
+        slidesToScroll:5,
     infinite:false,
+    accessibility:true,
         prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />
       };
@@ -118,7 +98,6 @@ function App() {
           />
         );
       }
-      
       function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -139,7 +118,6 @@ return (
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     paddingLeft: "30px"
-
                 }}
                 container
             >
