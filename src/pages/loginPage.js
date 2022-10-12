@@ -95,14 +95,33 @@ const doco = {
 
     let perrolepermsnid=response1.Result[0].perrolepermsnid[0]
     localStorage.setItem('perrolepermsnid', perrolepermsnid);
+
+    let raw2 = {
+  
+      "db_name": "ipmo",
+  
+      "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+perrolepermsnid+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+  
+  }
+    console.log(raw2)
+    const url2 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+  
+    let responses1 = await makeAPIpost(raw2, url2)
+   
+    console.log(responses1[0].permsn_repo)
+    //setpost(response[0].permsn_repo)
+    localStorage.setItem("permsn_repo",[responses1[0].permsn_repo])
+
     navigate("/page")
+    
   }
     else{
       {<CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>}
         
     }
+    
   }
-  const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
+   const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
   const titl = { color: '#324D70', fontWeight: 'bold',fontSize:"15px",paddingTop:"10px" }
   const blue = { color: '#277FFE',marginTop:"11px" }
   const [showPassword, setShowPassword] = useState(false)

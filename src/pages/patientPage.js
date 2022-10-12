@@ -47,8 +47,10 @@ export default  function Patient(props) {
         
       
         const getData = async () => {
+            let inputdata=props.inputarray
+            console.log(inputdata);
        
-            let permsn_repo=localStorage.getItem("permsn_repo")
+            let permsn_repo= await localStorage.getItem("permsn_repo")
             let array = permsn_repo.split(',');
           
           let raw1 = {
