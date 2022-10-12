@@ -22,6 +22,7 @@ import CustomizedSnackbars from '../component/Toast.jsx';
 
 function App() {
   localStorage.setItem('roll_id', 0 );
+  localStorage.setItem('permsn_repo', 0 );
   const navigate = useNavigate();
 
   const [username, setusername] = useState('')
@@ -35,6 +36,7 @@ const header = {
   height: "60px",
 
 }
+const inputStyle = { WebkitBoxShadow: "0 0 0 1000px white inset", };
 
 const doco = {
   width: "39vw",
@@ -131,6 +133,7 @@ const doco = {
           </Grid>
           <Typography style={titl}>User ID / Bed No.</Typography>
           <TextField
+          
           sx={{alignSelf:"center"}}
             onChange={e => {
               _handleTextFieldChange(e)
@@ -140,7 +143,9 @@ const doco = {
             variant='outlined'
             size='small'
             id='user'
+           inputProps={{ style: inputStyle}}
             InputProps={{
+              
               sx: {
                   "& input": {
                       marginTop:"6px",fontFamily:"poppins",fontWeight:"500",color:"#324D70"
@@ -156,11 +161,12 @@ const doco = {
             }}
           
             value={password}
-            id='pass'
+            id='user'
             className='TextField-without-border-radius'
             variant='outlined'
             type={showPassword ? 'text' : 'password'} // <-- This is where the magic happens
             //   onChange={handleChange('password')}
+            inputProps={{ style: inputStyle }}
             InputProps={{
               sx: {
                 "& input": {
