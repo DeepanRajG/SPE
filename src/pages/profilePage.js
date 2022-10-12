@@ -30,9 +30,9 @@ export default function Tolly() {
     <body sx={{ bgcolor: "yellow" }}>
       <Container maxWidth="xl" sx={{ marginTop: "60px" }}>
         <Grid container spacing={0}>
-          <Grid item md={8}></Grid>
-          <Grid item md={4} sx={{ height: "100px", width: "300px" }}>
-            <Grid container spacing={0}>
+          <Grid item md={11}></Grid>
+          <Grid item md={1} sx={{ height: "100px", width: "300px", }}>
+            <Grid container spacing={0} sx={{display:"flex",justifyContent:"right"}}>
               <Grid item md={6} sx={{ height: "100px", width: "auto" }}></Grid>
               <Grid item md={6}>
                 <Grid
@@ -48,7 +48,7 @@ export default function Tolly() {
                 >
                   <Grid
                     item
-                    md={3}
+                    lg={3}
                     sx={{
                       backgroundColor: "#223144",
                       borderRadius: "10px 10px 0px 0px",
@@ -60,7 +60,7 @@ export default function Tolly() {
                       </Typography>
                     </Box>
                   </Grid>
-                  <Grid item md={9}>
+                  <Grid item lg={9}>
                     <Grid
                       container
                       direction="column"
@@ -78,9 +78,9 @@ export default function Tolly() {
                         }}
                       ></Avatar>
                       <Box sx={{ backgroundColor: "white", }}>
-                        <Typography color="black" sx={{fontFamily:"poppins"}} >Dolly Tan</Typography>
+                        <Typography color="black" sx={{fontFamily:"poppins",fontWeight:500}} >Dolly Tan</Typography>
 
-                        <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:500,opacity:"0.87"}} >sathish.rakin@ainqa.com</Typography>
+                        <Typography color="black" sx={{paddingTop:"5px",fontFamily:"poppins",fontSize:"12px",fontWeight:500,opacity:"0.87"}} >sathish.rakin@ainqa.com</Typography>
                       </Box>
 
                       {/* first avatar */}
@@ -102,7 +102,7 @@ export default function Tolly() {
                           >
                             12
                           </Avatar>
-                          <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:"500",opacity:"0.87"}}>ROOM</Typography>
+                          <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:"600",opacity:"0.69"}}>ROOM</Typography>
                           {/* second */}
                         </Stack>
                         <Stack spacing={1} sx={{marginTop:"10px"}}>
@@ -119,7 +119,7 @@ export default function Tolly() {
                           >
                             12
                           </Avatar>
-                          <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:"500",opacity:"0.87"}}>BED</Typography>
+                          <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:"600",opacity:"0.69"}}>BED</Typography>
                         </Stack>
                       </Grid>
                       <Grid sx={{marginTop:"60px"}}>
@@ -134,7 +134,7 @@ export default function Tolly() {
                               height: "auto",
                               textTransform: "capitalize",
                               alignSelf: "center",
-
+                              fontFamily:"poppins",
                               "&:hover": { backgroundColor: "#FFE3E7" },
                             }}
                             variant="outline"
