@@ -99,9 +99,8 @@ const doco = {
       {<CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>}
         
     }
-    
   }
-   const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
+  const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
   const titl = { color: '#324D70', fontWeight: 'bold',fontSize:"15px",paddingTop:"10px" }
   const blue = { color: '#277FFE',marginTop:"11px" }
   const [showPassword, setShowPassword] = useState(false)

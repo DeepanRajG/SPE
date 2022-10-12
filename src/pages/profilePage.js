@@ -30,17 +30,17 @@ export default function Tolly() {
     <body sx={{ bgcolor: "yellow" }}>
       <Container maxWidth="xl" sx={{ marginTop: "60px" }}>
         <Grid container spacing={0}>
-          <Grid item md={6}></Grid>
-          <Grid item md={6} sx={{ height: "100px", width: "300px" }}>
+          <Grid item md={8}></Grid>
+          <Grid item md={4} sx={{ height: "100px", width: "300px" }}>
             <Grid container spacing={0}>
-              <Grid item md={6} sx={{ height: "100px", width: "200px" }}></Grid>
+              <Grid item md={6} sx={{ height: "100px", width: "auto" }}></Grid>
               <Grid item md={6}>
                 <Grid
                   container
                   direction="column"
                   sx={{
-                    height: "450px",
-                    width: "350px",
+                    height: "430px",
+                    width: "285px",
                     textAlign: "center",
                     backgroundColor: "white",
                     borderRadius: "10px",
@@ -55,7 +55,7 @@ export default function Tolly() {
                     }}
                   >
                     <Box sx={{ verticalAlign: "center" }}>
-                      <Typography sx={{marginTop:"30px", color: "white", fontWeight: "bold" }}>
+                      <Typography sx={{marginTop:"30px", color: "white", fontWeight: "bold",fontFamily:"poppins" }}>
                         Patient
                       </Typography>
                     </Box>
@@ -77,18 +77,17 @@ export default function Tolly() {
                          
                         }}
                       ></Avatar>
-                      <Box sx={{ backgroundColor: "white" }}>
-                        <Typography color="black">Dolly Tan</Typography>
+                      <Box sx={{ backgroundColor: "white", }}>
+                        <Typography color="black" sx={{fontFamily:"poppins"}} >Dolly Tan</Typography>
 
-                        <Typography color="black" >sathish.rakin@ainqa.com</Typography>
+                        <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:500,opacity:"0.87"}} >sathish.rakin@ainqa.com</Typography>
                       </Box>
 
                       {/* first avatar */}
                       <Grid className="avatar"  >
                         <Stack
-                        //   direction="column"
-                          spacing={2}
-                          sx={{ paddingRight: "30px" }}
+                          spacing={1}
+                          sx={{ paddingRight: "30px",marginTop:"10px" }}
                         >
                           <Avatar
                             variant="circular"
@@ -96,16 +95,17 @@ export default function Tolly() {
                               bgcolor: "white",
                               color: "black",
                               border: "1px solid grey",
-                              fontWeight: "bold",
+                              fontWeight: "600",
                               alignSelf: "center",
+                              fontSize:"18px"
                             }}
                           >
                             12
                           </Avatar>
-                          <Typography color="black">ROOM</Typography>
+                          <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:"500",opacity:"0.87"}}>ROOM</Typography>
                           {/* second */}
                         </Stack>
-                        <Stack spacing={2}>
+                        <Stack spacing={1} sx={{marginTop:"10px"}}>
                           <Avatar
                             variant="circular"
                             sx={{
@@ -114,14 +114,15 @@ export default function Tolly() {
                               border: "1px solid grey",
                               fontWeight: "bold",
                               alignSelf: "center",
+                              fontSize:"18px"
                             }}
                           >
                             12
                           </Avatar>
-                          <Typography color="black">BED</Typography>
+                          <Typography color="black" sx={{fontFamily:"poppins",fontSize:"12px",fontWeight:"500",opacity:"0.87"}}>BED</Typography>
                         </Stack>
                       </Grid>
-                      <Grid sx={{marginTop:"50px"}}>
+                      <Grid sx={{marginTop:"60px"}}>
                         <Stack spacing={2}>
                           <Button
                           onClick={logout}
@@ -129,8 +130,8 @@ export default function Tolly() {
                               bgcolor: "#FFE3E7",
                               color: "#FA273E",
                               fontWeight: "bold",
-                              width: "258px",
-                              height: "50px",
+                              width: "170px",
+                              height: "auto",
                               textTransform: "capitalize",
                               alignSelf: "center",
 
