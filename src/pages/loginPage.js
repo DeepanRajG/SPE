@@ -36,8 +36,8 @@ const header = {
 }
 
 const doco = {
-  width: "70vh",
-  height: "82vh",
+  width: "39vw",
+  height: "auto",
   maxHeight: { xs: 200, md: 650 },
   maxWidth: { xs: 250, md: 600 },
   padding: "0px",
@@ -118,51 +118,31 @@ const doco = {
     }
     console.log(response)
   }
-   const user = { paddingTop: '10px', width: '300px', paddingBottom: '20px' }
-  const enter = { color: '#CDCED0', paddingBottom: '20px' }
-  const log = { fontWeight: 'bold',   fontSize: "40px", paddingBottom: '10px',color:"#223144" }
+   const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
   const titl = { color: '#324D70', fontWeight: 'bold' }
-  const blue = { color: '#277FFE' }
+  const blue = { color: '#277FFE',margin:"30px 0px" }
   const [showPassword, setShowPassword] = useState(false)
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
-  // const [values, setValues] = React.useState({
-
-  //   password: '',
-
-  //   showPassword: false,
-  // });
-  // const handleChange = (prop) => (event) => {
-  //   setValues({ ...values, [prop]: event.target.value });
-
-  // };
-
-  return (
+   return (
     <div>
-        <Container maxWidth="xl" sx={{ padding: "30px", backgroundColor: "#F5F7FA" }}>
+        <Container maxWidth="xl" sx={{ padding: "10px", backgroundColor: "#F5F7FA" }}>
             <Container maxWidth="xl" sx={{ backgroundColor: "white", borderRadius: "20px" }}>
                 <Grid item container>
                     <Grid item md={12} style={header}>
                         <Avatar src={logo} style={{ width: 60, height: 60, }} />
                     </Grid>
-                    <Grid item md={5} lg={6} sx={{ padding: "0px", margin: "0px" }}>
+                    <Grid item md={7} lg={7} sx={{ padding: "0px 0px 0px 10px", margin: "0px" }}>
                         <Box style={doco} component="img" src={doctor} />
                     </Grid>
-                    <Grid
-        item
-        xs={6}
-        sx={{
-          height: 900,
-          width: 700,
-          maxHeight: { xs: 200, md: 800 },
-          maxWidth: { xs: 200, md: 600 },
-          marginTop:10,
+                    <Grid item md={5} lg={5} sx={{ height: "auto", width:"100%",marginTop:15
         }}
       >
-        <Container mt={15}>
+        <Container>
+        
           <Grid>
-            <Typography style={log}>Login</Typography>
-            <Typography style={enter}>
+            <Typography sx={{fontFamily:"poppins",fontWeight: 'bold',   fontSize: "32px", paddingBottom: '10px',color:"#223144"}}>Login</Typography>
+            <Typography sx={{fontFamily:"poppins",color: '#CDCED0', paddingBottom: '20px'}} >
               Enter your credentials to access your Account
             </Typography>
           </Grid>
@@ -217,8 +197,10 @@ const doco = {
                 float: 'center',
                 color: '#277FFE',
                 textDecoration: 'none',
-                marginLeft: '160px',
-                marginBottom: '20px'
+                marginLeft: '220px',
+                marginBottom: '20px',
+                fontWeight:500,
+                fontFamily:"poppins"
               }}
             >
               Forgot Password?
@@ -231,7 +213,7 @@ const doco = {
               variant='contained'
               sx={{
                 textTransform: 'capitalize',
-                width: '200px',
+                width: '250px',
                 alignSelf: 'center',
                 borderRadius: '20px',
                 marginLeft: '50px'

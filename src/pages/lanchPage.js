@@ -8,6 +8,7 @@ import doc from '../img/doc.png'
 import nur from '../img/nur.png'
 import pat from '../img/pat.png'
 import selec from '../img/selec.svg'
+import { fontWeight } from "@mui/system";
 
 const LanchPage = () => {
 const navigate = useNavigate();
@@ -49,63 +50,49 @@ const navigate = useNavigate();
   }
     const header = {
         height: "60px",
+        marginTop:"10px"
     }
     const doco = {
-        width: "70vh",
-        height: "82vh",
-        maxHeight: { xs: 200, md: 650 },
+        width: "72vh",
+        height: "auto",
+        // maxHeight: { xs: 200, md: 650 },
         maxWidth: { xs: 250, md: 600 },
-        padding: "0px",
+        padding: "0px ",
         margin: "0px"
-    }
-    const Heading = {
-        fontWeight: "bold",
-        fontSize: "40px",
-        color: "#223144",
-        margin: "0px"
-    }
-    const subHeading = {
-        fontWeight: "medium",
-        fontSize: "18px",
-        color: "#CDCED0",
-        marginTop: "0px",
-        marginBottom: "50px"
-    }
-    const center = {
-        alignSelf: "center"
     }
     const minibox = {
-        height: "200px",
+        height: "250px",
+        width:"190px",
         backgroundColor: "#F5F7FA",
         borderRadius: "20px",
     }
     const persona = {
-        height: "auto",
+        height: "20px",
         color: "white"
     }
     return (
         <div>
-            <Container maxWidth="xl" sx={{ padding: "30px", backgroundColor: "#F5F7FA" }}>
+            <Container maxWidth="xl" sx={{ padding: "10px", backgroundColor: "#F5F7FA" }}>
                 <Container maxWidth="xl" sx={{ backgroundColor: "white", borderRadius: "20px" }}>
                     <Grid item container>
                         <Grid item md={12} style={header}>
                             <Avatar src={logo} style={{ width: 60, height: 60, }}  onClick={admin}/>
                         </Grid>
-                        <Grid item md={5} lg={6} sx={{ padding: "0px", margin: "0px" }}>
+                        <Grid item md={3} lg={5} sx={{ padding: "0px", margin: "0px" }}>
                             <Box style={doco} component="img" src={doctor} />
                         </Grid>
-                        <Grid item md={7} lg={6} style={center}>
-                            <Grid container direction="column">
-                                <p style={Heading}>Select your Profile</p>
-                                <p style={subHeading}>Select your appropriate profile to login into SPE</p>
-                                <Grid item container spacing={3} direction='row' md={12}>
-                                    <Grid item md={4} lg={3}>
+                        <Grid item md={9} lg={7} sx={{marginTop:"60px",paddingLeft:"60px"}}>
+                            <Grid container direction="column" sx={{display:"flex",justifyContent:"flex-start"}}>
+                                <Typography sx={{color:"#223144",fontSize:"35px",fontWeight:"700",fontFamily:"poppins"}}>Select your Profile</Typography>
+                                <Typography sx={{color:"#CDCED0",fontSize:"17px",marginTop:{md:"10px",xs:"5px"}}}>Select your appropriate profile to login into SPE</Typography>
+                                <Grid item container rowSpacing={3} sx={{marginTop:{md:"50px",xs:"25px"}}} direction='row' md={12}>
+                                    <Grid item md={4} lg={3} sx={{margin:"0px  40px 0px 0px"}}>
                                         <Grid item container sx={{cursor:"pointer"}} direction="column" style={minibox} onClick={showselectDoctor}  {...showSelectDoctor ? {border:"0.5px solid #277FFE", opacity: "50%"} :null}>
                                             <Grid item md={3} >
                                             { showSelectDoctor ? <SelectComponent/>: null }
                                             </Grid>
                                             <Grid item md={6} sx={{ alignSelf: "center" }} >
-                                                <Avatar src={doc} style={{ width: 80, height: 80,}} {...showSelectDoctor ? {opacity: "0.5"} : {opacity:"1"}}/>
+                                                <Avatar src={doc} style={{ width: 90, height: 90,}} {...showSelectDoctor ? {opacity: "0.5"} : {opacity:"1"}}/>
                                             </Grid>
                                             <Grid item md={3} sx={{ borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }} {...showSelectDoctor ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
                                                 <Container maxWidth="lg">
@@ -114,13 +101,13 @@ const navigate = useNavigate();
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <Grid item md={4} lg={3}>
+                                    <Grid item md={4} lg={3} sx={{marginRight:"40px"}}>
                                         <Grid item container sx={{cursor:"pointer"}} direction="column" style={minibox} onClick={showselectNurse} {...showSelectNurse ? {border:"0.5px solid #277FFE"} :null} >
                                             <Grid item md={3} >
                                             { showSelectNurse ? <SelectComponent/>: null }
                                             </Grid>
                                             <Grid item md={6} sx={{ alignSelf: "center" }}>
-                                                <Avatar src={nur} style={{ width: 80, height: 80, }} />
+                                                <Avatar src={nur} style={{ width: 90, height: 90, }} />
                                             </Grid>
                                             <Grid item md={3} sx={{  borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }}{...showSelectNurse ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
                                                 <Container maxWidth="lg">
@@ -129,13 +116,13 @@ const navigate = useNavigate();
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <Grid item md={4} lg={3}>
+                                    <Grid item md={4} lg={3} >
                                         <Grid item container sx={{cursor:"pointer"}} direction="column" style={minibox} onClick={showselectPatient} {...showSelectPatient ? {border:"0.5px solid #277FFE"} :null}>
                                             <Grid item md={3}>
                                             { showSelectPatient ? <SelectComponent/>: null }
                                             </Grid>
                                             <Grid item md={6} sx={{ alignSelf: "center" }}>
-                                                <Avatar src={pat} style={{ width: 80, height: 80, }} />
+                                                <Avatar src={pat} style={{ width: 90, height: 90, }} />
                                             </Grid>
                                             <Grid item md={3} sx={{  borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }}{...showSelectPatient ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
                                                 <Container maxWidth="lg">
