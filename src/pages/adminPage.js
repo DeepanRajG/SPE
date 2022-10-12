@@ -18,8 +18,6 @@ function App(props){
             
             <CssBaseline></CssBaseline>
                <ThemeProvider theme={theme} >
-              
-
             <Authorization  />
             </ThemeProvider>
         </div>

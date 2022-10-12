@@ -34,7 +34,7 @@ export default  function Patient(props) {
     let cardlogo=[]
     let [LOGO, putlogo] = React.useState("");
     let [TITLE, puttitle] = React.useState("");
-    let [response, putresponse] = React.useState("Loading");
+
 
  
 
@@ -95,22 +95,7 @@ export default  function Patient(props) {
 
         getData();
       }, [])
-     
-
-    
-   
  
-
-
-
-
-
-
-
-
-
-
-
     const settings = {
         dots: false,
         slidesToShow: 5,

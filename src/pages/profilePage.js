@@ -4,7 +4,7 @@ import React from "react";
 import "../css/App.css";
 
 import dollytan from "../img/afrin.png";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import {
   Container,

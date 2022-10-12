@@ -76,6 +76,10 @@ function App() {
     console.log(responseData)
     putlogo(cardlogo)
     puttitle(cardname)
+
+
+  
+
   }
     getData();
   }, [])

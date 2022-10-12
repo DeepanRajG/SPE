@@ -3,8 +3,8 @@ import {useEffect} from "react";
 import "../index.css";
 import {Container,Grid,} from "@mui/material";
 import { makeAPIpost } from '../component/api.js';
-import Entertainhead from './Entertainhead.js'
-import Entertain from './Entertainbody.js'
+import Entertainhead from '../component/Entertainhead.js'
+import Entertain from '../component/Entertainbody.js'
 import Header from "../component/header";
 import tolly from "../img/dolly.png";
 function  Entertaincomp() {

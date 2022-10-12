@@ -43,7 +43,7 @@ export const Cardd = (props) => {
  }
   // console.log("loop agithu");
   return (
-    <Card  sx={{ maxWidth: 220, borderRadius: "10px", textAlign: "center" ,cursor:"pointer" }}    >
+    <Card  sx={{ maxWidth: 220 ,borderRadius: "10px", textAlign: "center" ,cursor:"pointer" }}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           sx={{

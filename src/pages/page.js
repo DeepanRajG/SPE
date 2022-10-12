@@ -2,12 +2,11 @@ import React from 'react'
 import Patient from './patientPage'
 import Doctor from './doctorPage'
 import Nurse from './nursePage'
-import{makeAPIpost} from '../component/api'
-import {useEffect,useState} from 'react'
+
 
 export default function Page() {
   let finaldata;
-  let dat =false;
+  
     const items = localStorage.getItem('user')
     console.log(items);
 
