@@ -13,9 +13,9 @@ import Carousel from 'react-material-ui-carousel'
 import tolly from '../img/dolly.png';
 import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
-import { Cardd } from "../component/card.jsx"
-
-
+import { Cardd } from "../component/card.jsx";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export default  function Patient(props) {
 
 
@@ -99,10 +99,12 @@ export default  function Patient(props) {
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidestoScroll:3,
-    infinite:false,
-        prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
-        nextArrow: <SampleNextArrow sx={{height:"100px"}} />
+        slidesToScroll:1,
+          infinite:false,
+         prevArrow: <SamplePrevArrow sx={{height:"100px"}} />,
+       
+        nextArrow: <SampleNextArrow sx={{height:"100px"}} />,
+        
       };
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -114,7 +116,7 @@ export default  function Patient(props) {
           />
         );
       }
-      function SamplePrevArrow(props) {
+      function SamplePrevArrow (props) {
         const { className, style, onClick } = props;
         return (
           <div
@@ -161,10 +163,11 @@ return (
                                         <Grid item md={3}>
                                             <Typography sx={{ fontSize: "32px", color: "white", fontWeight: "600", paddingTop: "40px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
                                             <Grid sx={{ paddingTop: "10px" }}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "140px", fontFamily: "poppins", maxWidth: "150px" }}>View More</Button></Grid>
-                                        </Grid>
+                                        
+                                            </Grid>
                                     </Grid>
                                 </Grid>
-                            </Grid>
+                            </Grid>         
                             <Grid container sx={{
                                 backgroundImage: `url(image/blur.png)`,
                                 backgroundSize: "cover",
@@ -208,7 +211,7 @@ return (
                         </Carousel>
                     </Grid>
                     {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} sx={{paddingLeft:"10px"}}>
+                    <Grid item md={12} >
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (

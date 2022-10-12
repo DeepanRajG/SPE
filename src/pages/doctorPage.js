@@ -85,7 +85,7 @@ function App() {
   const settings = {
     dots: false,
     slidesToShow: 5,
-    slidestoScroll:3,
+    slidesToScroll:3,
 infinite:false,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />

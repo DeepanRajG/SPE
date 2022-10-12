@@ -19,7 +19,7 @@ export default function Option(props) {
         <CardContent>
             {Array.from(Array(setoptions.length)).map((_, index) => (
                 <Grid {...hide ? { display: "none" } : null}>
-                    <Button sx={{ backgroundColor: "#f6f8FA", color: "#277FFe", textTransform: "capitalize", margin: "10px 0px 10px 0px", "&:hover": { backgroundColor: "transparent" } }} variant="contained" fullWidth>{setoptions[index]}</Button>
+                    <Button sx={{ backgroundColor: "#f6f8FA", color: "#277FFe", boxShadow: "none",textTransform: "capitalize", margin: "10px 0px 10px 0px", "&:hover": { backgroundColor: "transparent" } }} variant="contained" fullWidth>{setoptions[index]}</Button>
                 </Grid>
             ))}
         </CardContent>

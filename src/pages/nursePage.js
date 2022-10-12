@@ -76,24 +76,8 @@ function App() {
       putlogo(cardlogo)
       puttitle(cardname)
 
-
-    
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
-        
-     
      
       getData();
     }, [])
@@ -103,7 +87,7 @@ function App() {
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidestoScroll:5,
+        slidesToScroll:3,
     infinite:false,
         prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />
