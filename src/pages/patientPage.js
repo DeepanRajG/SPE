@@ -96,25 +96,10 @@ export default  function Patient(props) {
         getData();
       }, [])
      
-
-    
-   
- 
-
-
-
-
-
-
-
-
-
-
-
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidestoScroll:3,
+        slidesToScroll:3,
     infinite:false,
         prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />
