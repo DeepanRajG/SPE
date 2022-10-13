@@ -22,7 +22,7 @@ const navigate = useNavigate();
     setSelectNurse(false)
     setSelectPatient(false)
     setTimeout(function () {
-     navigate("/login");
+     navigate("/SBE/login");
     }, 500);
    }
  const showselectNurse = () =>{
@@ -31,7 +31,7 @@ const navigate = useNavigate();
     setSelectNurse(true)
     setSelectPatient(false)
     setTimeout(function () {
-        navigate("/login");
+        navigate("/SBE/login");
        }, 500);
   }
   const showselectPatient = () =>{
@@ -40,13 +40,13 @@ const navigate = useNavigate();
     setSelectNurse(false)
     setSelectPatient(true)
     setTimeout(function () {
-        navigate("/login");}, 500);
+        navigate("/SBE/login");}, 500);
   }
 
   const admin =()=>{
-   navigate("/login");
+   navigate("/SBE/login");
    //window.location.replace("https://ipmo.dev.ainqaplatform.in/");
-   window.open("https://ipmo.dev.ainqaplatform.in/", "/login");
+   window.open("https://ipmo.dev.ainqaplatform.in/", "/SBE/login");
   }
     const header = {
         height: "60px",

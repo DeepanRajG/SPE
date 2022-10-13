@@ -112,7 +112,7 @@ const doco = {
     //setpost(response[0].permsn_repo)
     localStorage.setItem("permsn_repo",[responses1[0].permsn_repo])
 
-    navigate("/page")
+    navigate("/SBE/page")
     
   }
     else{
