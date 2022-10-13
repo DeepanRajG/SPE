@@ -169,7 +169,7 @@ return (
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
                                         <Grid item key={index} sx={{marginLeft:"30px"}} >
-                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SBE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
                                         </Grid>
                                     </Grid>
                                 ))}
