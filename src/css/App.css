@@ -5,7 +5,6 @@
 
     font-family: 'Poppins', sans-serif;
     -webkit-text-fill-color: initial;
-   
 }
 .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
     outline: none !important;
