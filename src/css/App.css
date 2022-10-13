@@ -1,14 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
 *{
-
     font-family: 'Poppins', sans-serif;
     -webkit-text-fill-color: initial;
 }
 .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
     outline: none !important;
-   
 }
 .TextField-without-height fieldset{
    height:"80px";
@@ -16,14 +12,12 @@
 .TextField-without-border-radius fieldset{
     border-radius: 50px;
     height:53px;
-    
   }
   input[type=password]::-ms-reveal,
   input[type=password]::-ms-clear {
     display: none;
   }
 #background{
-   
     background-repeat: no-repeat;
     width: 700;
     height: 700;
@@ -33,9 +27,7 @@
     display: flex ;
     align-items: center ;
     justify-content: center ;
-    
   }
- 
 .slick-prev:before{
     font-size: 30px !important;
 }
@@ -44,5 +36,4 @@
 }
 #user{
   -webkit-text-fill-color: #324D70;
-
 }

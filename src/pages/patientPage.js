@@ -25,7 +25,6 @@ export default  function Patient(props) {
     let cardlogo=[]
     let [LOGO, putlogo] = React.useState("");
     let [TITLE, puttitle] = React.useState("");
-    let [response, putresponse] = React.useState("Loading");
     useEffect(() => {
         const getData = async () => {
             let inputdata=props.inputarray

@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import '../css/App.css'
 import logo from '../img/logo.png'
@@ -70,5 +69,4 @@ class Header extends Component {
         );
     }
 }
-
 export default Header;

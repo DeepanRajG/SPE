@@ -12,7 +12,6 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import Option from "./option";
 export const Cardd = (props) => {
- 
   const navigate = useNavigate();
   const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -38,7 +37,6 @@ export const Cardd = (props) => {
     }
     if (props.int===2){
       window.open("https://avcprimarycare.dev.ainqaplatform.in/");
-  
     }
  }
   // console.log("loop agithu");
