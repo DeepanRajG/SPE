@@ -28,13 +28,13 @@ export default function Tolly() {
    
   return (
     <body sx={{ bgcolor: "yellow" }}>
-      <Container maxWidth="xl" sx={{ marginTop: "60px" }}>
+      
         <Grid container spacing={0}>
-          <Grid item md={11}></Grid>
-          <Grid item md={1} sx={{ height: "100px", width: "300px", }}>
+          <Grid item md={6}></Grid>
+          <Grid item md={6} sx={{ height: "100px", width: "300px",}}>
             <Grid container spacing={0} sx={{display:"flex",justifyContent:"right"}}>
-              <Grid item md={6} sx={{ height: "100px", width: "auto" }}></Grid>
-              <Grid item md={6}>
+              <Grid item md={8} sx={{ height: "100px", width: "auto" }}></Grid>
+              <Grid item md={4}>
                 <Grid
                   container
                   direction="column"
@@ -151,7 +151,7 @@ export default function Tolly() {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
+
     </body>
   );
 }

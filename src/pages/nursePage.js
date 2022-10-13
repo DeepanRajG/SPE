@@ -29,8 +29,8 @@ function App() {
     let cardlogo=[]
    
 
-    let [LOGO, putlogo] = React.useState("Loading");
-    let [TITLE, puttitle] = React.useState("Loading");
+    let [LOGO, putlogo] = React.useState("");
+    let [TITLE, puttitle] = React.useState("");
 
 
     useEffect(() => {
