@@ -60,7 +60,7 @@ function App() {
         </Grid>
         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
           {Array.from(Array(TITLE.length)).map((_, index) => (
-            <Grid item xs={2} sm={3} md={3} lg={2} key={index} >
+            <Grid item xs={2} sm={3} md={3} lg={2} key={index} sx={{marginRight:"40px"}}>
               <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
             </Grid>
           ))}

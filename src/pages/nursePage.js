@@ -107,11 +107,11 @@ return (
                 <Grid item md={12} sx={{paddingLeft:"10px"}} >
                 <Slider {...settings} >
                 {Array.from(Array(TITLE.length)).map((_, index) => (
-                    <Grid>
-            <Grid item  key={index}  sx={{marginLeft:"20px"}}>
-              <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
+                  
+            <Grid item xs={2} sm={2} md={12} lg={12} key={index} sx={{marginLeft:"10px",slignSelf:"center"}} >
+              <Cardd sx={{padding: "10px 25px 15px 11px"}} title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
             </Grid>
-            </Grid>
+            
           ))}
               </Slider> 
 </Grid>

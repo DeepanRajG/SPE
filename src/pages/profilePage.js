@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 export default function Tolly() {
   const navigate = useNavigate();
   const logout=()=>{
-    navigate("/login")
+    navigate("/SPE/login")
   }
   return (
     <body sx={{ bgcolor: "yellow" }}>

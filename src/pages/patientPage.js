@@ -162,12 +162,12 @@ return (
                         </Carousel>
                     </Grid>
                     {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} sx={{paddingLeft:"10px"}}>
+                    <Grid item md={12} sx={{marginLeft:"0px" ,}}>
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
-                                        <Grid item key={index} sx={{marginLeft:"30px"}} >
+                                        <Grid item key={index} sx={{marginLeft:"20px",paddingBottom:"30px"}} >
                                             <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
                                         </Grid>
                                     </Grid>
