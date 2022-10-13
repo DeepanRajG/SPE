@@ -22,7 +22,7 @@ const navigate = useNavigate();
     setSelectNurse(false)
     setSelectPatient(false)
     setTimeout(function () {
-     navigate("/SBE/login");
+     navigate("/SPE/login");
     }, 500);
    }
  const showselectNurse = () =>{
@@ -31,7 +31,7 @@ const navigate = useNavigate();
     setSelectNurse(true)
     setSelectPatient(false)
     setTimeout(function () {
-        navigate("/SBE/login");
+        navigate("/SPE/login");
        }, 500);
   }
   const showselectPatient = () =>{
@@ -40,7 +40,7 @@ const navigate = useNavigate();
     setSelectNurse(false)
     setSelectPatient(true)
     setTimeout(function () {
-        navigate("/SBE/login");}, 500);
+        navigate("/SPE/login");}, 500);
   }
 
   const admin =()=>{
