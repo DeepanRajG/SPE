@@ -121,7 +121,7 @@ return (
                 container
             >
                 <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
-                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"20px"}}>Logged In As Nr.Afrin</Typography>
+                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"20px",fontWeight:"600"}}>Logged In As Nr.Afrin</Typography>
                 </Grid>
                 <Grid item md={12} sx={{paddingLeft:"10px"}} >
                 <Slider {...settings} >

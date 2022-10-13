@@ -89,9 +89,10 @@ export default  function Patient(props) {
         dots: false,
         slidesToShow: 5,
         slidesToScroll:3,
-    infinite:false,
+        infinite:false,
         prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
-        nextArrow: <SampleNextArrow sx={{height:"100px"}} />
+        nextArrow: <SampleNextArrow sx={{height:"100px"}} />,
+
       };
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
