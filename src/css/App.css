@@ -38,6 +38,8 @@
 
 .slick-next:before {
     font-size: 30px !important;
-    /* background: url('../img/rightarrow.png') no-repeat !important;
-    content: "" !important; */
-}
+    background-image: url('../img/rightarrow.png') no-repeat !important;
+    content: "" !important;
+
+} 
+

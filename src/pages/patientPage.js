@@ -14,8 +14,7 @@ import tolly from '../img/dolly.png';
 import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
 import { Cardd } from "../component/card.jsx";
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import $ from 'jquery';
 export default  function Patient(props) {
 
 
@@ -99,20 +98,22 @@ export default  function Patient(props) {
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidesToScroll:1,
+        slidesToScroll:3,
           infinite:false,
          prevArrow: <SamplePrevArrow sx={{height:"100px"}} />,
        
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />,
         
       };
+      
     function SampleNextArrow(props) {
-        const { className, style, onClick } = props;
+        const { className, style, onClick, images} = props;
         return (
           <div
             className={className}
             style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px"}}
             onClick={onClick}
+           
           />
         );
       }
@@ -214,6 +215,7 @@ return (
                     <Grid item md={12} >
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
+
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
                                         <Grid item key={index} sx={{marginLeft:"30px"}} >

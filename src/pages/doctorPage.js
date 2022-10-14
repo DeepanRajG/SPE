@@ -80,8 +80,6 @@ function App() {
     getData();
   }, [])
 
-
-
   const settings = {
     dots: false,
     slidesToShow: 5,
@@ -112,7 +110,7 @@ function SampleNextArrow(props) {
   }
   return (
     <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
-       <Header name ="Rakin" profile={Rakin} displayP="none"/>
+       <Header name ="Rak in" profile={Rakin} displayP="none"/>
         <Grid
             style={bg_image}
             sx={{
@@ -123,7 +121,8 @@ function SampleNextArrow(props) {
 
             }}
             container
-        >
+           
+        > 
             <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
             <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"20px"}}>Logged In As Dr.Rakin</Typography>
             </Grid>

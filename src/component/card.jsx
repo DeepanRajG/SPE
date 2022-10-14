@@ -32,7 +32,7 @@ export const Cardd = (props) => {
    //const style={ "opacity":"0.5"}
   let cardclk = ()=>{
     if (props.int===0){
-      navigate(props.navigate);
+      navigate(props.navigate);  
     }
     if (props.int===1){
       window.open("https://ipmo.dev.ainqaplatform.in/");
@@ -42,9 +42,9 @@ export const Cardd = (props) => {
   
     }
  }
-  // console.log("loop agithu");
+
   return (
-    <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",padding:"10px 15px 15px 11px " }}    >
+    <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",padding:"0px 15px 0px 11px " }}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           sx={{
