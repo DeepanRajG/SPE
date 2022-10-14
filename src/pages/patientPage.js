@@ -13,6 +13,7 @@ import Carousel from 'react-material-ui-carousel'
 import tolly from '../img/dolly.png';
 import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { Cardd } from "../component/card.jsx"
 export default  function Patient(props) {
     let options = []
@@ -55,7 +56,7 @@ export default  function Patient(props) {
         slidesToShow: 5,
         slidesToScroll:3,
     infinite:false,
-        prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
+        // prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />
       };
     function SampleNextArrow(props) {
@@ -68,16 +69,16 @@ export default  function Patient(props) {
           />
         );
       }
-      function SamplePrevArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
-            onClick={onClick}
-          />
-        );
-      }
+    //   function SamplePrevArrow(props) {
+    //     const { className, style, onClick } = props;
+    //     return (
+    //       <div
+    //         className={className}
+    //         style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
+    //         onClick={onClick}
+    //       />
+    //     );
+    //   }
 return (
         <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
