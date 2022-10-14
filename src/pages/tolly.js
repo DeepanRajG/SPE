@@ -6,11 +6,8 @@ import {
     Avatar,
     Grid,
     Box,
-  
     Typography
-
 } from "@mui/material";
-
 export default function tolly() {
     return (
         <body style={{ backgroundColor: "#707070", }}>
@@ -18,21 +15,11 @@ export default function tolly() {
                 <Grid container spacing={0} >
                     <Grid item md={6} >
                         <Carousel>
-
                             <Grid item md={12} sx={{ width: "100%", height: "100px", backgroundColor: "red" }}></Grid>
                             <Grid item md={12} sx={{ width: "100%", height: "100px", backgroundColor: "blue" }}></Grid>
                             <Grid item md={12} sx={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></Grid>
                             <Grid item md={12} sx={{ width: "100%", height: "100px", backgroundColor: "green" }}></Grid>
-
-
-
-
                         </Carousel>
-
-
-
-
-
                     </Grid>
                     <Grid item md={6} sx={{ height: "100px", width: "300px" }} >
                         <Grid container spacing={0}>
@@ -41,8 +28,6 @@ export default function tolly() {
                             <Grid item md={6} >
                                 <Grid container direction="column" sx={{ height: "450px", width: "350px", textAlign: "center", backgroundColor: "white", borderRadius: '10px' }}>
                                     <Grid item md={3} sx={{ backgroundColor: "#223144", borderRadius: '10px 10px 0px 0px' }}>
-
-
                                         <Box sx={{ verticalAlign: "center" }}>
                                             <Typography sx={{ color: "white" }}>Patient</Typography>
                                         </Box>
@@ -54,16 +39,11 @@ export default function tolly() {
                                                 <Typography>Dolly Tan</Typography>
                                                 <p>sathish.rakin@ainqa.com</p>
                                             </Box>
-
                                         </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
-
-
                         </Grid>
-
-
                     </Grid>
                 </Grid>
             </Container>

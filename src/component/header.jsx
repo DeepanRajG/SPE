@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import '../css/App.css'
 import logo from '../img/logo.png'
@@ -59,7 +58,7 @@ class Header extends Component {
                     </Grid>
                 </Grid>
             </Grid>
-            <Backdrop  maxWidth="xl"  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            <Backdrop  maxWidth="lg" sx={{ color: '#fff',paddingLeft:"670px", paddingTop:"120px", zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 open={this.state.count}
                 onClick={() => this.setState({ count: this.state.count =false })}
             >
@@ -70,5 +69,4 @@ class Header extends Component {
         );
     }
 }
-
 export default Header;

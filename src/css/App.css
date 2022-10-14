@@ -36,6 +36,9 @@
     justify-content: center ;
     
   }
+  .slick-list {
+    padding-top: 20px!important;
+  }
  
 .slick-prev:before{
     font-size: 30px !important;

@@ -12,30 +12,16 @@ function  Entertaincomp() {
     let [URL, puturl] = React.useState("Loading");
     let logo=[]
     let url=[]
-
-
-
     useEffect(() => {
       const getData = async () => {
-               
         let permsn_repo=localStorage.getItem("permsn_repo")
         let array = permsn_repo.split(',');
-      
-   
-   
         const raw = {
           "db_name": "ipmo",
           "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc",
-          
       }
       console.log(raw);
       const url1 = "https://arangodbservice.dev.ainqaplatform.in/api/execute_aql"
-
-
-
-
-
-
         let response = await makeAPIpost(raw, url1)
         console.log(response);
         for (let i = 0; i < response.length; i++) {
@@ -47,7 +33,6 @@ function  Entertaincomp() {
     }
     getData();
   }, [])
-   
     return (
         <Container maxWidth="xl" style={{ height: "10%", padding: "0px" }}>
         <Header name ="Dolly Tan" profile={tolly}/>

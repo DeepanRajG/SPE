@@ -14,30 +14,23 @@ import {
 import { useNavigate } from "react-router-dom";
 import '../css/App.css'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
-
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import doctor from '../img/doctor1.png'
 import logo from '../img/logo.png'
 import CustomizedSnackbars from '../component/Toast.jsx';
-
 function App() {
   localStorage.setItem('roll_id', 0 );
   localStorage.setItem('permsn_repo', 0 );
   const navigate = useNavigate();
-
   const [username, setusername] = useState('')
-  const [showtoast, setshowtoast] = useState(false)
   const _handleTextFieldChange = e => {
     let Username = e.target.value
     setusername(Username)
-    
 }
 const header = {
   height: "60px",
-
 }
 const inputStyle = { WebkitBoxShadow: "0 0 0 1000px white inset", };
-
 const doco = {
   width: "39vw",
   height: "auto",
@@ -50,76 +43,51 @@ const doco = {
   const _handleTextFieldChange1 = e => {
     let pass = e.target.value
     setpassword(pass)
-    
   }
- 
   let login = async () => {
     let raw = { username: username, password: password }
- 
     const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
-
   let response = await makeAPIpost(raw, url)
     if (response.Result === "Valid user!") {
-      
       localStorage.setItem('access_token', response.tokenDetails.access_token );
       localStorage.setItem('keyclkId', response.keyclkId);
-
     let filterid= "Person.keycloackid=='" + localStorage.getItem('keyclkId')  +"'"
- 
     let raws = {
       "db_name": "ipmo",
       "entity": "Person",
       "filter": filterid ,
       "return_fields": "Person"
     }
-    
     const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/read_documents'
-  
     let responses = await makeAPIpost(raws, urls)
-       
     let roll_id= responses.result[0].roleid[0].roleid
     let roll_name= responses.result[0].roleid[0].rolename
     localStorage.setItem('roll_id', roll_id );
     localStorage.setItem('roll_name', roll_name);
-
     //////////////////////////////////////////////////////////////////////////
-
     let raw1 = {
       "db_name": "ipmo",
       "roleid": roll_id
   }
-  
     const url1 = 'https://idmservices.dev.ainqaplatform.in/GetPermissionforRoles'
-  
     let response1 = await makeAPIpost(raw1, url1)
-
     let perrolepermsnid=response1.Result[0].perrolepermsnid[0]
     localStorage.setItem('perrolepermsnid', perrolepermsnid);
-
     let raw2 = {
-  
       "db_name": "ipmo",
-  
       "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+perrolepermsnid+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
-  
   }
     console.log(raw2)
     const url2 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
-  
     let responses1 = await makeAPIpost(raw2, url2)
-   
     console.log(responses1[0].permsn_repo)
     //setpost(response[0].permsn_repo)
     localStorage.setItem("permsn_repo",[responses1[0].permsn_repo])
-
-    navigate("/page")
-    
+    navigate("/SPE/page")
   }
     else{
       {<CustomizedSnackbars msg="Invalid User Credentials,check Username and Password!" alerts="error"/>}
-        
     }
-    
   }
    const user = { paddingTop: '2px', width: '370px',height:"50px", paddingBottom: '20px' }
   const titl = { color: '#324D70', fontWeight: 'bold',fontSize:"15px",paddingTop:"10px" }
@@ -142,7 +110,6 @@ const doco = {
         }}
       >
         <Container>
-        
           <Grid>
             <Typography sx={{fontFamily:"poppins",fontWeight: 'bold',   fontSize: "32px", paddingBottom: '10px',color:"#223144"}}>Login</Typography>
             <Typography sx={{fontFamily:"poppins",fontWeight:400,color: '#CDCED0', paddingBottom: '20px'}} >
@@ -151,7 +118,6 @@ const doco = {
           </Grid>
           <Typography style={titl}>User ID / Bed No.</Typography>
           <TextField
-          
           sx={{alignSelf:"center"}}
             onChange={e => {
               _handleTextFieldChange(e)
@@ -163,7 +129,6 @@ const doco = {
             id='user'
            inputProps={{ style: inputStyle}}
             InputProps={{
-              
               sx: {
                   "& input": {
                       marginTop:"6px",fontFamily:"poppins",fontWeight:"500",color:"#324D70"
@@ -177,7 +142,6 @@ const doco = {
             onChange={e => {
               _handleTextFieldChange1(e)
             }}
-          
             value={password}
             id='user'
             className='TextField-without-border-radius'
@@ -244,7 +208,6 @@ const doco = {
               Log in
             </Button>
           </Grid>
-
         </Container>
       </Grid>
                 </Grid>

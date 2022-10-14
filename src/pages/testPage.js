@@ -9,22 +9,13 @@ import {
     CardContent,
     CardActions,
     Collapse,
-
 } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import logo from "../css/img/logo.png";
-
-//import union from "../css/img/union.png";
-// import back from "../css/img/background.jfif"
-
-
 function App() {
-    // interface ExpandMoreProps extends IconButtonProps {
-    //   expand: boolean;
-    //   }
-    const ExpandMore = styled((props: props) => {
+    const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
         return <IconButton {...other} />;
     })(({ theme, expand }) => ({
@@ -40,9 +31,6 @@ function App() {
     const [expanded, setExpanded] = React.useState(false);
     const [exp, setExp] = React.useState(false);
     const [val, setVal] = React.useState(false);
-
-
-
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
@@ -57,51 +45,32 @@ function App() {
             backgroundImage: `url(${"static/src/img/main.jpg"})`,
         },
     };
-
-
     const bg_image = {
         height: "calc(100% - 60px)",
         // width: '100vw'
     };
-
-
     return (
         <Container maxWidth="xl" style={{ height: "100%" }}>
             <Grid container sx={{ height: "60px", padding: "0px", margin: "0px" }}>
-
                 <Grid item md={2} alignSelf="center">
                     <Grid item container direction="row" >
                         <Avatar src={logo} style={{ width: 33, height: 33, marginLeft: "30px" }} />
                         <Typography sx={{ fontSize: "25px", fontFamily: "poppins", fontWeight: '500', color: "#0D224C", textAlign: "center", marginLeft: "10px" }}>SPE</Typography>
                     </Grid>
                 </Grid>
-
                 <Grid item lg={7}>
                 </Grid>
-
                 <Grid item lg={3} alignSelf="center">
                     <Grid item container direction="row" >
-
-
-
                         <Typography sx={{ padding: "10px", marginLeft: "70px", fontSize: "15px", fontFamily: "poppins", fontWeight: '500', color: "#0D224C", }}>R12</Typography>
                         <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: '500', color: "#0D224C", }}>B12</Typography>
                         <NotificationsIcon sx={{ padding: "10px" }}></NotificationsIcon>
                         <Avatar src={profile} style={{ width: 40, height: 40, }} />
                         <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: 'bold', color: "#0D224C" }}>Rakin</Typography>
                         <KeyboardArrowDownRoundedIcon sx={{ padding: "10px", paddingLeft: '0px' }}></KeyboardArrowDownRoundedIcon>
-
-
-
-
-
-
                     </Grid>
-
                 </Grid>
-
             </Grid>
-
             <Grid
                 style={bg_image}
                 sx={{
@@ -123,12 +92,10 @@ function App() {
         }}
         src={back}/> */}
                 {/* <Box style={{background:"red",width:"100px",height:"100px"}}>
-
         </Box> */}
                 <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                     <h4>Logged In as Dotor</h4>
                 </Grid>
-
                 <Grid container justifyContent="center">
                     <Grid item xs={2}>
                         <Card sx={{ maxWidth: 220 }}>
@@ -178,12 +145,10 @@ function App() {
                                         backgroundColor: "#f3f5f7",
                                         borderRadius: "8px"
                                     }}>
-
                                 </Box>
                                 <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "10px" }}>Smart Assist</Grid>
                             </CardContent>
                             <CardActions disableSpacing>
-
                             </CardActions>
                             <Collapse in={exp} timeout="auto" unmountOnExit>
                                 <CardContent>
@@ -214,12 +179,10 @@ function App() {
                                         backgroundColor: "#f3f5f7",
                                         borderRadius: "8px"
                                     }}>
-
                                 </Box>
                                 <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "10px" }}>Timetable</Grid>
                             </CardContent>
                             <CardActions disableSpacing>
-
                             </CardActions>
                             <Collapse in={val} timeout="auto" unmountOnExit>
                                 <CardContent>
@@ -243,33 +206,19 @@ function App() {
     );
 }
 export default App;
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 import './App.css';
 import { Container, Paper, Box, Typography, Button, Grid, Avatar } from "@mui/material";
 import patient1 from "./patient1.png";
-
 import swap from "./swap.svg";
 import logout from "./logout.svg";
-
 function App() {
-
-
     const b2 = { height: "70px", width: "248px", backgroundColor: "#223144", marginLeft: "452px", marginTop: "-360px", BorderRadius: "50px" }
-
-
     return (
-
         <Container>
             <Grid container>
-
                 <Grid item xs={15}>
-
                     <Box display="flex"
-
                         flexDirection={"column"}
                         maxWidth={200}
                         height={300}
@@ -279,10 +228,7 @@ function App() {
                         marginTop={10}
                         padding={3}
                         borderRadius={1}
-
                         backgroundColor='#FFFFFF' />
-
-
                     <Paper elevation={0} style={b2} />
                     <Typography variant="h6" padding={10} textAlign="center" marginTop={"-140px"} fontWeight="400" color={"white"}   >
                         Patient
@@ -297,7 +243,6 @@ function App() {
                     <div class="circle">
                         <p class="text">12</p>
                     </div>
-
                     <div class="circle2">
                         <p class="text2">12</p>
                     </div>
@@ -317,16 +262,8 @@ function App() {
         </Container>
     );
 }
-
 export default App;
-
-
-
-
-
-
 #button{
-
 }
 .circle {
     display: flexbox;
@@ -358,20 +295,8 @@ export default App;
     border - width: 1px;
 }
   .text2 {
-
     text - align: center;
     margin - top: 3px;
     margin - left: 1px;
-
 }
 \
-
-
-
-
-
-
-
-
-
-

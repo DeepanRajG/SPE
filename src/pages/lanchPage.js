@@ -8,21 +8,18 @@ import doc from '../img/doc.png'
 import nur from '../img/nur.png'
 import pat from '../img/pat.png'
 import selec from '../img/selec.svg'
-import { fontWeight } from "@mui/system";
-
 const LanchPage = () => {
 const navigate = useNavigate();
   const [showSelectDoctor, setSelectDoctor] = useState(false)
   const [showSelectNurse,setSelectNurse] = useState(false)
   const [showSelectPatient,setSelectPatient] = useState(false)
-
   const showselectDoctor = () =>{
     localStorage.setItem('user', "doctor");
     setSelectDoctor(true)
     setSelectNurse(false)
     setSelectPatient(false)
     setTimeout(function () {
-     navigate("/login");
+     navigate("/SPE/login");
     }, 500);
    }
  const showselectNurse = () =>{
@@ -31,7 +28,7 @@ const navigate = useNavigate();
     setSelectNurse(true)
     setSelectPatient(false)
     setTimeout(function () {
-        navigate("/login");
+        navigate("/SPE/login");
        }, 500);
   }
   const showselectPatient = () =>{
@@ -40,13 +37,12 @@ const navigate = useNavigate();
     setSelectNurse(false)
     setSelectPatient(true)
     setTimeout(function () {
-        navigate("/login");}, 500);
+        navigate("/SPE/login");}, 500);
   }
-
   const admin =()=>{
-   navigate("/login");
+   navigate("/SBE/login");
    //window.location.replace("https://ipmo.dev.ainqaplatform.in/");
-   window.open("https://ipmo.dev.ainqaplatform.in/", "/login");
+   window.open("https://ipmo.dev.ainqaplatform.in/", "/SBE/login");
   }
     const header = {
         height: "60px",

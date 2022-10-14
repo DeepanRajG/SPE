@@ -1,40 +1,29 @@
-
 import React from "react";
-
 import "../css/App.css";
-
 import dollytan from "../img/afrin.png";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import {
-  Container,
   Avatar,
   Grid,
   Box,
- 
   Button,
- 
   Stack,
   Typography,
-
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 export default function Tolly() {
   const navigate = useNavigate();
-
   const logout=()=>{
-    navigate("/login")
+    navigate("/SPE/login")
   }
-   
   return (
     <body sx={{ bgcolor: "yellow" }}>
-      <Container maxWidth="xl" sx={{ marginTop: "60px" }}>
         <Grid container spacing={0}>
-          <Grid item md={11}></Grid>
-          <Grid item md={1} sx={{ height: "100px", width: "300px", }}>
+          <Grid item md={6}></Grid>
+          <Grid item md={6} sx={{ height: "100px", width: "300px",}}>
             <Grid container spacing={0} sx={{display:"flex",justifyContent:"right"}}>
-              <Grid item md={6} sx={{ height: "100px", width: "auto" }}></Grid>
-              <Grid item md={6}>
+              <Grid item md={8} sx={{ height: "100px", width: "auto" }}></Grid>
+              <Grid item md={4}>
                 <Grid
                   container
                   direction="column"
@@ -74,15 +63,12 @@ export default function Tolly() {
                           width: "70px",
                           height: "70px",
                           marginTop: "-40px",
-                         
                         }}
                       ></Avatar>
                       <Box sx={{ backgroundColor: "white", }}>
                         <Typography color="black" sx={{fontFamily:"poppins",fontWeight:500}} >Dolly Tan</Typography>
-
                         <Typography color="black" sx={{paddingTop:"5px",fontFamily:"poppins",fontSize:"12px",fontWeight:500,opacity:"0.87"}} >sathish.rakin@ainqa.com</Typography>
                       </Box>
-
                       {/* first avatar */}
                       <Grid className="avatar"  >
                         <Stack
@@ -151,8 +137,6 @@ export default function Tolly() {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
     </body>
   );
 }
-

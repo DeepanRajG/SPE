@@ -14,7 +14,7 @@ function Entertainhead() {
       setValue(newValue);
     };
     let previous = ()=>{
-      navigate("/page");
+      navigate("/SPE/page");
       }
     return (
 <Grid container sx={{marginTop:"10px"}}>
