@@ -13,10 +13,18 @@ import Carousel from 'react-material-ui-carousel'
 import tolly from '../img/dolly.png';
 import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
-import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { Cardd } from "../component/card.jsx"
+
+
 export default  function Patient(props) {
+
+
+
+
+
+
     let options = []
+
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
     let options2 = ["Calls","patient schedules","patient Care Team",]
     let options3 = ["Laboratory", "Radiology", "Documents"]
@@ -26,21 +34,39 @@ export default  function Patient(props) {
     let cardlogo=[]
     let [LOGO, putlogo] = React.useState("");
     let [TITLE, puttitle] = React.useState("");
+    let [response, putresponse] = React.useState("Loading");
+
+ 
+
+
+
+   
+
+    
     useEffect(() => {
+        
+      
         const getData = async () => {
             let inputdata=props.inputarray
             console.log(inputdata);
+       
             let permsn_repo= await localStorage.getItem("permsn_repo")
             let array = permsn_repo.split(',');
+          
           let raw1 = {
+  
             "db_name": "ipmo",
+        
             "query": "for doc in spe_category filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc"
+        
         }
           console.log(raw1)
           const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+        
           let response1 = await makeAPIpost(raw1, url1)
           console.log(response1)
           let responseData=response1
+    
           for (let i = 0; i < responseData.length; i++) {
             cardname[i]= responseData[i].name
             cardlogo[i]= responseData[i].logo
@@ -48,16 +74,25 @@ export default  function Patient(props) {
         console.log(responseData)
         putlogo(cardlogo)
         puttitle(cardname)
+  
+  
+      
+  
       }
+  
+
+
         getData();
       }, [])
+     
     const settings = {
         dots: false,
         slidesToShow: 5,
         slidesToScroll:3,
-    infinite:false,
-        // prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
-        nextArrow: <SampleNextArrow sx={{height:"100px"}} />
+        infinite:false,
+        prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
+        nextArrow: <SampleNextArrow sx={{height:"100px"}} />,
+
       };
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -69,16 +104,16 @@ export default  function Patient(props) {
           />
         );
       }
-    //   function SamplePrevArrow(props) {
-    //     const { className, style, onClick } = props;
-    //     return (
-    //       <div
-    //         className={className}
-    //         style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
-    //         onClick={onClick}
-    //       />
-    //     );
-    //   }
+      function SamplePrevArrow(props) {
+        const { className, style, onClick } = props;
+        return (
+          <div
+            className={className}
+            style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
+            onClick={onClick}
+          />
+        );
+      }
 return (
         <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
@@ -163,13 +198,13 @@ return (
                         </Carousel>
                     </Grid>
                     {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} sx={{marginLeft:"0px" ,}}>
+                    <Grid item md={12} sx={{paddingLeft:"10px"}}>
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
-                                        <Grid item key={index} sx={{marginLeft:"20px",paddingBottom:"30px"}} >
-                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                        <Grid item key={index} sx={{marginLeft:"30px"}} >
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
                                         </Grid>
                                     </Grid>
                                 ))}
@@ -182,3 +217,5 @@ return (
         </Container>
     );
 }
+
+

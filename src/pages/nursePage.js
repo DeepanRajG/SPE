@@ -12,6 +12,7 @@ import {Cardd}  from "../component/card.jsx"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 function App() {
     let options = ["Option 1","Option 1","Option 1"]
     let options1 = ["Laboratory","Radiology","Documents"]
@@ -23,32 +24,49 @@ function App() {
         height: "90vh",
         // width: '100vw'
     };
+
     let cardname=[]
     let cardlogo=[]
-    let [LOGO, putlogo] = React.useState("");
-    let [TITLE, puttitle] = React.useState("");
+   
+
+    let [LOGO, putlogo] = React.useState("Loading");
+    let [TITLE, puttitle] = React.useState("Loading");
+
+
     useEffect(() => {
+        
       let id=localStorage.getItem('perrolepermsnid')
       console.log(id);
       const getData = async () => {
       let raw = {
+
         "db_name": "ipmo",
+    
         "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
+    
     }
       console.log(raw)
       const url = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+    
       let response = await makeAPIpost(raw, url)
+     
       let permsn_repo=localStorage.getItem("permsn_repo")
       let array = permsn_repo.split(',');
+    
     let raw1 = {
+
       "db_name": "ipmo",
+  
       "query": "for doc in spe_category filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc"
+  
   }
         console.log(raw1)
         const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+      
         let response1 = await makeAPIpost(raw1, url1)
         console.log(response1)
         let responseData=response1
+  
         for (let i = 0; i < responseData.length; i++) {
           cardname[i]= responseData[i].name
           cardlogo[i]= responseData[i].logo
@@ -59,6 +77,7 @@ function App() {
     }
     getData();
     }, [])
+
     const settings = {
         dots: false,
         slidesToShow: 5,
@@ -102,16 +121,16 @@ return (
                 container
             >
                 <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
-                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"20px",fontFamily:"poppins",fontWeight:500}}>Logged In As Nr.Afrin</Typography>
+                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"20px",fontWeight:"600"}}>Logged In As Nr.Afrin</Typography>
                 </Grid>
                 <Grid item md={12} sx={{paddingLeft:"10px"}} >
                 <Slider {...settings} >
                 {Array.from(Array(TITLE.length)).map((_, index) => (
-                  
-            <Grid item xs={2} sm={2} md={12} lg={12} key={index} sx={{marginLeft:"10px",slignSelf:"center"}} >
-              <Cardd sx={{padding: "10px 25px 15px 11px"}} title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
+                    <Grid>
+            <Grid item  key={index}  sx={{marginLeft:"20px"}}>
+              <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
             </Grid>
-            
+            </Grid>
           ))}
               </Slider> 
 </Grid>

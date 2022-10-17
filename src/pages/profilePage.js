@@ -115,7 +115,7 @@ export default function Tolly() {
                             sx={{
                               bgcolor: "#FFE3E7",
                               color: "#FA273E",
-                              fontWeight: "bold",
+                              fontWeight:"600",
                               width: "170px",
                               height: "auto",
                               textTransform: "capitalize",
