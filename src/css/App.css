@@ -3,8 +3,12 @@
 
 *{
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     -webkit-text-fill-color: initial;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+display: none;
    
 }
 .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
@@ -12,24 +16,27 @@
    
 }
 .TextField-without-height fieldset{
-   height:"80px";
+   height:"60px";
 }
 .TextField-without-border-radius fieldset{
     border-radius: 50px;
     height:53px;
     
   }
+  .TextField :hover fieldset {
+    border-color: 'white',
+  }
   input[type=password]::-ms-reveal,
   input[type=password]::-ms-clear {
     display: none;
   }
-#background{
+/* #background{
    
     background-repeat: no-repeat;
     width: 700;
     height: 700;
     background-color: aqua;
-}
+} */
 .avatar{
     display: flex ;
     align-items: center ;
@@ -49,4 +56,13 @@
 #user{
   -webkit-text-fill-color: #324D70;
 
+}
+html,body{
+  width: 100%;
+  
+  margin: 0px;
+  padding: 0px;
+  height:100vh;
+
+  /* overflow-y: hidden; */
 }

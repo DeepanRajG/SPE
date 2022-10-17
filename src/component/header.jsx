@@ -30,7 +30,7 @@ class Header extends Component {
             <Grid item lg={6} alignSelf="center" >
                 <Grid item container direction="row" >
                     <Avatar src={logo} style={{ width: 33, height: 33, marginLeft: "30px" }} />
-                    <Typography sx={{ fontSize: "20px", fontFamily: "poppins", fontWeight: '600', color: "#0D224C", textAlign: "center", marginLeft: "10px" }}>Smart Patient Engagement</Typography>
+                    <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '600', color: "#0D224C", textAlign: "center", marginLeft: "10px" }}>Smart Patient Engagement</Typography>
                 </Grid>
             </Grid>
             <Grid item lg={6}  >
@@ -38,7 +38,7 @@ class Header extends Component {
                     <Grid  item container md={5} sx={{justifyContent: "flex-end",marginTop:"0px", }} display={this.props.displayP}>
                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 10px", marginLeft: "0px", }}  />
                     <Avatar src={alert} style={{ width: 30, height: 30,padding:"5px 0px 10px 10px",marginTop:"10px" }} />
-                    <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "15px", fontFamily: "poppins", fontWeight: 'bold', color: "#0D224C",marginTop:"10px" }} >Emergency</Typography>
+                    <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "15px", fontFamily: "poppins", color: "#FA273E",marginTop:"10px" }} >Emergency</Typography>
                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 0px", marginLeft: "0px", }}  />
                     <Avatar src={mic} style={{ width: 30, height: 30,padding:"5px 0px 10px 10px",marginTop:"10px" }} />
                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 0px", marginLeft: "0px", }}  />
