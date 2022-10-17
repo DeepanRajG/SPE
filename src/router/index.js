@@ -8,9 +8,9 @@ import Entertainment from '../pages/entertainmentPage'
 const App = () => {
     localStorage.setItem("tenantid","1e4c8e40-a7f8-46de-9ac7-cedde81aa046")
   return (
-    <div>
+  
     <Routes> 
-      <Route path="*" element={<Launch/>} />
+      <Route path="*" element={<Login/>} />
       <Route path="/SPE" element={<Launch/>} />
       <Route path="/SPE/launch" element={<Launch/>} />
       <Route path="/SPE/page" element={<Page/>} />
@@ -18,7 +18,7 @@ const App = () => {
       <Route path="/SPE/login" element={<Login/>} />
       <Route path="/SPE/enter" element={<Entertainment/>} />
     </Routes>
-  </div>
+  
   );
 };
 export default App;
