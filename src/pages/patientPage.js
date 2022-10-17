@@ -37,7 +37,7 @@ export default  function Patient(props) {
             "query": "for doc in spe_category filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc"
         }
           console.log(raw1)
-          const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+          const url1 = process.env.REACT_APP_QUERY_URL
           let response1 = await makeAPIpost(raw1, url1)
           console.log(response1)
           let responseData=response1
@@ -46,8 +46,37 @@ export default  function Patient(props) {
             cardlogo[i]= responseData[i].logo
         }
         console.log(responseData)
+
+
+      
+        const raw2 = {
+          "db_name": "ipmo",
+          "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc",
+      }
+      console.log(raw2);
+      const url2 = process.env.REACT_APP_QUERY_URL
+        let response = await makeAPIpost(raw2, url2)
+        console.log(response);
+
+    
+        for (let i = 0; i < response.length; i++) {
+
+          let enter=response[i].apptype
+          console.log(enter)
+       
+       
+        }
+
+
+
+
+
         putlogo(cardlogo)
         puttitle(cardname)
+
+
+
+
       }
         getData();
       }, [])

@@ -31,7 +31,7 @@ function App() {
       "query": "for doc in spe_category filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc"
   }
       console.log(raw1)
-      const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+      const url1 = process.env.REACT_APP_QUERY_URL
       let response1 = await makeAPIpost(raw1, url1)
       console.log(response1)
       let responseData=response1

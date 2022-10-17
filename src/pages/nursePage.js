@@ -36,7 +36,7 @@ function App() {
         "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+id+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
     }
       console.log(raw)
-      const url = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+      const url = process.env.REACT_APP_QUERY_URL
       let response = await makeAPIpost(raw, url)
       let permsn_repo=localStorage.getItem("permsn_repo")
       let array = permsn_repo.split(',');
@@ -45,7 +45,7 @@ function App() {
       "query": "for doc in spe_category filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc"
   }
         console.log(raw1)
-        const url1 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+        const url1 = process.env.REACT_APP_QUERY_URL
         let response1 = await makeAPIpost(raw1, url1)
         console.log(response1)
         let responseData=response1
