@@ -35,8 +35,10 @@ class Header extends Component {
                 </Grid>
             </Grid>
             <Grid item lg={6}  >
-                    <Grid item container direction="row" sx={{display: "flex",justifyContent: "flex-end",marginLeft:"20px"}} >
-                    <Grid  item container md={5} sx={{justifyContent: "flex-end",marginTop:"0px", }} display={this.props.displayP}>
+                    <Grid item container direction="row" sx={{display: "flex",justifyContent: "flex-end",}} >
+                    <Grid  item container md={5} sx={{justifyContent: "flex-end",marginTop:"0px", }} >
+                    <Grid display={this.props.displayP}>
+                        
                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 10px",height:"92%"}}  />
                     <Avatar src={alert} style={{ width: 30, height: 30,padding:"5px 0px 10px 10px",marginTop:"10px" }} />
                     <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "15px", fontFamily: "poppins", color: "#FA273E",marginTop:"10px" }} >Emergency</Typography>
@@ -45,7 +47,8 @@ class Header extends Component {
                     <Divider orientation="vertical" sx={{height:"92%"}}  />
                     <Avatar src={text} style={{ width: 30, height: 45,padding:"10px"}} />
                     </Grid>
-                    <Grid item container md={6} >
+                    </Grid>
+                    <Grid item container md={5} sx={{justifyContent:"center",marginRight:"30px"}} >
                     <Divider orientation="vertical" sx={{height:"92%"}} />
                     <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "22px", fontFamily: "poppins", fontWeight: '300', color: "#0D224C",marginTop:"5px" }}> <font color="#E62E22">R</font>12</Typography>
                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px",height:"92%"}} />

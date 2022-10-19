@@ -89,7 +89,7 @@ function App() {
         );
       }
 return (
-        <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
+        <Container maxWidth="device-width" style={{ height: "100%", padding: "0px" }}>
             <Header name ="Afrin" profile={afrin} displayP="none"/>
             <Grid
                 style={bg_image}
@@ -102,7 +102,7 @@ return (
                 container
             >
                 <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
-                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"20px",fontFamily:"poppins",fontWeight:500}}>Logged In As Nr.Afrin</Typography>
+                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.70"}}>Logged In As Nr.Afrin</Typography>
                 </Grid>
                 <Grid item md={12} sx={{paddingLeft:"10px"}} >
                 <Slider {...settings} >

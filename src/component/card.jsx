@@ -42,7 +42,7 @@ export const Cardd = (props) => {
     }
  }
   return (
-    <Card  sx={{width:230 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 50px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
+    <Card  sx={{width:230 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           sx={{

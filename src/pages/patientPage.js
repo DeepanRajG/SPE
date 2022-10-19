@@ -144,7 +144,7 @@ return (
                                     <Grid direction="column">
                                         <Grid item md={3}>
                                         <Typography sx={{ fontSize: "29px", color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
-                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "200px", fontFamily: "poppins",color:"#277FFE",maxWidth: "150px" }}>View More</Button></Grid>
+                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "100px", fontFamily: "poppins",color:"#277FFE",maxWidth: "150px" }}>View More</Button></Grid>
                                     </Grid>
                                     </Grid>
                                 </Grid>
@@ -192,7 +192,7 @@ return (
                         </Carousel>
                     </Grid>
                     {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} sx={{marginTop:"-70px" ,}}>
+                    <Grid item md={12} sx={{marginTop:"-70px"}}>
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (

@@ -46,7 +46,7 @@ function App() {
     getData();
   }, [])
   return (
-    <Grid maxWidth="xl" style={{ height: "100%" }}>
+    <Grid maxWidth="device-width" style={{ height: "100%" }}>
    <Header name ="Rakin" profile={Rakin} displayP="none"/>
       <Grid  container
         style={bg_image}
@@ -56,7 +56,7 @@ function App() {
           backgroundPosition: "center",
           }}> 
         <Grid item style={{margin:"20px 0px 0px 20px",fontSize:"20px"}}>
-          <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"20px",fontFamily:"poppins",fontWeight:500}}>Logged In As Dr.Rakin</Typography>
+          <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"24px",fontFamily:"poppins",opacity:"0.92",fontWeight:500}}>Logged In As Dr.Rakin</Typography>
         </Grid>
         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
           {Array.from(Array(TITLE.length)).map((_, index) => (
