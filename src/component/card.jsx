@@ -56,7 +56,7 @@ export const Cardd = (props) => {
           }}>
           <Box component="img" src={props.images[props.int]}   style={{
             height: 70,
-            width: 75, alignSelf: "center",
+            width: 70, alignSelf: "center",
           }} />
         </Grid>
         <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "20px"}}>{props.title[props.int]}</Grid>

@@ -118,7 +118,7 @@ return (
               maxHeight: { xs: 400,md:800},
               maxWidth: { xs: 400,md:1600 }
             }}>
-                    <Grid item md={12} >
+                    <Grid item md={12} sx={{height:"400px"}}>
                         <Carousel  autoPlay={false} indicatorIconButtonProps={{
                             style: {
                                 padding: '1px',    // 1
@@ -136,16 +136,16 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                height: "250px",
+                                height: "310px",
                                 width: "100%",
-                                borderRadius: "10px"
+                                borderRadius: "20px"
                             }} >
                                 <Grid item md={6} >
                                     <Grid direction="column">
                                         <Grid item md={3}>
-                                            <Typography sx={{ fontSize: "32px", color: "white", fontWeight: "600", paddingTop: "40px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
-                                            <Grid sx={{ paddingTop: "10px" }}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "140px", fontFamily: "poppins", maxWidth: "150px" }}>View More</Button></Grid>
-                                        </Grid>
+                                        <Typography sx={{ fontSize: "29px", color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
+                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "200px", fontFamily: "poppins",color:"#277FFE",maxWidth: "150px" }}>View More</Button></Grid>
+                                    </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -154,9 +154,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                height: "250px",
+                                height: "310px",
                                 width: "100%",
-                                borderRadius: "10px"
+                                borderRadius: "20px"
                             }} >
                             </Grid>
                             <Grid container sx={{
@@ -164,9 +164,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                height: "250px",
+                                height: "310px",
                                 width: "100%",
-                                borderRadius: "10px"
+                                borderRadius: "20px"
                             }} >
                             </Grid>
                             <Grid container sx={{
@@ -174,9 +174,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                height: "250px",
+                                height: "310px",
                                 width: "100%",
-                                borderRadius: "10px"
+                                borderRadius: "20px"
                             }} >
                             </Grid>
                             <Grid container sx={{
@@ -184,15 +184,15 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                height: "250px",
+                                height: "310px",
                                 width: "100%",
-                                borderRadius: "10px"
+                                borderRadius: "20px"
                             }} >
                             </Grid>
                         </Carousel>
                     </Grid>
                     {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} sx={{marginLeft:"0px" ,}}>
+                    <Grid item md={12} sx={{marginTop:"-70px" ,}}>
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (
