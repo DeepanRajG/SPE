@@ -21,18 +21,27 @@ function  Entertaincomp() {
           "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc",
       }
       console.log(raw);
-      const url1 = "https://arangodbservice.dev.ainqaplatform.in/api/execute_aql"
+      const url1 = process.env.REACT_APP_QUERY_URL
         let response = await makeAPIpost(raw, url1)
         console.log(response);
+
         for (let i = 0; i < response.length; i++) {
-            logo[i]= response[i].applogo
-            url[i]= response[i].url
+
+    
+          logo[i]= response[i].applogo
+       
+          url[i]= response[i].url
+
+        
+       
         }
         putdat(logo)
         puturl(url)
+
     }
     getData();
   }, [])
+  console.log(LOGO);
     return (
         <Container maxWidth="xl" style={{ height: "10%", padding: "0px" }}>
         <Header name ="Dolly Tan" profile={tolly}/>

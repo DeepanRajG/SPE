@@ -40,7 +40,7 @@ const doco = {
   }
   let login = async () => {
     let raw = { username: username, password: password }
-    const url = 'https://idmservices.dev.ainqaplatform.in/login_keycloackuser'
+    const url = process.env.REACT_APP_KEY_CLOACK_URL
   let response = await makeAPIpost(raw, url)
     if (response.Result === "Valid user!") {
       localStorage.setItem('access_token', response.tokenDetails.access_token );
@@ -52,7 +52,7 @@ const doco = {
       "filter": filterid ,
       "return_fields": "Person"
     }
-    const urls = 'https://arangodbservice.dev.ainqaplatform.in/api/read_documents'
+    const urls = process.env.REACT_APP_READ_DOCUMENT_URL
     let responses = await makeAPIpost(raws, urls)
     let roll_id= responses.result[0].roleid[0].roleid
     let roll_name= responses.result[0].roleid[0].rolename
@@ -63,7 +63,7 @@ const doco = {
       "db_name": "ipmo",
       "roleid": roll_id
   }
-    const url1 = 'https://idmservices.dev.ainqaplatform.in/GetPermissionforRoles'
+    const url1 = process.env.REACT_APP_ROLL_URL
     let response1 = await makeAPIpost(raw1, url1)
     let perrolepermsnid=response1.Result[0].perrolepermsnid[0]
     localStorage.setItem('perrolepermsnid', perrolepermsnid);
@@ -72,7 +72,7 @@ const doco = {
       "query": "FOR adqolcIDM_PermissionManagement IN IDM_PermissionManagement FILTER adqolcIDM_PermissionManagement._id =='"+perrolepermsnid+"' Return merge(adqolcIDM_PermissionManagement,{permsn_repo:(for IDM_permissionRepoMapping in IDM_permissionRepoMapping filter IDM_permissionRepoMapping._id in adqolcIDM_PermissionManagement.permsn_repo && IDM_permissionRepoMapping.activestatus==true && IDM_permissionRepoMapping.permsndelete==true return document(IDM_permissionRepoMapping.repoid)._id)})"
   }
     console.log(raw2)
-    const url2 = 'https://arangodbservice.dev.ainqaplatform.in/api/execute_aql'
+    const url2 =process.env.REACT_APP_QUERY_URL
     let responses1 = await makeAPIpost(raw2, url2)
     console.log(responses1[0].permsn_repo)
     //setpost(response[0].permsn_repo)
