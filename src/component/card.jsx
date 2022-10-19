@@ -41,23 +41,22 @@ export const Cardd = (props) => {
       window.open("https://avcprimarycare.dev.ainqaplatform.in/");
     }
  }
-  // console.log("loop agithu");
   return (
-    <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow:"12",padding:"10px 25px 10px 11px " }}    >
+    <Card  sx={{width:230 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 50px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           sx={{
             height: 214,
-            width: 223,
-            maxHeight: { xs: 100, md: 225 },
-            maxWidth: { xs: 80, md: 225 },
+            width: 200,
+            maxHeight: { xs: 100, md: 214 },
+            maxWidth: { xs: 80, md: 200 },
             backgroundColor: "#f3f5f7",
             display: "flex", justifyContent: "center",
-            borderRadius: "20px"
+            borderRadius: "20px",marginLeft:"5px"
           }}>
           <Box component="img" src={props.images[props.int]}   style={{
-            height: 86,
-            width: 99, alignSelf: "center",
+            height: 70,
+            width: 75, alignSelf: "center",
           }} />
         </Grid>
         <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "20px"}}>{props.title[props.int]}</Grid>

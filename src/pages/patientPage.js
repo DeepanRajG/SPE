@@ -90,7 +90,7 @@ export default  function Patient(props) {
         slidesToShow: 5,
         slidesToScroll:3,
         infinite:false,
-        prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
+        // prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
         nextArrow: <SampleNextArrow sx={{height:"100px"}} />,
 
       };
@@ -104,31 +104,32 @@ export default  function Patient(props) {
           />
         );
       }
-      function SamplePrevArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
-            onClick={onClick}
-          />
-        );
-      }
+    //   function SamplePrevArrow(props) {
+    //     const { className, style, onClick } = props;
+    //     return (
+    //       <div
+    //         className={className}
+    //         style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
+    //         onClick={onClick}
+    //       />
+    //     );
+    //   }
 return (
         <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
             <Grid direction="column" container marginTop="20px" >
                 <Container sx={{
-              height: 900,
-              width: 1500,
-              maxHeight: { xs: 400,md:800},
-              maxWidth: { xs: 400,md:1600 }
+              height:1600,
+              width:"1500px",
+              maxHeight: { xs: 400,md:600,lg:800,xl:1500},
+              maxWidth: { xs: 400,md:1900 }
             }}>
-                    <Grid item md={12} >
+                    <Grid item md={12} sx={{height:"400px",margin:"10px"}}>
                         <Carousel  autoPlay={false} indicatorIconButtonProps={{
                             style: {
                                 padding: '1px',    // 1
-                                color: '#EDF0F5',// 3
+                                color: '#EDF0F5',
+                                fontSize:"5px"//3,
                             }
                         }}
                             activeIndicatorIconButtonProps={{
@@ -141,16 +142,16 @@ return (
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                paddingLeft: "30px",
-                                height: "250px",
+                                
+                                height: "310px",
                                 width: "100%",
                                 borderRadius: "10px"
                             }} >
                                 <Grid item md={6} >
                                     <Grid direction="column">
                                         <Grid item md={3}>
-                                            <Typography sx={{ fontSize: "32px", color: "white", fontWeight: "600", paddingTop: "40px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
-                                            <Grid sx={{ paddingTop: "10px" }}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "140px", fontFamily: "poppins", maxWidth: "150px" }}>View More</Button></Grid>
+                                            <Typography sx={{ fontSize: "29px", color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
+                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "140px", fontFamily: "poppins",color:"#277FFE",maxWidth: "150px" }}>View More</Button></Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -159,7 +160,7 @@ return (
                                 backgroundImage: `url(image/blur.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                paddingLeft: "30px",
+                               
                                 height: "250px",
                                 width: "100%",
                                 borderRadius: "10px"
@@ -169,7 +170,7 @@ return (
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                paddingLeft: "30px",
+                                
                                 height: "250px",
                                 width: "100%",
                                 borderRadius: "10px"
@@ -179,7 +180,7 @@ return (
                                 backgroundImage: `url(image/blur.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                paddingLeft: "30px",
+                                
                                 height: "250px",
                                 width: "100%",
                                 borderRadius: "10px"
@@ -189,7 +190,7 @@ return (
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                paddingLeft: "30px",
+                               
                                 height: "250px",
                                 width: "100%",
                                 borderRadius: "10px"
@@ -197,13 +198,11 @@ return (
                             </Grid>
                         </Carousel>
                     </Grid>
-                    {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} sx={{paddingLeft:"10px"}}>
-                        {/* <Grid container item  direction="row"> */}
+                    <Grid item md={12} sx={{marginTop:"-70px"}}>
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
-                                        <Grid item key={index} sx={{marginLeft:"30px"}} >
+                                        <Grid item key={index} sx={{marginLeft:"10px"}} >
                                             <Cardd title={TITLE} int={index} optionName={options1} navigate={"/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
                                         </Grid>
                                     </Grid>
