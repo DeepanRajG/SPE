@@ -75,7 +75,7 @@ function App() {
         return (
           <div
             className={className}
-            style={{ ...style, background: "#00000029",alignSelf:"center",padding:"25px 10px",marginRight:"45px"}}
+            style={{ ...style, background: "#00000029",padding:"25px 10px",borderRadius:"5px",marginRight:"45px"}}
             onClick={onClick}
           />
         );

@@ -55,7 +55,7 @@ const navigate = useNavigate();
                 <Grid   sx={{ backgroundColor: "white", borderRadius: "30px", margin:"none",  }}>
                     <Grid item container sx={{height:"inherit"}}>
                     <Grid item md={7} lg={6} xl={6} sx={{position:"relative"}}>
-                    <Avatar src={logo} style={{ width: "60px", height:"55px",position:"absolute",left:"20px",top:"10px",padding:"0px" }} />
+                    <Avatar src={logo} style={{ width: "60px", height:"55px",position:"absolute",left:"20px",top:"20px",padding:"0px" }} />
                         <Box sx={{width:"410px",height: "630px",minHeight: { xs: 680, md: 630,lg:700 },minWidth: { xs: 531, md: 410,lg:570},padding: "40px 0px 40px 40px"}} component="img" src={doctor} />
                     </Grid>
                         <Grid item md={5} lg={6} xl={6} sx={{marginTop:"130px"}}>

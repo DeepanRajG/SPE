@@ -110,8 +110,7 @@ const doco = {
           sx={{alignSelf:"center",
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
-                borderColor: "#277FFE",
-                borderWidth:2
+                borderColor: '#DDE4EA',
               }
             }
           }}
@@ -138,13 +137,13 @@ const doco = {
             onChange={e => {
               _handleTextFieldChange1(e)
             }}
-            sx={{
-              "& .MuiOutlinedInput-root:hover": {
-                "& > fieldset": {
-                  borderColor: "#277FFE",borderWidth:2
-                }
+            sx={{alignSelf:"center",
+            "& .MuiOutlinedInput-root:hover": {
+              "& > fieldset": {
+                borderColor: '#DDE4EA',
               }
-            }}
+            }
+          }}
           
             value={password}
             id='user'
@@ -187,10 +186,9 @@ const doco = {
                 float: 'center',
                 color: '#277FFE',
                 textDecoration: 'none',
-                marginRight: '80px',
+                margin: '20px 80px 25px 0px',
                 display:"flex",
                 justifyContent:"center",
-                marginBottom: '20px',
                 fontWeight:500,
                 fontFamily:"poppins",fontSize:"14px"
               }}
@@ -209,7 +207,7 @@ const doco = {
                 height:"50px",
                 borderRadius: '50px',
                 fontFamily:"poppins",
-                color:"#FFFFFF",backgroundColor:"#277FFE","&:hover": { backgroundColor: "#277FFE",boxShadow:0} 
+                color:"#FFFFFF",backgroundColor:"#277FFE","&:hover": { backgroundColor: "#277FFE",boxShadow:"none"} 
               }}
             >
               Log in

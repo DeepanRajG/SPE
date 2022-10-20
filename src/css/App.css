@@ -51,6 +51,7 @@ display: none;
   background: url('../img/slidearrow.png') center center no-repeat!important;
   background-size: 70px!important;
   background-color: #00000029!important;
+  background-position: center;
   }
 .slick-prev::before{
     font-size: 10px !important;

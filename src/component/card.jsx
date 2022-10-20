@@ -42,7 +42,7 @@ export const Cardd = (props) => {
     }
  }
   return (
-    <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
+    <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 25px 10px 11px ",margin:"10px 0px 50px 0px "}}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           sx={{
@@ -69,7 +69,7 @@ export const Cardd = (props) => {
         onClick={handleExpandClick}
         aria-expanded={expanded}
         aria-label="show more">
-          { show ?  <Grid ><Box component="img" sx={{height:"auto",width:"20px"}} src={Expand}/></Grid> : null }
+          { show ?  <Grid ><Box component="img" sx={{height:"auto",width:"20px",marginTop:"10px"}} src={Expand}/></Grid> : null }
         </ExpandMore>
     </Card>
 )

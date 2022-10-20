@@ -92,7 +92,7 @@ export default  function Patient(props) {
         return (
           <div
             className={className}
-            style={{ ...style, background: "#00000029",display:"flex",justifyContent:"center",marginRight:"30px",padding:"25px 8px"}}
+            style={{ ...style, background: "#00000029",display:"flex",justifyContent:"center",marginRight:"30px",borderRadius:"5px",padding:"25px 8px"}}
             onClick={onClick}
           />
         );
@@ -110,7 +110,7 @@ export default  function Patient(props) {
 return (
         <Container maxWidth="device-width" style={{ height: "100%", padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
-            <Grid direction="row" container sx={{marginTop:"20px"}}>
+            <Grid direction="row" container maxWidth="device-width" sx={{marginTop:"20px"}}>
                 <Grid sx={{
               height: 340,
               width:"100vw",display:"flex",justifyContent:"center"
@@ -142,7 +142,7 @@ return (
                                     <Grid direction="column">
                                         <Grid item md={3}>
                                         <Typography sx={{ fontSize: "29px", color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
-                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "190px", fontFamily: "poppins",color:"#277FFE" }}>View More</Button></Grid>
+                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "155px", height: "40px", fontFamily: "poppins", color: "#277FFE", marginLeft: "5px", borderRadius: "5px" }}>View More</Button></Grid>
                                     </Grid>
                                     </Grid>
                                 </Grid>
