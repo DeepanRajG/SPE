@@ -1,5 +1,8 @@
 import React from "react";
 import {useEffect} from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import {
   Grid, Typography,
   } from "@mui/material";
@@ -9,8 +12,8 @@ import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
 function App() {
   const bg_image = {
-    maxHeight: "100%",
-    height: "90vh",
+    
+    height: "92vh",
     // width: '100vw'
 };
   let options = ["Option 1","Option 1","Option 1"]
@@ -45,6 +48,25 @@ function App() {
   }
     getData();
   }, [])
+  const settings = {
+    dots: false,
+    slidesToShow: 5,
+    slidesToScroll:5,
+infinite:false,
+accessibility:true,
+    // prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
+    nextArrow: <SampleNextArrow sx={{height:"50px"}} />
+  };
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, background: "#00000029",alignSelf:"center",padding:"25px 10px",marginRight:"45px"}}
+        onClick={onClick}
+      />
+    );
+  }
   return (
     <Grid maxWidth="device-width" style={{ height: "100%" }}>
    <Header name ="Rakin" profile={Rakin} displayP="none"/>
@@ -56,14 +78,16 @@ function App() {
           backgroundPosition: "center",
           }}> 
         <Grid item style={{margin:"20px 0px 0px 20px",fontSize:"20px"}}>
-          <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"24px",fontFamily:"poppins",opacity:"0.92",fontWeight:500}}>Logged In As Dr.Rakin</Typography>
+          <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.90"}}>Logged In As Dr.Rakin</Typography>
         </Grid>
         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
+        <Slider {...settings} >
           {Array.from(Array(TITLE.length)).map((_, index) => (
             <Grid item xs={2} sm={3} md={3} lg={2} key={index} sx={{marginRight:"40px"}}>
               <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
             </Grid>
           ))}
+          </Slider> 
         </Grid>
       </Grid>
     </Grid>

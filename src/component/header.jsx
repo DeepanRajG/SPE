@@ -26,7 +26,7 @@ class Header extends Component {
     render() {
         return (
             <div>
-            <Grid maxWidth="device-width" container spacing={0}>
+            <Grid  spacing={0}>
             <Grid item  container sx={{ height: "60px"}}>
             <Grid item lg={6} alignSelf="center" >
                 <Grid item container direction="row" >
@@ -50,7 +50,7 @@ class Header extends Component {
                     </Grid>
                     <Grid item container md={5} sx={{justifyContent:"center",marginRight:"30px"}} >
                     <Divider orientation="vertical" sx={{height:"92%"}} />
-                    <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "22px", fontFamily: "poppins", fontWeight: '300', color: "#0D224C",marginTop:"5px" }}> <font color="#E62E22">R</font>12</Typography>
+                    <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "22px", fontFamily: "poppins", fontWeight: '400', color: "#0D224C",marginTop:"5px" }}> <font color="#E62E22">R</font>12</Typography>
                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px",height:"92%"}} />
                     <Typography sx={{ padding: "10px", fontSize: "22px", fontFamily: "poppins", fontWeight: '300', color: "#0D224C",marginTop:"5px", }}><font color="#E62E22" >B</font>12</Typography>
                     <Divider orientation="vertical" sx={{ padding: "0px 0px ",height:"92%"}} />

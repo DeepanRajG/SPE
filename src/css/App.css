@@ -45,13 +45,19 @@ display: none;
   }
   .slick-list {
     padding-top: 20px!important;
+
   }
- 
-.slick-prev:before{
-    font-size: 30px !important;
+ .slick-next{
+  background: url('../img/slidearrow.png') center center no-repeat!important;
+  background-size: 70px!important;
+  background-color: #00000029!important;
+  }
+.slick-prev::before{
+    font-size: 10px !important;
+    display:none;
 }
-.slick-next:before {
-    font-size: 30px !important;
+.slick-next::before {
+  display:none;
 }
 #user{
   -webkit-text-fill-color: #324D70;

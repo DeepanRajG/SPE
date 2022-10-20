@@ -42,14 +42,14 @@ export const Cardd = (props) => {
     }
  }
   return (
-    <Card  sx={{width:230 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
+    <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           sx={{
             height: 214,
-            width: 200,
-            maxHeight: { xs: 100, md: 214 },
-            maxWidth: { xs: 80, md: 200 },
+            width: 210,
+            maxHeight: { xs: 90, md:140,lg:190,xl:214},
+            maxWidth: { xs: 80, md:120,lg:170,xl:210},
             backgroundColor: "#f3f5f7",
             display: "flex", justifyContent: "center",
             borderRadius: "20px",marginLeft:"5px"
@@ -69,7 +69,7 @@ export const Cardd = (props) => {
         onClick={handleExpandClick}
         aria-expanded={expanded}
         aria-label="show more">
-          { show ? <Box component="img" sx={{height:"auto",width:20}} src={Expand}/> : null }
+          { show ?  <Grid ><Box component="img" sx={{height:"auto",width:"20px"}} src={Expand}/></Grid> : null }
         </ExpandMore>
     </Card>
 )

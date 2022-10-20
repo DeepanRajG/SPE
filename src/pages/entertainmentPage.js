@@ -43,8 +43,8 @@ function  Entertaincomp() {
   }, [])
   console.log(LOGO);
     return (
-        <Container maxWidth="xl" style={{ height: "10%", padding: "0px" }}>
-        <Header name ="Dolly Tan" profile={tolly}/>
+        <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
+        <Header name ="Dolly Tan" profile={tolly} displayP="flex"/>
       <Grid container >
         <Entertainhead/>
           </Grid>
