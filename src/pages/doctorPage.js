@@ -13,6 +13,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 function App() {
+
     let options = ["Option 1","Option 1","Option 1"]
     let options1 = ["Laboratory","Radiology","Documents"]
     let options2 = ["Device", "Apps", "Bed / Rooms"]
@@ -38,6 +39,7 @@ function App() {
       console.log(raw)
       const url = process.env.REACT_APP_QUERY_URL
       let response = await makeAPIpost(raw, url)
+
       let permsn_repo=localStorage.getItem("permsn_repo")
       let array = permsn_repo.split(',');
     let raw1 = {
@@ -58,6 +60,7 @@ function App() {
       puttitle(cardname)
     }
     getData();
+
     }, [])
 
     const settings = {
@@ -152,6 +155,7 @@ return (
               </Slider> 
                         {/* </Grid> */}
                     </Grid>
+
             </Grid>
         </Container>
     );

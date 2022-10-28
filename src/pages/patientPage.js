@@ -16,10 +16,12 @@ import Carousel from 'react-material-ui-carousel'
 import tolly from '../img/dolly.png';
 import Header from "../component/headertest";
 import { makeAPIpost } from '../component/api.js';
+
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { Cardd } from "../component/card.jsx";
 
 export default function Patient(props) {
+
     let options = []
     let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
     let options2 = ["Calls", "patient schedules", "patient Care Team",]
@@ -119,6 +121,7 @@ export default function Patient(props) {
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
         return (
+
             <div
                 className={className}
                 style={{ ...style, background: "#00000029", height: "20px", display: "flex", justifyContent: "center", padding: "25px 10px ",marginRight:"35px" }}
@@ -143,13 +146,14 @@ export default function Patient(props) {
         <Container maxWidth="device-width" style={{padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
             <Grid maxWidth="device-width" direction="column" container marginTop="20px" >
-                <Container maxWidth="device-width">
+               
                     <Grid item md={12} maxWidth="device-width" style={{ marginLeft: "13px", marginTop: "10px", marginRight: "13px", height: "400px", displayp: "flex" }}>
                         <Carousel maxWidth="device-width" autoPlay={false} indicatorIconButtonProps={{
                             style: {
                                 padding: '1px',    // 1
                                 color: '#EDF0F5',
                                 // 3                 
+
                             }
                         }}
                             activeIndicatorIconButtonProps={{
@@ -162,8 +166,9 @@ export default function Patient(props) {
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                paddingLeft: "30px",
+                                margin: "10px 10px 10px 50px",
                                 height: "310px",
+
 
                                 borderRadius: "20px"
                             }} >
@@ -179,6 +184,7 @@ export default function Patient(props) {
                                             ) : (<Typography style={{ color: "white", fontWeight: "600", paddingTop: "70px", paddingLeft: "15px", fontFamily: "poppins", fontSize: 32 }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>)}
                                         </Grid>
                                         <Grid sm={3} style={{ paddingTop: "15px" }} ><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "155px", height: "40px", fontFamily: "poppins", color: "#277FFE", marginLeft: "15px", borderRadius: "5px" }}>View More</Button></Grid>
+
                                     </Grid>
 
                                 </Grid>
@@ -188,8 +194,9 @@ export default function Patient(props) {
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
+                                margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "100%",
+                                width: "95%",
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -198,8 +205,9 @@ export default function Patient(props) {
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
+                                margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "100%",
+                                width: "95%",
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -208,8 +216,9 @@ export default function Patient(props) {
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
+                                margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "100%",
+                                width: "95%",
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -218,32 +227,32 @@ export default function Patient(props) {
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
+                                margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "100%",
+                                width: "95%",
                                 borderRadius: "20px"
                             }} >
                             </Grid>
                         </Carousel>
-                    </Grid>
+                    </Grid></Grid>
                     {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} style={{ marginTop: "-70px", justifySelf:"center"}}>
-                        
+
+                    <Grid item md={12} direction="column" >
                         {/* <Grid container item  direction="row"> */}
                         <Slider {...settings} >
-                            {Array.from(Array(TITLE.length)).map((_, index) => (
-                                <Grid>
-                                    <Grid item key={index} style={{ marginLeft: "20px", paddingBottom: "30px",justifyContent:"center"}} >
-                                        <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                        {Array.from(Array(TITLE.length)).map((_, index) => (
+                                    <Grid>
+                                        <Grid item key={index} sx={{marginLeft:"50px",paddingBottom:"30px"}} >
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            ))}
-                        </Slider>
-                        {/* </Grid> */}
+                                ))}
+              </Slider> 
+
                        
                     </Grid>
                     {/* </div> */}
-                </Container>
-            </Grid>
+            
         </Container>
     );
 }

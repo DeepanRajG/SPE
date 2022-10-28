@@ -51,12 +51,14 @@ const navigate = useNavigate();
     }
     return (
 <div style={{height:"inherit"}}>
+
             <Grid  style={{ padding: "45px", backgroundColor: "#F5F7FA",maxWidth:"none", }}>
                 <Grid   style={{ backgroundColor: "white", borderRadius: "30px", margin:"none",  }}>
                     <Grid item container style={{height:"inherit"}}>
                     <Grid item  sm={8} md={5} lg={6} xl={6} style={{position:"relative"}}>
                     <Avatar src={logo} style={{ width: "60px", height:"55px",position:"absolute",left:"20px",top:"10px",padding:"0px" }} />
                         <Box sx={{width:"410px",height: "630px",minHeight: { xs: 680, md: 490,lg:600,sm:474 },maxWidth: { xs: 531, md: 320,lg:570,sm:240},padding: "40px 0px 40px 40px"}} component="img" src={doctor} />
+
                     </Grid>
                         <Grid item md={7} sm={12} lg={6} xl={6}  alignItems="center" sx={{marginTop:{md:"130px",sm:"100",xs:"50px"}}} >
                             <Grid container direction="column" style={{display:"flex",justifyContent:"flex-start"}} justifyContent="space-around" >

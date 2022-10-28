@@ -45,7 +45,9 @@ display: none;
   }
   .slick-list {
     padding-top: 20px!important;
+
   }
+
 
   .slick-next {
     background: url('../img/slidearrow.png') center center no-repeat!important;
@@ -61,6 +63,7 @@ display: none;
 .slick-next:before {
     font-size: 30px !important;
     display: none;
+
 }
 #user{
   -webkit-text-fill-color: #324D70;

@@ -43,15 +43,19 @@ export const Cardd = (props) => {
     }
  }
   return (
+
     <div >
     <Card  style={{height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 11px 20px 11px ",margin:"10px "}}  sx={{maxWidth :{xs:240,md:280,lg:280,sm:280} }}>
       <CardContent style={{ paddingBottom: "0px" }}>
+
         <Grid onClick={cardclk}
           style={{
             height: 214,
+
             // width: 200,
             // maxHeight: { xs: 100, md: 214 },
             // maxWidth: { xs: 80, md: 200 },
+
             backgroundColor: "#f3f5f7",
             display: "flex", justifyContent: "center",
             borderRadius: "20px",
@@ -71,7 +75,9 @@ export const Cardd = (props) => {
         onClick={handleExpandClick}
         aria-expanded={expanded}
         aria-label="show more">
+
           { show ? <Box component="img" style={{height:"auto",width:20}} src={Expand}/> : null }
+
         </ExpandMore>
     </Card>
     </div>
