@@ -13,6 +13,7 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import Option from "./option";
 import Expand from "../img/expand.png";
+import { maxWidth, width } from "@mui/system";
 export const Cardd = (props) => {
   const navigate = useNavigate();
   const ExpandMore = styled((props) => {
@@ -42,35 +43,37 @@ export const Cardd = (props) => {
     }
  }
   return (
-    <Card  sx={{width:230 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 25px 20px 11px ",margin:"10px 0px 50px 0px "}}    >
-      <CardContent sx={{ paddingBottom: "0px" }}>
+    <div >
+    <Card  style={{height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 11px 20px 11px ",margin:"10px "}}  sx={{maxWidth :{xs:240,md:280,lg:280,sm:280} }}>
+      <CardContent style={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
-          sx={{
+          style={{
             height: 214,
-            width: 200,
-            maxHeight: { xs: 100, md: 214 },
-            maxWidth: { xs: 80, md: 200 },
+            // width: 200,
+            // maxHeight: { xs: 100, md: 214 },
+            // maxWidth: { xs: 80, md: 200 },
             backgroundColor: "#f3f5f7",
             display: "flex", justifyContent: "center",
-            borderRadius: "20px",marginLeft:"5px"
+            borderRadius: "20px",
           }}>
           <Box component="img" src={props.images[props.int]}   style={{
             height: 70,
-            width: 70, alignSelf: "center",
+             alignSelf: "center",
           }} />
         </Grid>
-        <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "20px"}}>{props.title[props.int]}</Grid>
+        <Grid style={{ textAlign: "center", fontWeight: "500", marginTop: "20px"}}>{props.title[props.int]}</Grid>
       </CardContent>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <Option OptionList={props.optionsAll} cardint={props.int}></Option>
       </Collapse>
-      <ExpandMore sx={{padding:"0px"}}
+      <ExpandMore style={{padding:"0px"}}
         expand={expanded}
         onClick={handleExpandClick}
         aria-expanded={expanded}
         aria-label="show more">
-          { show ? <Box component="img" sx={{height:"auto",width:20}} src={Expand}/> : null }
+          { show ? <Box component="img" style={{height:"auto",width:20}} src={Expand}/> : null }
         </ExpandMore>
     </Card>
+    </div>
 )
 }

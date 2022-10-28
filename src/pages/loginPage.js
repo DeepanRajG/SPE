@@ -18,7 +18,7 @@ import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined
 import doctor from '../img/doctor1.png'
 import logo from '../img/logo.png'
 import CustomizedSnackbars from '../component/Toast.jsx';
-import { height } from '@mui/system';
+
 function App() {
   localStorage.setItem('roll_id', 0 );
   localStorage.setItem('permsn_repo', 0 );
@@ -90,24 +90,24 @@ const doco = {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
    return (
-        <div sx={{}}>
-        <Grid sx={{ backgroundColor: "#F5F7FA",padding:"40px ",maxWidth:"device-width"}}>
-                <Grid item container sx={{ backgroundColor: "white", borderRadius: "20px" }}>
-                <Grid item md={7} lg={7} xl={7} sx={{position:"relative"}}>
+        <div style={{}}>
+        <Grid style={{ backgroundColor: "#F5F7FA",padding:"40px ",maxWidth:"device-width"}}>
+                <Grid item container style={{ backgroundColor: "white", borderRadius: "20px" }}>
+                <Grid item md={7} lg={7} xl={7} style={{position:"relative"}}>
                     <Avatar src={logo} style={{ width: "60px", height:"55px",position:"absolute",left:"20px",top:"20px"}} />
-                        <Box sx={{width:"410px",height: "630px",minHeight: { xs: 680, md: 630,lg:700 },minWidth: { xs: 531, md: 410,lg:570},padding: "40px 0px 40px 40px"}} component="img" src={doctor} />
+                        <Box style={{width:"410px",height: "630px",minHeight: { xs: 680, md: 630,lg:700 },minWidth: { xs: 531, md: 410,lg:570},padding: "40px 0px 40px 40px"}} component="img" src={doctor} />
                     </Grid>
-                    <Grid item md={5} lg={5} xl={5} sx={{ height: "auto", width:"100%",marginTop:"160px"}}>
+                    <Grid item md={5} lg={5} xl={5} style={{ height: "auto", width:"100%",marginTop:"160px"}}>
         
           <Grid>
-            <Typography sx={{fontFamily:"poppins",fontWeight: 'bold',fontSize: "32px", paddingBottom: '10px',color:"#223144",opacity: 1}}>Login</Typography>
-            <Typography sx={{fontFamily:"poppins",fontWeight:400,fontSize: "14px",color: '#CDCED0', paddingBottom: '20px'}} >
+            <Typography style={{fontFamily:"poppins",fontWeight: 'bold',fontSize: "32px", paddingBottom: '10px',color:"#223144",opacity: 1}}>Login</Typography>
+            <Typography style={{fontFamily:"poppins",fontWeight:400,fontSize: "14px",color: '#CDCED0', paddingBottom: '20px'}} >
               Enter your credentials to access your account
             </Typography>
           </Grid>
           <Typography style={titl}>User ID / Bed No.</Typography>
           <TextField
-          sx={{alignSelf:"center",
+          style={{alignSelf:"center",
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
                 borderColor: "#277FFE",
@@ -131,14 +131,14 @@ const doco = {
                   }
               }
           }}
-            style={user}
+            sx={user}
           />
           <Typography style={titl}>Password</Typography>
           <TextField
             onChange={e => {
               _handleTextFieldChange1(e)
             }}
-            sx={{
+            style={{
               "& .MuiOutlinedInput-root:hover": {
                 "& > fieldset": {
                   borderColor: "#277FFE",borderWidth:2
@@ -179,11 +179,11 @@ const doco = {
               )
             }}
             size='small'
-            style={user}
+            sx={user}
           />
           <Grid>
             <Typography
-              sx={{
+              style={{
                 float: 'center',
                 color: '#277FFE',
                 textDecoration: 'none',
@@ -203,7 +203,7 @@ const doco = {
               onClick={login}
               type='submit'
               variant='contained'
-              sx={{
+              style={{
                 textTransform: 'capitalize',
                 width: '330px',
                 height:"50px",

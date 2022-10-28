@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import '../css/App.css'
 import logo from '../img/logo.png'
 import mic from '../img/mic.png'
@@ -15,17 +15,10 @@ import {
     Divider, Box,
 } from "@mui/material";
 
-class Header extends Component {
-    state = {
-    }
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: false
-        };
-    }
+function App() {
+    const [count, setCount] = useState(false);
 
-    render() {
+
        
         return (
             <div>
@@ -67,17 +60,17 @@ class Header extends Component {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Backdrop maxWidth="lg" style={{ color: '#fff', paddingRight: "50px", paddingTop: "120px",  zIndex: (theme) => theme.zIndex.drawer + 1}}
+                        <Backdrop maxWidth="lg" style={{ color: '#fff', paddingRight: "50px", paddingTop: "120px", zIndex:1}}
                             open={this.state.count}
                             onClick={() => this.setState({ count: this.state.count = false })}
                         >
                             <Profile></Profile>
                         </Backdrop>
-                    </Grid >    
+                    </Grid >
                 </Grid>
                 <Grid maxWidth="deviceWidth"  style={{ backgroundColor: "#F3F5F7" }}></Grid>
             </div>
         );
     }
-}
-export default Header;
+
+export default App;

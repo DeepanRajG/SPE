@@ -17,14 +17,14 @@ function Entertainhead() {
       navigate("/SPE/page");
       }
     return (
-<Grid container sx={{marginTop:"10px"}}>
-        <Grid container item md={7} direction="row" sx={{padding:"10px",paddingBottom:"0px"}} >
+<Grid container style={{marginTop:"10px"}}>
+        <Grid container item md={7} direction="row" style={{padding:"10px",paddingBottom:"0px"}} >
           <Grid>
-            <WestIcon sx={{ margin: "10px 10px 10px 20px" }} onClick={previous} />
+            <WestIcon style={{ margin: "10px 10px 10px 20px" }} onClick={previous} />
           </Grid>
           <Grid>
             <Typography
-              sx={{
+              style={{
                 margin: "10px 10px 10px 0px",
                 fontWeight: "600",
                 fontSize:"20px",
@@ -35,15 +35,15 @@ function Entertainhead() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={5} sx={{padding:"10px",paddingBottom:"0px"}}>
+        <Grid item md={5} style={{padding:"10px",paddingBottom:"0px"}}>
             <Grid  container >
             <Tabs value={value} onChange={handleChange} TabIndicatorProps={{style:{background:"black"}}} textColor="Black" >
-            <Tab sx={{minWidth: "100px"}} value="one" label="All" />
-            <Tab sx={{minWidth: "100px"}} value="two" label="Movies" />
-            <Tab sx={{minWidth: "100px"}} value="three" label="Music" />
-            <Tab sx={{minWidth: "100px"}} value="four" label="Series" />
-            <Tab sx={{minWidth: "100px"}} value="five" label="Sports" />
-            <Tab sx={{minWidth: "100px"}} value="six" label="Cartoons" />
+            <Tab style={{minWidth: "100px"}} value="one" label="All" />
+            <Tab style={{minWidth: "100px"}} value="two" label="Movies" />
+            <Tab style={{minWidth: "100px"}} value="three" label="Music" />
+            <Tab style={{minWidth: "100px"}} value="four" label="Series" />
+            <Tab style={{minWidth: "100px"}} value="five" label="Sports" />
+            <Tab style={{minWidth: "100px"}} value="six" label="Cartoons" />
           </Tabs>
             </Grid>
         </Grid>

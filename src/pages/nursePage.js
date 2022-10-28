@@ -6,7 +6,7 @@ import {
     Typography,
 } from "@mui/material";
 import afrin from "../img/afrin.png";
-import Header from "../component/header";
+import Header from "../component/headertest";
 import { makeAPIpost } from '../component/api.js';
 import {Cardd}  from "../component/card.jsx"
 import Slider from "react-slick";
@@ -59,14 +59,48 @@ function App() {
     }
     getData();
     }, [])
+
     const settings = {
         dots: false,
         slidesToShow: 5,
         slidesToScroll:5,
     infinite:false,
     accessibility:true,
-        prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
-        nextArrow: <SampleNextArrow sx={{height:"100px"}} />
+        // prevArrow: <SamplePrevArrow style={{height:"100px"}}  />,
+        nextArrow: <SampleNextArrow style={{height:"100px"}} />,
+        responsive: [////////////////////res
+        {
+            breakpoint: 1485,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 3,
+                infinite: true,
+             
+            }
+        },
+        {
+            breakpoint: 1197,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
+        },
+        {
+            breakpoint: 917,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 585,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
       };
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -78,43 +112,37 @@ function App() {
           />
         );
       }
-      function SamplePrevArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px"}}
-            onClick={onClick}
-          />
-        );
-      }
+   
+      
 return (
-        <Container maxWidth="device-width" style={{ height: "100%", padding: "0px" }}>
+        <Container maxWidth="device-width" style={{ height: "100vh", padding: "0px" }}>
             <Header name ="Afrin" profile={afrin} displayP="none"/>
             <Grid
-                style={bg_image}
-                sx={{
+                sx={bg_image}
+                style={{
                     backgroundImage: `url(image/blur.png)`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    paddingLeft: "30px"
+                    paddingLeft: "30px",height:"100vh"
                 }}
                 container
             >
                 <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
                     <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.70"}}>Logged In As Nr.Afrin</Typography>
                 </Grid>
-                <Grid item md={12} sx={{paddingLeft:"10px"}} >
-                <Slider {...settings} >
-                {Array.from(Array(TITLE.length)).map((_, index) => (
-                  
-            <Grid item xs={2} sm={2} md={12} lg={12} key={index} sx={{marginLeft:"10px",slignSelf:"center"}} >
-              <Cardd sx={{padding: "10px 25px 15px 11px"}} title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2,options3,options4,options5]} />
-            </Grid>
-            
-          ))}
+                <Grid item md={12}sm={12} xs={12}style={{marginTop:"-70px"}}>
+                        {/* <Grid container item  direction="row"> */}
+                        <Slider {...settings} >
+                        {Array.from(Array(TITLE.length)).map((_, index) => (
+                                    <Grid>
+                                        <Grid item key={index} style={{marginLeft:"20px",paddingBottom:"30px"}} >
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                        </Grid>
+                                    </Grid>
+                                ))}
               </Slider> 
-</Grid>
+                        {/* </Grid> */}
+                    </Grid>
             </Grid>
         </Container>
     );
