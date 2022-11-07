@@ -251,7 +251,7 @@ class Header extends Component {
                      <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px 0px',cursor:"pointer",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"block"} }} onClick={() => this.setState({  count: this.state.count =true })}></KeyboardArrowDownRoundedIcon>
             </Grid>
             </Grid>
-        <Backdrop   sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        <Backdrop   sx={{ color: '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }}
             open={this.state.count}
             onClick={() => this.setState({ count: this.state.count =false })}
         >

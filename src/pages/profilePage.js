@@ -18,13 +18,13 @@ export default function Tolly() {
     navigate("/SPE/login")
   }
   return (
-    <Fragment>
+    <body>
         <Grid container spacing={0}>
           <Grid item xl={6} lg={6} md={6} sm={6} xs={6} ></Grid>
           <Grid item xl={6} lg={6} md={6} sm={6} xs={6} sx={{ height: "100px", width: "300px",}}>
             <Grid container spacing={0} sx={{display:"flex",justifyContent:"right"}}>
               <Grid item xl={6} lg={6} md={8} sm={3}   sx={{ height: "100px", width: "auto" }}></Grid>
-              <Grid item xl={6} lg={6} md={4} sm={9} xs={12}>
+              <Grid item xl={6} lg={6} md={4} sm={9} xs={12} sx={{display:"flex",justifyContent:"flex-end"}}>
                 <Grid
                   container
                   direction="column"
@@ -138,6 +138,6 @@ export default function Tolly() {
             </Grid>
           </Grid>
         </Grid>
-        </Fragment>
+        </body>
   );
 }
