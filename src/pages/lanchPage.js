@@ -39,69 +39,70 @@ const navigate = useNavigate();
     setTimeout(function () {
         navigate("/SPE/login");}, 500);
   }
-  const admin =()=>{
+  const admin =()=>{ 
    navigate("/SBE/login");
    //window.location.replace("https://ipmo.dev.ainqaplatform.in/");
    window.open("https://ipmo.dev.ainqaplatform.in/", "/SBE/login");
   }
-
     const persona = {
         height: "20px",
         color: "white",fontFamily:"poppins",fontSize:"20px"
     }
     return (
-<div style={{height:"inherit"}}>
-            <Grid  sx={{ padding: "45px", backgroundColor: "#F5F7FA",maxWidth:"none", }}>
-                <Grid   sx={{ backgroundColor: "white", borderRadius: "30px", margin:"none",  }}>
-                    <Grid item container sx={{height:"inherit"}}>
-                    <Grid item md={7} lg={6} xl={6} sx={{position:"relative"}}>
-                    <Avatar src={logo} style={{ width: "60px", height:"55px",position:"absolute",left:"20px",top:"20px",padding:"0px" }} />
-                        <Box sx={{width:"410px",height: "630px",minHeight: { xs: 680, md: 630,lg:700 },minWidth: { xs: 531, md: 410,lg:570},padding: "40px 0px 40px 40px"}} component="img" src={doctor} />
+<div >
+            <Grid  sx={{padding:{xs:"20px",sm:"20px",md:"20px",lg:"40px",xl:"40px "},backgroundColor: "#F5F7FA",maxWidth:"device-width", }}>
+                <Grid   sx={{backgroundColor: "white", borderRadius: "30px", margin:"none",  }}>
+                    <Grid item container >
+                    <Grid item xs={12}sm={5} md={6} lg={7} xl={6} sx={{position:"relative"}}>
+                    <Avatar src={logo} sx={{width:"60px",height:"55px",maxWidth:{xl:"60px",lg:"60px",md:"60px",xs:"45px",sm:"45px"}, maxHeight:{xl:"55px",md:"55px",lg:"55px",xs:"40px",sm:"40px"},position:"absolute",left:"20px",top:"20px"}} />
+                    <Box sx={{width:"70%",height: "auto",minWidth: {xs:"90%",sm:"89%",md:"80%",lg:"70%",xl:"70%"},padding:{md:"40px 0px 40px 40px",lg:"40px 0px 40px 40px",xl:"40px 0px 40px 40px",xs:"10px 0px 10px 10px",sm:"20px 0px 20px 20px"}}} component="img" src={doctor} />
                     </Grid>
-                        <Grid item md={5} lg={6} xl={6} sx={{marginTop:"130px"}}>
-                            <Grid container direction="column" sx={{display:"flex",justifyContent:"flex-start"}}>
-                                <Typography sx={{color:"#223144",fontSize:"32px",fontWeight:"700",fontFamily:"poppins"}}>Select your Profile</Typography>
-                                <Typography sx={{color:"#CDCED0",fontSize:"15px",fontFamily:"poppins",marginTop:{md:"10px",xs:"5px"}}}>Select your appropriate profile to login into SPE</Typography>
-                                <Grid item container rowSpacing={3} sx={{marginTop:{md:"50px",xs:"25px"}}} direction='row' md={12}>
-                                    <Grid item md={4} lg={3} sx={{margin:"0px  40px 0px 0px"}}>
-                                        <Grid item container sx={{height: "230px",width:"170px",backgroundColor: "#F5F7FA",borderRadius: "20px",cursor:"pointer"}} direction="column"  onClick={showselectDoctor}  {...showSelectDoctor ? {border:"0.5px solid #277FFE", opacity: "50%"} :null}>
-                                            <Grid item md={2} >
+                        {/* </Grid><Grid item md={7} sm={12} lg={6} xl={6}  alignItems="center" sx={{marginTop:{md:"130px",sm:"100",xs:"50px"}}} > */}
+                    <Grid item  xs={12}sm={7} md={6} lg={5} xl={6} sx={{ height: "auto", width:"100%",alignSelf:"center",marginLeft:{xs:"0px",sm:"0px",xl:0,lg:0,md:0},textAlign:{xs:"center",sm:"center",lg:"left",xl:"left",md:"left"}}}>
+
+                            <Grid container direction="column" sx={{display:"flex",justifyContent:"flex-start"}} justifyContent="space-around" >
+                                <Typography sx={{color:"#223144",fontWeight:"700",fontFamily:"poppins",fontSize:{xs:"22px",sm:"18px",md:"28px",lg:"32px",xl:"32px"}}}>Select your Profile</Typography>
+                                <Typography sx={{color:"#CDCED0",fontSize:"15px",marginTop:{md:"10px",xs:"5px"},fontFamily:"poppins"}}>Select your appropriate profile to login into SPE</Typography>
+                                <Grid item container rowSpacing={3} sx={{marginTop:{xl:"50px",lg:"50px",md:"50px",xs:"15px",sm:"20px"}}} direction='row' xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <Grid item xs={12} sm={3} md={3} lg={3} xl={3} sx={{marginRight:{xs:0,sm:"30px",md:"40px",lg:"40px",xl:"40px"},display:"flex",justifyContent:{xs:"center",sm:"center",md:"center",lg:"center",xl:"flex-start"}}}>
+                                        <Grid item container sx={{height: "230px",width:"170px",backgroundColor: "#F5F7FA",borderRadius: "20px",cursor:"pointer",}} direction="column"  onClick={showselectDoctor}  {...showSelectDoctor ? {border:"0.5px solid #277FFE", opacity: "50%"} :null}>
+                                            <Grid item xs={2} sm={2} md={2} lg={2} xl={2} >
                                             { showSelectDoctor ? <SelectComponent/>: null }
                                             </Grid>
-                                            <Grid item md={7} sx={{ alignSelf: "center" }} >
+                                            <Grid item xs={7} sm={7} md={7} lg={7} xl={7} sx={{ alignSelf: "center" }} >
                                                 <Avatar src={doc} style={{marginTop:"10px", width: 90, height: 90,}} {...showSelectDoctor ? {opacity: "0.5"} : {opacity:"1"}}/>
                                             </Grid>
-                                            <Grid item md={3} sx={{ borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }} {...showSelectDoctor ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
+                                            <Grid item xs={3} sm={3} md={3} lg={3} xl={3} sx={{ borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }} {...showSelectDoctor ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
                                                 <Container maxWidth="lg">
                                                     <div style={persona}>DOCTOR</div>
                                                 </Container>
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <Grid item md={4} lg={3} sx={{marginRight:"40px"}}>
+                                    <Grid item xs={12} sm={3} md={3} lg={3} xl={3} sx={{marginRight:{xs:0,sm:"30px",md:"40px",lg:"40px",xl:"40px"},display:"flex",justifyContent:{xs:"center",sm:"center",md:"center",lg:"center",xl:"flex-start"}}}>
                                         <Grid item container sx={{height: "230px",width:"170px",backgroundColor: "#F5F7FA",borderRadius: "20px",cursor:"pointer"}} direction="column"  onClick={showselectNurse} {...showSelectNurse ? {border:"0.5px solid #277FFE"} :null} >
-                                            <Grid item md={2} >
+                                            <Grid item xs={2} sm={2} md={2} lg={2} xl={2} >
                                             { showSelectNurse ? <SelectComponent/>: null }
                                             </Grid>
-                                            <Grid item md={7} sx={{ alignSelf: "center" }}>
-                                                <Avatar src={nur} style={{ marginTop:"10px",width: 90, height: 90, }} />
+                                            <Grid item xs={7} sm={7} md={7} lg={7} xl={7} sx={{ alignSelf: "center"}}>
+                                                <Avatar src={nur} style={{ marginTop:10,width: 90, height: 90,}} />
                                             </Grid>
-                                            <Grid item md={3} sx={{  borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }}{...showSelectNurse ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
+                                            <Grid item xs={3} sm={3} md={3} lg={3} xl={3} sx={{  borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }}{...showSelectNurse ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
                                                 <Container maxWidth="lg">
                                                     <div style={persona}>NURSE</div>
                                                 </Container>
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <Grid item md={4} lg={3} >
+                                    <Grid item xs={12} sm={3} md={3} lg={3} xl={3} sx={{display:"flex",justifyContent:{xs:"center",sm:"center",md:"center",lg:"center",xl:"flex-start"}}} >
                                         <Grid item container sx={{height: "230px",width:"170px",backgroundColor: "#F5F7FA",borderRadius: "20px",cursor:"pointer"}} direction="column" onClick={showselectPatient} {...showSelectPatient ? {border:"0.5px solid #277FFE"} :null}>
-                                            <Grid item md={2}>
+                                            <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
                                             { showSelectPatient ? <SelectComponent/>: null }
                                             </Grid>
-                                            <Grid item md={7} sx={{ alignSelf: "center" }}>
+                                            <Grid item xs={7} sm={7} md={7} lg={7} xl={7} sx={{ alignSelf: "center" }}>
                                                 <Avatar src={pat} style={{marginTop:"10px",width: 90, height: 90, }} />
                                             </Grid>
-                                            <Grid item md={3} sx={{  borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }}{...showSelectPatient ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
+                                            <Grid item xs={3} sm={3} md={3} lg={3} xl={3} sx={{  borderRadius: "0 0 20px 20px", textAlign: "center", paddingTop: "12px" }}{...showSelectPatient ? {backgroundColor:"#ACBCD2"} : {backgroundColor: "#4F709F"}}>
                                                 <Container maxWidth="lg">
                                                     <div style={persona}>PATIENT</div>
                                                 </Container>

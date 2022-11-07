@@ -4,20 +4,20 @@ import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
-
-
-ReactDOM.render(
+import { ThemeProvider } from '@emotion/react';
+import {theme} from './Theme.js';
+ ReactDOM.render
+(
   <React.StrictMode>
   <Router>
     <Routes>
-      <Route path="*" element={ <App /> }>
+    
+      <Route path="*" element={<App /> }>
       </Route>
     </Routes>
   </Router>
 </React.StrictMode>,
 document.getElementById('root')
-
-
 );
 
 

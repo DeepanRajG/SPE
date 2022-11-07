@@ -15,16 +15,12 @@ import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
 import { Cardd } from "../component/card.jsx"
 export default  function Patient(props) {
-    let options = []
-    let options1 = ["Order Meal / Status", "My Diet Plan", "Attender Plan"]
-    let options2 = ["Calls","patient schedules","patient Care Team",]
-    let options3 = ["Laboratory", "Radiology", "Documents"]
-    let options4 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
-    let options5 = ["Scheduled Visits", "Scheduled Activities", "Option 3"]
     let cardname=[]
     let cardlogo=[]
     let [LOGO, putlogo] = React.useState("");
     let [TITLE, puttitle] = React.useState("");
+    let [OPTION, putoption] = React.useState("");
+  let [STATUS, putstatus] = React.useState("");
     useEffect(() => {
         const getData = async () => {
             let inputdata=props.inputarray
@@ -45,9 +41,6 @@ export default  function Patient(props) {
             cardlogo[i]= responseData[i].logo
         }
         console.log(responseData)
-
-
-      
         const raw2 = {
           "db_name": "ipmo",
           "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc",
@@ -56,37 +49,55 @@ export default  function Patient(props) {
       const url2 = process.env.REACT_APP_QUERY_URL
         let response = await makeAPIpost(raw2, url2)
         console.log(response);
-
-    
         for (let i = 0; i < response.length; i++) {
-
           let enter=response[i].apptype
           console.log(enter)
-       
-       
         }
-
-
-
-
-
         putlogo(cardlogo)
         puttitle(cardname)
-
-
-
-
       }
         getData();
       }, [])
     const settings = {
         dots: false,
         slidesToShow: 5,
-        slidesToScroll:3,
+        slidesToScroll:5,
     infinite:false,
         // prevArrow: <SamplePrevArrow sx={{height:"100px"}}  />,
-        nextArrow: <SampleNextArrow sx={{height:"100px"}} />
-      };
+        nextArrow: <SampleNextArrow sx={{height:"100px"}} />,
+        responsive: [////////////////////res
+        {
+            breakpoint: 1485,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 5,
+                
+            }
+        },
+        {
+            breakpoint: 1197,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+                
+            }
+        },
+        {
+            breakpoint: 917,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 585,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+};
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -108,14 +119,14 @@ export default  function Patient(props) {
       //   );
       // }
 return (
-        <Container maxWidth="device-width" style={{ height: "100%", padding: "0px" }}>
+        <Container maxWidth="device-width" style={{  padding: "0px" }}>
             <Header name="Dolly Tan" profile={tolly} displayP="flex" />
-            <Grid direction="row" container maxWidth="device-width" sx={{marginTop:"20px"}}>
-                <Grid sx={{
+            <Grid direction="column" container maxWidth="device-width" sx={{marginTop:"20px"}}>
+                {/* <Grid item md={12} sx={{
               height: 340,
               width:"100vw",display:"flex",justifyContent:"center"
-            }}>
-                    <Grid item md={12} sx={{height:"400px"}}>
+            }}> */}
+                    <Grid item md={12} maxWidth="device-width" sx={{height:"400px"}}>
                         <Carousel  autoPlay={false} indicatorIconButtonProps={{
                             style: {
                                 padding: '1px',    // 1
@@ -133,15 +144,16 @@ return (
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                margin: "10px 10px 10px 50px",
+                                margin:{xl:"10px 10px 10px 50px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
                                 height: "310px",
-                                width: "95%",
+                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
+
                                 borderRadius: "20px"
                             }} >
                                 <Grid item md={6} >
                                     <Grid direction="column">
                                         <Grid item md={3}>
-                                        <Typography sx={{ fontSize: "29px", color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
+                                        <Typography sx={{ fontSize:{xl:"29px",lg:"25px",md:"23px",sm:"20px",xs:"20px"}, color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
                                             <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "155px", height: "40px", fontFamily: "poppins", color: "#277FFE", marginLeft: "5px", borderRadius: "5px" }}>View More</Button></Grid>
                                     </Grid>
                                     </Grid>
@@ -154,7 +166,7 @@ return (
                                 paddingLeft: "30px",
                                 margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "95%",
+                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -165,7 +177,7 @@ return (
                                 paddingLeft: "30px",
                                 margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "95%",
+                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -176,26 +188,25 @@ return (
                                 paddingLeft: "30px",
                                 margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "95%",
+                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
-                            <Grid container sx={{
+                            <Grid  sx={{
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
                                 margin: "10px 10px 10px 50px",
                                 height: "310px",
-                                width: "95%",
+                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
                         </Carousel>
-                    </Grid></Grid>
-                    {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
-                    <Grid item md={12} direction="column" >
-                        {/* <Grid container item  direction="row"> */}
+                    </Grid>
+                    
+                                        {/* <Grid item md={12} direction="column" >
                         <Slider {...settings} >
                         {Array.from(Array(TITLE.length)).map((_, index) => (
                                     <Grid>
@@ -206,8 +217,23 @@ return (
                                 ))}
               </Slider> 
                        
-                    </Grid>
-                    {/* </div> */}
+                    </Grid> */}
+                    <Grid container  item md={12} lg={12} xl={12} xs={12} sm={12}  sx={{ paddingLeft: "10px", marginBottom: "100px", display: { sm: "none", xs: "none", xl: "block", lg: "block", md: "block" } }} >
+          <Slider {...settings}  >
+            {Array.from(Array(TITLE.length)).map((_, index) => (
+              <Grid item xs={12} sm={12} md={12} lg={12} key={index} sx={{ marginLeft: "10px", alignSelf: "center" }} >
+                <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
+              </Grid>
+            ))}
+          </Slider>
+        </Grid>
+        <Grid item md={12} lg={12} xl={12} xs={12} sm={12} sx={{ padding: "10px", alignSelf: "center", marginBottom: "100px", display: { sm: "block", xs: "block", xl: "none", lg: "none", md: "none" } }}>
+          {Array.from(Array(TITLE.length)).map((_, index) => (
+            <Grid item xs={12} sm={12} md={12} lg={12} key={index} sx={{ marginLeft: "0px", alignSelf: "center",padding:"10px"}} >
+              <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
+            </Grid>
+          ))}
+        </Grid>
             </Grid>
         </Container>
     );

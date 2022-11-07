@@ -1,7 +1,7 @@
 import React from "react";
 import {useEffect} from "react";
 import {
-  Grid, Typography,
+  Grid, Typography,Box
   } from "@mui/material";
 import Rakin from '../img/profile.png'
 import { Cardd } from '../component/card.jsx'
@@ -65,28 +65,29 @@ function SampleNextArrow(props) {
     );
   }
   return (
-    <Grid maxWidth="device-width" style={{ height: "100%" }}>
-   <Header name ="Rakin" profile={Rakin} displayP="none"/>
-      <Grid  container
-        style={bg_image}
-        sx={{
-          backgroundImage: `url(./image/background.png)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          }}> 
-        <Grid item style={{margin:"20px 0px 0px 20px",fontSize:"20px"}}>
-          <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.90"}}>Logged In As Dr.Rakin</Typography>
-        </Grid>
-        <Grid container item sx={{display:"flex",justifyContent:"center"}}>
-          
-          {Array.from(Array(TITLE.length)).map((_, index) => (
-            <Grid item xs={2} sm={3} md={3} lg={2} key={index} sx={{marginRight:"40px"}}>
-              <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
-    </Grid>
+    <Grid maxWidth="device-width" position="static" style={{ height: "100%" }}>
+    <Header name ="Rakin" profile={Rakin} displayP="none"/>
+       <Grid  container 
+         style={{bg_image,marginTop:{xs:"80px",sm:"80px"}}}
+         sx={{
+           backgroundImage: `url(./image/background.png)`,
+           backgroundSize: "cover",
+           backgroundPosition: "center",height:"100vh"
+           
+           }}> 
+         <Grid item style={{display:"flex",justifyContent:"flex-start"}}>
+           <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.90"}}>Logged In As Dr.Rakin</Typography>
+         </Grid>
+         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
+           
+           {Array.from(Array(TITLE.length)).map((_, index) => (
+             <Grid item  md={3} lg={3} xl={2} key={index} sx={{marginRight:{xl:"50px",lg:"50px",md:"50px",xs:"0px",sm:"30px"},paddingBottom:{sm:"none",xs:"none"}}}>
+               <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
+             </Grid>
+           ))}
+         </Grid>
+       </Grid>
+     </Grid>
   );
 }
 export default App;

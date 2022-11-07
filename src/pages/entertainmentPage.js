@@ -5,9 +5,14 @@ import {Container,Grid,} from "@mui/material";
 import { makeAPIpost } from '../component/api.js';
 import Entertainhead from './Entertainhead.js'
 import Entertain from './Entertainbody.js'
-import Header from "../component/header";
+import Headerr from "../component/headerr";
 import tolly from "../img/dolly.png";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import Menu from "../component/menu";
 function  Entertaincomp() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
     let [LOGO, putdat] = React.useState("Loading");
     let [URL, puturl] = React.useState("Loading");
     let logo=[]
@@ -43,21 +48,22 @@ function  Entertaincomp() {
   }, [])
   console.log(LOGO);
     return (
-        <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
-        <Header name ="Dolly Tan" profile={tolly} displayP="flex"/>
-      <Grid container >
-        <Entertainhead/>
+        <Container maxWidth="device-width" style={{ height: "100%", padding: "0px" }}>
+        <Headerr name ="Dolly Tan" profile={tolly} displayP="flex"/>
+      <Grid container maxWidth="device-width">
+      {!matches && <Entertainhead/>}
+      {matches && <Menu/>}
           </Grid>
-          <Grid container  direction="row" spacing={2} sx={{padding:"20px 20px 20px 30px"}}>
-          <Grid item md={12} sx={{ height: "200px" }}>
+          <Grid container maxWidth="device-width" direction="row" spacing={2} sx={{padding:{xl:"20px 20px 20px 0px",lg:"20px 20px 20px 0px",md:"20px 20px 20px 0px",sm:"20px 0px 20px 10px"}}}>
+          <Grid item md={12}  sx={{ height: "200px" }}>
              <Grid container direction="row" spacing={1} >
-             <Grid container item  direction="row" spacing={2} sx={{padding:"20px 20px 20px 30px"}}>
+             <Grid container item  direction="row" spacing={1} sx={{ textAlign:"center",marginTop:"5px"}} >
              {Array.from(Array(LOGO.length)).map((_, index) => (
-            <Grid item xs={3} sm={3} md={3} lg={3} key={index} >
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={index} >
               <Entertain src={LOGO} int={index} url={URL}/>
             </Grid>
           ))}
-          </Grid>
+          </Grid> 
           </Grid>
           </Grid>
           </Grid>

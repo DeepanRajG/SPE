@@ -11,19 +11,20 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Fragment } from "react";
 export default function Tolly() {
   const navigate = useNavigate();
   const logout=()=>{
     navigate("/SPE/login")
   }
   return (
-    <body sx={{ bgcolor: "yellow" }}>
+    <Fragment>
         <Grid container spacing={0}>
-          <Grid item md={6}></Grid>
-          <Grid item md={6} sx={{ height: "100px", width: "300px",}}>
+          <Grid item xl={6} lg={6} md={6} sm={6} xs={6} ></Grid>
+          <Grid item xl={6} lg={6} md={6} sm={6} xs={6} sx={{ height: "100px", width: "300px",}}>
             <Grid container spacing={0} sx={{display:"flex",justifyContent:"right"}}>
-              <Grid item md={8} sx={{ height: "100px", width: "auto" }}></Grid>
-              <Grid item md={4}>
+              <Grid item xl={6} lg={6} md={8} sm={3}   sx={{ height: "100px", width: "auto" }}></Grid>
+              <Grid item xl={6} lg={6} md={4} sm={9} xs={12}>
                 <Grid
                   container
                   direction="column"
@@ -37,19 +38,19 @@ export default function Tolly() {
                 >
                   <Grid
                     item
-                    lg={3}
+                    lg={3} xl={3} md={3} sm={3} xs={3}
                     sx={{
                       backgroundColor: "#223144",
                       borderRadius: "10px 10px 0px 0px",
                     }}
                   >
                     <Box sx={{ verticalAlign: "center" }}>
-                      <Typography sx={{marginTop:"30px", color: "white", fontWeight: "bold",fontFamily:"poppins" }}>
+                      <Typography sx={{marginTopcolor: "white", fontWeight: "bold",fontFamily:"poppins" }}>
                         Patient
                       </Typography>
                     </Box>
                   </Grid>
-                  <Grid item lg={9}>
+                  <Grid item lg={9} md={9} xl={9} sm={9} xs={9}>
                     <Grid
                       container
                       direction="column"
@@ -137,6 +138,6 @@ export default function Tolly() {
             </Grid>
           </Grid>
         </Grid>
-    </body>
+        </Fragment>
   );
 }
