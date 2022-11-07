@@ -4,6 +4,8 @@ import {
     Container,
     Grid,
     Typography,
+    useTheme,
+    useMediaQuery,
 } from "@mui/material";
 import afrin from "../img/afrin.png";
 import Header from "../component/header";
@@ -12,7 +14,13 @@ import {Cardd}  from "../component/card.jsx"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+<<<<<<< Updated upstream
 
+=======
+import {Carddd} from "../component/cardtest2";
+
+import DrawerComponent from "../component/drawer.js";
+>>>>>>> Stashed changes
 function App() {
     let options = ["Option 1","Option 1","Option 1"]
     let options1 = ["Laboratory","Radiology","Documents"]
@@ -102,6 +110,7 @@ function App() {
           />
         );
       }
+<<<<<<< Updated upstream
       
       function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
@@ -116,11 +125,37 @@ function App() {
 return (
         <Container maxWidth="xl" style={{ height: "100%", padding: "0px" }}>
             <Header name ="Afrin" profile={afrin} displayP="none"/>
+=======
+
+      // function SamplePrevArrow(props) {
+      //   const { className, style, onClick } = props;
+      //   return (
+      //     <div
+      //       className={className}
+      //       style={{ ...style, background: "#00000029",height:"20px",display:"none",appearance:"none",justifyContent:"center",padding:"25px 10px"}}
+      //       onClick={onClick}
+      //     />
+      //   );
+      // }
+      const theme = useTheme();
+      const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+return (
+        <Container maxWidth="device-width" style={{ height: "100vh", padding: "0px" }}>
+           {/* {isMobile ? (
+          <DrawerComponent profile={afrin}/>         
+        ) : ( */}
+            <Header name="Dolly Tan" profile={afrin} displayP="none" />
+            {/* )} */}
+>>>>>>> Stashed changes
             <Grid
                 style={bg_image}
                 sx={{
                     backgroundImage: `url(image/blur.png)`,
+<<<<<<< Updated upstream
                     backgroundSize: "cover",
+=======
+                    backgroundSize:"cover",
+>>>>>>> Stashed changes
                     backgroundPosition: "center",
                     paddingLeft: "30px"
 
@@ -130,6 +165,7 @@ return (
                 <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
                     <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"20px"}}>Logged In As Nr.Afrin</Typography>
                 </Grid>
+<<<<<<< Updated upstream
                 <Grid item md={12} sx={{paddingLeft:"10px"}} >
                 <Slider {...settings} >
                 {Array.from(Array(TITLE.length)).map((_, index) => (
@@ -139,6 +175,19 @@ return (
             </Grid>
             </Grid>
           ))}
+=======
+
+                <Grid item md={12}sm={12} xs={12}style={{marginTop:"-70px"}}>
+                        {/* <Grid container item  direction="row"> */}
+                        <Slider {...settings} >
+                        {Array.from(Array(3)).map((_, index) => (
+                                    <Grid>
+                                        <Grid item key={index} style={{marginLeft:"20px",paddingBottom:"30px"}} >
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                        </Grid>
+                                    </Grid>
+                                ))}
+>>>>>>> Stashed changes
               </Slider> 
 </Grid>
             </Grid>

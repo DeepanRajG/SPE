@@ -30,6 +30,35 @@
     justify-content: center ;
     
   }
+<<<<<<< Updated upstream
+=======
+  .slick-list {
+    padding-top: 20px!important;
+
+  }
+  @media (min-width: 0px)  and (max-width: 391px) {
+    .slick-next {
+      display: none;
+  }
+   
+  .slick-prev:before{
+      font-size: 30px !important;
+      display: none;
+  }
+  .slick-next:before {
+      font-size: 30px !important;
+      display: none;
+  
+  }
+  }
+  @media (min-width: 392px)  {
+  .slick-next {
+    background: url('../img/slidearrow.png') center center no-repeat!important;
+  background-size: 70px!important;
+  background-color: #00000029!important;
+  background-position: center;
+}
+>>>>>>> Stashed changes
  
 .slick-prev:before{
     font-size: 30px !important;
@@ -41,5 +70,34 @@
     background-image: url('../img/rightarrow.png') no-repeat !important;
     content: "" !important;
 
+<<<<<<< Updated upstream
 } 
 
+=======
+}
+
+  }
+#user{
+  -webkit-text-fill-color: #324D70;
+
+}
+html,body{
+  width: 100%; 
+  margin: 0px;
+  padding: 0px;
+  height:100vh;
+}
+
+ .css-1abc02a{
+  display: none;
+}
+.css-hn784z{
+  display: none;
+}
+
+.css-mhc70k-MuiGrid-root {
+  margin-left: 0%!important;
+  width: calc(100% + 0px)!important;
+  margin-top:  0%!important;
+}
+>>>>>>> Stashed changes

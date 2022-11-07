@@ -2,11 +2,22 @@ import React from "react";
 import {useEffect} from "react";
 import {
     Container,
+<<<<<<< Updated upstream
   Grid, Typography,
   } from "@mui/material";
 import Rakin from '../img/profile.png'
 import { Cardd } from '../component/card.jsx'
 import Header from "../component/header";
+=======
+    Grid,
+    Typography,
+    useTheme,
+    useMediaQuery,
+} from "@mui/material";
+import DrawerComponent from "../component/drawer.js";
+import Rakin from "../img/profile.png";
+import Header from "../component/headertest";
+>>>>>>> Stashed changes
 import { makeAPIpost } from '../component/api.js';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -80,6 +91,7 @@ function App() {
     getData();
   }, [])
 
+<<<<<<< Updated upstream
   const settings = {
     dots: false,
     slidesToShow: 5,
@@ -118,6 +130,105 @@ function SampleNextArrow(props) {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 paddingLeft: "30px"
+=======
+    const settings = {
+        dots: false,
+        slidesToShow: 5,
+        slidesToScroll:5,
+    infinite:false,
+    accessibility:true,
+        // prevArrow: <SamplePrevArrow style={{height:"100px"}}  />,
+        nextArrow: <SampleNextArrow style={{height:"100px"}} />,
+        responsive: [////////////////////res
+        {
+            breakpoint: 1485,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 3,
+                infinite: true,
+             
+            }
+        },
+        {
+            breakpoint: 1197,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
+        },
+        {
+            breakpoint: 917,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 540,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+      };
+    function SampleNextArrow(props) {
+        const { className, style, onClick } = props;
+        return (
+          <div
+            className={className}
+            style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px",marginRight:"35px"}}
+            onClick={onClick}
+          />
+        );
+      }
+      // function SamplePrevArrow(props) {
+      //   const { className, style, onClick } = props;
+      //   return (
+      //     <div
+      //       className={className}
+      //       style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px"}}
+      //       onClick={onClick}
+      //     />
+      //   );
+      // }
+      const theme = useTheme();
+      const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+      
+return (
+        <Container maxWidth="device-width" style={{ padding: "0px",margin:"0px" }} position="static">
+                     {isMobile ? (
+          <DrawerComponent profile={Rakin}/>         
+        ) : (
+            <Header name="Dolly Tan" profile={Rakin} displayP="flex" />)}
+            <Grid
+                sx={{bg_image,marginTop:{xs:"80px", sm:"80px",md:"0px"}}}
+                style={{
+                    backgroundImage: `url(image/background.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    paddingLeft: "30px",height:"100vh"
+                }}
+                container
+            >
+                <Grid item style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
+                    <Typography style={{marginLeft:"40px",marginTop:"50px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.70"}}>Logged In As Dr.Rakin</Typography>
+                </Grid>
+                <Grid item md={12}sm={12} xs={12}style={{marginTop:"-70px"}}>
+                        {/* <Grid container item  direction="row"> */}
+                        <Slider {...settings} >
+                        {Array.from(Array(TITLE.length)).map((_, index) => (
+                                    <Grid >
+                                        <Grid item key={index} style={{marginLeft:"20px",paddingBottom:"30px",textAlign:"center"}} >
+                                            <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                        </Grid>
+                                    </Grid>
+                                ))}
+              </Slider> 
+                        {/* </Grid> */}
+                    </Grid>
+>>>>>>> Stashed changes
 
             }}
             container

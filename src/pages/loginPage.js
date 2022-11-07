@@ -12,7 +12,7 @@ import {
   InputAdornment
 } from '@mui/material'
 import { useNavigate } from "react-router-dom";
-import '../css/App.css'
+  import '../css/App.css'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import doctor from '../img/doctor1.png'

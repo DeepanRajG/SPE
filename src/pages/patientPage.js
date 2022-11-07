@@ -9,10 +9,16 @@ import {
     Button,
     Typography
 } from "@mui/material";
+<<<<<<< Updated upstream
+=======
+import '../css/App.css'
+import { styled } from '@mui/material/styles';
+>>>>>>> Stashed changes
 import Carousel from 'react-material-ui-carousel'
 import tolly from '../img/dolly.png';
 import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
+<<<<<<< Updated upstream
 import { Cardd } from "../component/card.jsx";
 import $ from 'jquery';
 export default  function Patient(props) {
@@ -21,6 +27,14 @@ export default  function Patient(props) {
 
 
 
+=======
+import DrawerComponent from "../component/drawer.js";
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { Cardd } from "../component/card.jsx";
+import {Carddd} from "../component/cardtest.jsx";
+import Profile from '../pages/profilePage.js'
+export default function Patient(props) {
+>>>>>>> Stashed changes
 
     let options = []
 
@@ -97,7 +111,9 @@ export default  function Patient(props) {
  
     const settings = {
         dots: false,
+        arrow: true,
         slidesToShow: 5,
+<<<<<<< Updated upstream
         slidesToScroll:3,
           infinite:false,
          prevArrow: <SamplePrevArrow sx={{height:"100px"}} />,
@@ -106,6 +122,51 @@ export default  function Patient(props) {
         
       };
       
+=======
+        slidesToScroll: 3,
+        infinite: false,
+        centerPadding: "10px",
+        draggable: true,
+
+        // prevArrow: $('.top-arrow'),
+        // nextArrow: $('.bottom-arrow'),
+        // prevArrow: <SamplePrevArrow style={{height:"100px"}}  />,
+        nextArrow: <SampleNextArrow style={{ height: "100px" }} />,
+        responsive: [////////////////////res
+            {
+                breakpoint: 1485,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                    infinite: true,
+
+                }
+            },
+            {
+                breakpoint: 1197,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 917,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 585,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+>>>>>>> Stashed changes
     function SampleNextArrow(props) {
         const { className, style, onClick, images} = props;
         return (
@@ -120,6 +181,7 @@ export default  function Patient(props) {
       function SamplePrevArrow (props) {
         const { className, style, onClick } = props;
         return (
+<<<<<<< Updated upstream
           <div
             className={className}
             style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
@@ -229,6 +291,209 @@ return (
                     {/* </div> */}
                 </Container>
             </Grid>
+=======
+
+            <div
+                className={className}
+                style={{ ...style, background: "#00000029", height: "20px", display: "flex", justifyContent: "center", padding: "25px 10px ", marginRight: "35px" }}
+                onClick={onClick}
+            />
+        );
+    }
+    const settingsxs = {
+        dots: false,
+        arrow: false,
+        slidesToShow: 5,
+        slidesToScroll: 3,
+        infinite: false,
+        vertical: true,
+        verticalScrolling: true,
+        centerPadding: "10px",
+        draggable: true,
+        swipe: true,
+        touchMove: true,
+        adaptiveHeight: true,
+        verticalSwiping: true,
+       
+        responsive: [////////////////////res
+            {
+                breakpoint: 1485,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                    infinite: true,
+
+                }
+            },
+            {
+                breakpoint: 1197,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 917,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 585,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
+    //   function SamplePrevArrow(props) {
+    //     const { className, style, onClick } = props;
+    //     return (
+    //       <div
+    //         className={className}
+    //         style={{ ...style, background: "#00000029",height:"20px",display:"flex",justifyContent:"center",padding:"25px 10px" }}
+    //         onClick={onClick}
+    //       />
+    //     );
+    //   }
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobilee = useMediaQuery(theme.breakpoints.down("sm"));
+    return (
+        <Container maxWidth="device-width" style={{ padding: "0px" }}>
+            {isMobile ? (
+          <DrawerComponent profile={tolly}/>         
+        ) : (
+            <Header name="Dolly Tan" profile={tolly} displayP="flex" />)}
+            <Grid maxWidth="device-width" direction="column" container marginTop="10px" >
+
+                <Grid item md={12} maxWidth="device-width" style={{ marginTop: "10px", marginRight: "0px", height: "400px", displayp: "flex" }}>
+                    <Carousel maxWidth="device-width" autoPlay={false} indicatorIconButtonProps={{
+                        style: {
+                            padding: '1px',    // 1
+                            color: '#EDF0F5',
+                            // 3                 
+
+                        }
+                    }}
+                        activeIndicatorIconButtonProps={{
+                            style: {
+                                color: '#277FFE' // 2
+                            }
+                        }}
+                    >
+                        <Grid container maxWidth="device-width" sx={{
+                            backgroundImage: `url(image/headerbackground.png)`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            margin:{xl:"10px 10px 10px 40px",lg:"10px 10px 10px 40px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 20px",xs:"10px 10px 10px 20px"},
+                            height: "310px",
+                            width: "100%",maxWidth :{xs:"100%",md:"92%",lg:"95%",sm:"100%"},marginRight:{xs:"10px",md:"20px"},
+                            borderRadius: "20px"
+                        
+                        }} >
+                            <Grid item md={6} sm={12}>
+
+                                <Grid item md={12} sm={12} direction="row">
+                                    <Grid sm={12}>
+                                        {isMobile ? (
+                                            <Typography style={{
+                                                color: "white", fontWeight: "600", paddingTop: "70px", paddingLeft: "50px", fontFamily: "poppins", fontSize: "25px", paddingRight: "0px"
+                                            }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
+
+                                        ) : (<Typography style={{ color: "white", fontWeight: "600", paddingTop: "70px", fontFamily: "poppins", fontSize: 32, paddingLeft: "50px" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>)}
+                                    </Grid>
+                                    <Grid sm={3} style={{ paddingTop: "15px" }} ><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "155px", height: "40px", fontFamily: "poppins", color: "#277FFE", marginLeft: "50px", borderRadius: "5px" }}>View More</Button></Grid>
+
+                                </Grid>
+
+                            </Grid>
+                        </Grid>
+                        <Grid container md={12} style={{
+                            backgroundImage: `url(image/blur.png)`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            paddingLeft: "30px",
+                            margin: "10px 10px 10px 40px",
+                            height: "310px",
+                            width: "95%",
+                            borderRadius: "20px"
+                        }}
+                        sx={{ height: "310px",
+                        width: "95%",maxWidth :{xs:"86%",md:"92%",lg:"95%",sm:"90%"}}}>  
+                        </Grid>
+                        <Grid container md={12} style={{
+                            backgroundImage: `url(image/headerbackground.png)`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            paddingLeft: "30px",
+                            margin: "10px 10px 10px 40px",
+                            height: "310px",
+                            width: "95%",
+                            borderRadius: "20px"
+                        }} 
+                        sx={{ height: "310px",
+                        width: "95%",maxWidth :{xs:"86%",md:"92%",lg:"95%",sm:"90%"}}}>
+                        </Grid>
+                        <Grid container style={{
+                            backgroundImage: `url(image/blur.png)`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            paddingLeft: "30px",
+                            margin: "10px 10px 10px 40px",
+                            height: "310px",
+                            width: "95%",
+                            borderRadius: "20px"
+                        }}  sx={{ height: "310px",
+                        width: "95%",maxWidth :{xs:"86%",md:"92%",lg:"95%",sm:"90%"}}}>
+                        </Grid>
+                        <Grid container style={{
+                            backgroundImage: `url(image/headerbackground.png)`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            paddingLeft: "30px",
+                            margin: "10px 10px 10px 40px",
+                            height: "310px",
+                            width: "95%",
+                            borderRadius: "20px"
+                        }} sx={{ height: "310px",
+                        width: "95%",maxWidth :{xs:"86%",md:"92%",lg:"95%",sm:"90%"}}} >
+                        </Grid>
+                    </Carousel>
+                </Grid></Grid>
+            {/* <div style={{maxWidth:"1000px" ,maxHeight:"300px",overflow:"auto"}}> */}
+{/* <container style={{display:"flex",alignItem:"center"}}> */}
+            <Grid item md={12} direction="row"  >
+                {/* <Grid container item  direction="row"> */}
+                {isMobilee? (
+                    <Slider {...settingsxs} >
+                        {Array.from(Array(TITLE.length)).map((_, index) => (
+                            <Grid container direction="row" >
+                                <Grid item key={index} sx={{ marginLeft: "60px", paddingBottom: "30px" }} >
+                                    <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                </Grid>
+                            </Grid>
+                        ))}
+                    </Slider>
+                ) : (
+                    <Slider {...settings}  >
+                        {Array.from(Array(TITLE.length)).map((_, index) => (
+                            <Grid container direction="row"  >
+                                <Grid item key={index} style={{ marginLeft: "30px", paddingBottom: "30px"}} >
+                                    <Cardd title={TITLE} int={index} optionName={options1} navigate={"/SPE/enter"} optionsLength={options1.length} images={LOGO} optionsAll={[options, options1, options2, options3, options4, options5]} />
+                                </Grid>
+                            </Grid>
+                        ))}
+                    </Slider>
+                )}
+            </Grid>
+            {/* </div> */}
+            {/* </container> */}
+>>>>>>> Stashed changes
         </Container>
     );
 }

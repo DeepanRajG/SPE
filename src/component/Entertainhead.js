@@ -38,12 +38,21 @@ function Entertainhead() {
         <Grid item md={5} sx={{padding:"10px",paddingBottom:"0px"}}>
             <Grid  container >
             <Tabs value={value} onChange={handleChange} TabIndicatorProps={{style:{background:"black"}}} textColor="Black" >
+<<<<<<< Updated upstream:src/component/Entertainhead.js
             <Tab sx={{minWidth: "100px"}} value="one" label="All" />
             <Tab sx={{minWidth: "100px"}} value="two" label="Movies" />
             <Tab sx={{minWidth: "100px"}} value="three" label="Music" />
             <Tab sx={{minWidth: "100px"}} value="four" label="Series" />
             <Tab sx={{minWidth: "100px"}} value="five" label="Sports" />
             <Tab sx={{minWidth: "100px"}} value="six" label="Cartoons" />
+=======
+            <Tab sx={{minWidth: "60px",textTransform:"capitalize"}} value="one" ></Tab>
+            <Tab style={{minWidth: "60px"}} value="two" label="Movies" />
+            <Tab style={{minWidth: "60px"}} value="three" label="Music" />
+            <Tab style={{minWidth: "60px"}} value="four" label="Series" />
+            <Tab style={{minWidth: "60px"}} value="five" label="Sports" />
+            <Tab style={{minWidth: "60px"}} value="six" label="Cartoons" />
+>>>>>>> Stashed changes:src/pages/Entertainhead.js
           </Tabs>
             </Grid>
         </Grid>

@@ -42,6 +42,14 @@ export const Cardd = (props) => {
   
     }
  }
+<<<<<<< Updated upstream
+=======
+  return (
+
+    <div >
+    <Card  style={{height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",boxShadow: "0px 3px 40px #00000029",padding:"10px 11px 20px 11px ",margin:"10px "}}  sx={{maxWidth :{md:280,lg:280} }}>
+      <CardContent style={{ paddingBottom: "0px" }}>
+>>>>>>> Stashed changes
 
   return (
     <Card  sx={{width:240 ,height:"auto",borderRadius: "20px", textAlign: "center" ,cursor:"pointer",padding:"0px 15px 0px 11px " }}    >
