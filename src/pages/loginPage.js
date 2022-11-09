@@ -106,7 +106,7 @@ const inputStyle = { WebkitBoxShadow: "0 0 0 1000px white inset", };
               Enter your credentials to access your account
             </Typography>
           </Grid>
-          <Typography style={titl}>User ID / Bed No.</Typography>
+          <Typography style={titl}>User ID / Bed No.<span style={{color:"red"}}>*</span></Typography>
           <TextField
           sx={{alignSelf:"center",maxWidth:{xs:270,sm:250,xl:330},
             "& .MuiOutlinedInput-root:hover": {
@@ -133,7 +133,7 @@ const inputStyle = { WebkitBoxShadow: "0 0 0 1000px white inset", };
           }}
             style={user}
           />
-          <Typography style={titl}>Password</Typography>
+          <Typography style={titl}>Password <span style={{color:"red"}}>*</span></Typography>
           <TextField
             onChange={e => {
               _handleTextFieldChange1(e)

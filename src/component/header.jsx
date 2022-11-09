@@ -1,83 +1,3 @@
-// import React, { Component } from "react";
-// import '../css/App.css'
-// import logo from '../img/logo.png'
-// import mic from '../img/mic.png'
-// import text from '../img/text.png'
-// import alert from '../img/alert.svg'
-// import NotificationsIcon from '@mui/icons-material/Notifications';
-// import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
-// import Profile from '../pages/profilePage.js'
-// import {
-//     Avatar,
-//     Grid,
-//     Backdrop,
-//     Typography,
-//     Divider
-// } from "@mui/material";
-// class Header extends Component {
-//     state = {
-//     }
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             count: false
-//         };
-//     }
-//     render() {
-//         return (
-//             <div>
-//             <Grid  spacing={0}>
-//             <Grid item  container sx={{ height: "60px"}}>
-//             <Grid item lg={6} alignSelf="center" >
-//                 <Grid item container direction="row" >
-//                     <Avatar src={logo} style={{ width: "auto", height: 40, marginLeft: "50px" }} />
-//                     <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C", textAlign: "center", margin: "5px 0px 0px 10px" }}>Smart Patient Engagement</Typography>
-//                 </Grid>
-//             </Grid>
-//             <Grid item lg={6}  >
-//                     <Grid item container direction="row" sx={{display: "flex",justifyContent: "flex-end",}} >
-//                     <Grid  item container md={5} sx={{justifyContent: "flex-end",marginTop:"0px", }} >
-//                     <Grid display={this.props.displayP}>
-                        
-//                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 10px",height:"92%"}}  />
-//                     <Avatar src={alert} style={{ width: 30, height: 30,padding:"5px 0px 10px 10px",marginTop:"10px" }} />
-//                     <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "15px", fontFamily: "poppins", color: "#FA273E",marginTop:"10px" }} >Emergency</Typography>
-//                     <Divider orientation="vertical" sx={{ padding:"0px 10px 0px 0px",alignSelf:"stretch",height:"92%"}}  />
-//                     <Avatar src={mic} style={{ width: 30, height: 30,padding:"17px 10px" }} />
-//                     <Divider orientation="vertical" sx={{height:"92%"}}  />
-//                     <Avatar src={text} style={{ width: 30, height: 45,padding:"10px"}} />
-//                     </Grid>
-//                     </Grid>
-//                     <Grid item container md={5} sx={{justifyContent:"center",marginRight:"30px"}} >
-//                     <Divider orientation="vertical" sx={{height:"92%"}} />
-//                     <Typography sx={{ padding: "10px 0px 10px 10px", fontSize: "22px", fontFamily: "poppins", fontWeight: '400', color: "#0D224C",marginTop:"5px" }}> <font color="#E62E22">R</font>12</Typography>
-//                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px",height:"92%"}} />
-//                     <Typography sx={{ padding: "10px", fontSize: "22px", fontFamily: "poppins", fontWeight: '300', color: "#0D224C",marginTop:"5px", }}><font color="#E62E22" >B</font>12</Typography>
-//                     <Divider orientation="vertical" sx={{ padding: "0px 0px ",height:"92%"}} />
-//                     <NotificationsIcon sx={{ padding: "10px 0px 10px 10px",marginTop:"10px" }}></NotificationsIcon>
-//                     <Divider orientation="vertical" sx={{ padding: "0px 10px 0px 0px",height:"92%"}} />
-//                     <Avatar src={this.props.profile} style={{ width: 40, height: 40,marginLeft:"10px" ,marginTop:"10px",cursor:"pointer"}} onClick={() => this.setState({  count: this.state.count =true })}/>
-//                     <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins", fontWeight: '600', color: "#0D224C" ,marginTop:"10px",cursor:"pointer"}} onClick={() => this.setState({  count: this.state.count =true })}>{this.props.name}</Typography>
-//                     <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px 0px',cursor:"pointer" }} onClick={() => this.setState({  count: this.state.count =true })}></KeyboardArrowDownRoundedIcon>
-//                     </Grid>
-//                 </Grid>
-//             </Grid>
-//             <Backdrop   sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-//                 open={this.state.count}
-//                 onClick={() => this.setState({ count: this.state.count =false })}
-//             >
-//                 <Profile></Profile>
-//             </Backdrop>
-//         </Grid >
-//         </Grid>
-//          <Grid maxWidth="deviceWidth"  height="5px" sx={{backgroundColor:"#F3F5F7"}}></Grid>
-//          </div>
-//         );
-//     }
-// }
-// export default Header;
-
-
 //////////////////////////////////////////////////////////////////// NEW HEADER //////////////////////////////////////////////////////////////////
 
 import React, { Component } from "react";
@@ -91,6 +11,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import Profile from '../pages/profilePage.js'
 import { makeStyles }from "@material-ui/core";
+import noti from '../img/noti.png'
 import { withStyles } from '@material-ui/core/styles';
 import {
     Avatar,
@@ -138,25 +59,26 @@ class Header extends Component {
         <>
         {/* <AppBar  position="static" sx={{backgroundColor: "#ffff" }}> */}
         <Grid container>
-        <Grid item md={5} lg={5} xl={5} sm={6} xs={6}>
-            <Grid item container style={{padding:"10px"}}  >
-                <Avatar src={logo} style={{ width: "auto", height: 40}} />
-                <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C" ,marginTop:"5px",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"block"} }}>Smart Patient Engagement</Typography>
-                <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C", textAlign: "center",marginTop:"5px", display:{xl:"none",lg:"none",md:"none"} }}>SPE</Typography>
+        <Grid item md={4} lg={5} xl={5} sm={6} xs={6}>
+            <Grid item container sx={{padding:{md:"10px 0px 0px 50px",lg:"10px 0px 0px 50px",xl:"10px 0px 0px 50px",sm:"5px 20px 5px 20px",xs:"5px 20px 5px 20px"}}}  >
+                <Avatar src={logo} sx={{ width: "auto", height: 40,paddingRight:"10px"}} />
+                <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C" ,marginTop:"5px",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"none"} }}>Smart Patient Engagement</Typography>
+                <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C", textAlign: "center",marginTop:"5px", display:{xl:"none",lg:"none",md:"block"} }}>SPE</Typography>
             </Grid>
             </Grid>
-            <Grid item md={7} lg={7} xl={7} sm={6} xs={6}>
-            <Grid item  container sx={{justifyContent:"flex-end"}} >
-              <img
-             alt="some value"
-             component="img"
-             src={bar}
-             style={{ paddingLeft: "10px", paddingRight: "10px" }} />
-             <Avatar src={alert} style={{ width: 35, height: 35,padding:"10px" }} />
+            <Grid item md={8} lg={7} xl={7} sm={6} xs={6}>
+            <Grid item  container sx={{justifyContent:"flex-end",padding:"0px 20px 0px 20px"}} >
+            <img
+                      alt="some value"
+                    component="img"
+                       src={bar}
+                      style={{ paddingLeft: "10px"}}
+                     />
+             <Avatar src={alert} style={{ width: 25, height: 25,padding:"15px 0px 10px 10px" }} />
              <Grid sx={{display:{sm:"none",xs:"none",xl:"flex",lg:"flex",md:"flex"}}}>
             <Grid display={this.props.displayP}>
                    <Typography
-                      style={{ color: "#FA273E", marginTop: "12px", paddingLeft: "10px",fontSize: "15px", fontFamily: "poppins", color: "#FA273E"}}
+                      style={{ color: "#FA273E", marginTop: "15px", paddingLeft: "10px",fontSize: "15px", fontFamily: "poppins", color: "#FA273E"}}
                       variant="h6"
                       // className={classes.logo}
                    >
@@ -167,45 +89,38 @@ class Header extends Component {
                       alt="some value"
                     component="img"
                        src={bar}
-                      style={{ paddingLeft: "10px", paddingRight: "10px" }}
+                      style={{ paddingLeft: "5px", paddingRight: "5px" }}
                      />
                    <img
                        alt="some value"
                       component="img"
                       src={mic}
-                   style={{
-                         paddingLeft: "10px",
-                        paddingRight: "10px",
-                         height: "30px",
-                        marginTop:"8px"
-                      }}
+                      style={{ width: 32, height: 32,padding:" 10px 5px 0px 5px" }} 
                      />
                     {/* Divider */}
                    <img
                       alt="some value"
                       component="img"
                       src={bar}
-                     style={{ paddingLeft: "10px", paddingRight: "10px" }}
+                     style={{ paddingLeft: "5px" }}
                    />
-                  <Avatar src={text} style={{ marginTop:"5px" }}/>
+                  <Avatar src={text} style={{padding:"5px" ,width: 45, height:45}}/>
              </Grid>
                     {/* Divider */}
                     <img
                        alt="some value"
                       component="img"
                       src={bar}
-                     style={{ paddingLeft: "10px", paddingRight: "10px" }}
+                     style={{  paddingRight: "10px" }}
                   />
                     <Typography
-                       style={{ color: "#E62E22", marginTop: "10px" }}
-                     variant="h6"
+                       style={{ color: "#E62E22", marginTop: "10px",fontSize: "20px" }}
                     //  className={classes.logo}
                    >
                       R
                      </Typography>
                     <Typography
-                    style={{ color: "#000000", marginTop: "10px" }}
-                      variant="h6"
+                    style={{ color: "#000000", marginTop: "10px",fontSize: "20px"  }}
                     //  className={classes.logo}
                     >
                       12
@@ -218,15 +133,13 @@ class Header extends Component {
                      style={{ paddingLeft: "10px", paddingRight: "10px" }}
                     />
                    <Typography
-                      style={{ color: "#E62E22", marginTop: "10px" }}
-                      variant="h6"
+                      style={{ color: "#E62E22", marginTop: "10px" ,fontSize: "20px"}}
                       //  className={classes.logo}
                     >
                       B
                     </Typography>
                     <Typography
-                     style={{ color: "#000000", marginTop: "10px" }}
-                      variant="h6"
+                     style={{ color: "#000000", marginTop: "10px" ,fontSize: "20px"}}
                       // className={classes.logo}
                     >
                       12
@@ -238,16 +151,23 @@ class Header extends Component {
                        src={bar}
                        style={{ paddingLeft: "10px", paddingRight: "10px" }}
                    />
-                    <NotificationsIcon style={{ color: "#000000", marginTop: "12px" }} />
+                    <img
+                      alt="some value"
+                    component="img"
+                       src={noti}
+                      style={{height:"22px",padding:"10px",marginTop:"5px"}}
+                     />
                     {/* Divider */}
+                    </Grid>
                     <img
                        alt="some value"
                        component="img"
                       src={bar}
                       style={{ paddingLeft: "10px", paddingRight: "10px" }}
                      />
-                     </Grid>
-                     <Avatar src={this.props.profile}  style={{ width: 40, height: 40, margin: "10px", cursor: "pointer" }} onClick={() => this.setState({  count: this.state.count =true })} />                   
+                     
+                     <Avatar src={this.props.profile}  style={{ width: 40, height: 40, marginTop: "8px", cursor: "pointer" }} onClick={() => this.setState({  count: this.state.count =true })}/>
+                     <Typography sx={{ padding: "10px", fontSize: "15px", fontFamily: "poppins",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"block"},fontWeight: '600', color: "#0D224C" ,marginTop:"10px",cursor:"pointer"}} onClick={() => this.setState({  count: this.state.count =true })}>{this.props.name}</Typography>
                      <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px 0px',cursor:"pointer",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"block"} }} onClick={() => this.setState({  count: this.state.count =true })}></KeyboardArrowDownRoundedIcon>
             </Grid>
             </Grid>

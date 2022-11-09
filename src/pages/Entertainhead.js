@@ -28,13 +28,13 @@ const [value, setValue] = useState(0)
           <Grid>
             <WestIcon sx={{ margin:{xl:"10px 10px 10px 20px",lg:"10px 10px 10px 20px",md:"10px 10px 10px 20px"}}} onClick={previous} />
           </Grid>
-          <Grid sx={{margin:{xl:"10px 10px 10px 0px"}}}>
+          <Grid sx={{padding:{xl:"10px 10px 0px 0px",lg:"20px 10px 0px 0px",md:"20px 10px 0px 0px"}}}>
             <Typography
               sx={{
                 fontWeight: 600,
                 fontFamily:"poppins",
                 fontSize:"20px",
-                "&:hover": { fontColor: "black" },
+                "&:hover": { fontColor: "black" }
               }}
             >
               Entertainment
@@ -42,13 +42,13 @@ const [value, setValue] = useState(0)
           </Grid>
         </Grid>
         <Grid item xl={5} lg={6} md={8}  sx={{display:"flex",justifyContent:"flex-end"}}>
-            <Tabs value={value} onChange={handleChange}   classes={{indicator: classes.customStyleOnActiveTab}}>
-            <Tab  sx={{minWidth:"40px"}}  label={<span className={ value === 0 ? classes.activeTab  : classes.customStyleOnTab}>All</span>} />
-            <Tab sx={{minWidth:"50px"}}  label={<span className={ value === 1 ? classes.activeTab : classes.customStyleOnTab}>Movies</span>} />
-            <Tab sx={{minWidth:"50px"}}  label={<span className={ value === 2 ? classes.activeTab : classes.customStyleOnTab}>Music</span>} />
-            <Tab sx={{minWidth:"50px"}}  label={<span className={ value === 3? classes.activeTab : classes.customStyleOnTab}>Series</span>} />
-            <Tab sx={{minWidth:"50px"}}  label={<span className={ value === 4 ? classes.activeTab : classes.customStyleOnTab}>Sports</span>} />
-            <Tab sx={{minWidth:"50px"}}  label={<span className={ value === 5 ? classes.activeTab : classes.customStyleOnTab}>Cartoons</span>} />
+            <Tabs value={value} onChange={handleChange} TabIndicatorProps={{style:{backgroundColor:"black"}}}  classes={{indicator: classes.customStyleOnActiveTab}}>
+            <Tab  sx={{minWidth:"40px",textTransform:"capitalize",fontFamily:"poppins"}}  label={<span className={ value === 0 ? classes.activeTab  : classes.customStyleOnTab}>All</span>} />
+            <Tab sx={{minWidth:"50px",textTransform:"capitalize",fontFamily:"poppins"}}  label={<span className={ value === 1 ? classes.activeTab : classes.customStyleOnTab}>Movies</span>} />
+            <Tab sx={{minWidth:"50px",textTransform:"capitalize",fontFamily:"poppins"}}  label={<span className={ value === 2 ? classes.activeTab : classes.customStyleOnTab}>Music</span>} />
+            <Tab sx={{minWidth:"50px",textTransform:"capitalize",fontFamily:"poppins"}}  label={<span className={ value === 3? classes.activeTab : classes.customStyleOnTab}>Series</span>} />
+            <Tab sx={{minWidth:"50px",textTransform:"capitalize",fontFamily:"poppins"}}  label={<span className={ value === 4 ? classes.activeTab : classes.customStyleOnTab}>Sports</span>} />
+            <Tab sx={{minWidth:"50px",textTransform:"capitalize",fontFamily:"poppins"}}  label={<span className={ value === 5 ? classes.activeTab : classes.customStyleOnTab}>Cartoons</span>} />
           </Tabs>
         </Grid>
       </Grid>
@@ -67,8 +67,9 @@ const [value, setValue] = useState(0)
       },
       activeTab:{
         fontSize:'16px',
-        fontWeight:'400 !important',
-        color:'black !important',fontWeight:"bold !important"
+        fontWeight:'600 !important',
+        color:'black !important',
+        // fontWeight:"bold !important"
       }
     })
     export default Entertainhead;

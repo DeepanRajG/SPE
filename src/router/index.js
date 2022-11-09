@@ -8,12 +8,13 @@ import Entertainment from '../pages/entertainmentPage';
 import Head from '../component/headerr';
 import Ent from '../pages/Enter';
 import Samp from '../pages/Sam';
-
+import Entertainn from '../pages/entertainmob';
 const App = () => {
     localStorage.setItem("tenantid","1e4c8e40-a7f8-46de-9ac7-cedde81aa046")
   return (
   
     <Routes> 
+         <Route path="/SPE/test" element={<Entertainn/>} />
       <Route path="/SPE/head" element={<Head/>}/>
       <Route path="*" element={<Login/>} />
       <Route path="/SPE" element={<Launch/>} />
