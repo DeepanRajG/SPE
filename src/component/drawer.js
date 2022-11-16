@@ -7,36 +7,13 @@ import {
     Avatar,
     makeStyles,
     Backdrop,
-    Grid,
-    useTheme,
-    useMediaQuery,
   } from "@material-ui/core";
-
-  import Box from '@mui/material/Box';
- 
-  import Menu from '@mui/material/Menu';
-  import MenuItem from '@mui/material/MenuItem';
-  import ListItemIcon from '@mui/material/ListItemIcon';
-  
-  import IconButton from '@mui/material/IconButton';
-
-  import Tooltip from '@mui/material/Tooltip';
-  import PersonAdd from '@mui/icons-material/PersonAdd';
-  import Settings from '@mui/icons-material/Settings';
-  import Logout from '@mui/icons-material/Logout';
-import text from '../img/text.png'
-import Profile from '../pages/profilePage.js'
+  import Profile from '../pages/profilePage.js'
 import bar from "../img/br.svg";
 import mic from '../img/mic.png'
 import alert from '../img/alert.svg'
-import InfoIcon from "@mui/icons-material/Info";
-import TextFieldsIcon from "@mui/icons-material/TextFields";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Link } from "react-router-dom";
 
-import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
     navlinks: {

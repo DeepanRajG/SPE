@@ -20,7 +20,7 @@ export default function Option(props) {
             {Array.from(Array(setoptions.length)).map((_, index) => (
                 <Grid container justify="center" {...hide ? { display: "none" } : null}>
 
-                    <Button style={{ backgroundColor: "#f6f8FA", color: "#277FFe", textTransform: "capitalize", margin: "10px 10px 10px 0px", "&:hover": { backgroundColor: "transparent" } }} variant="contained" fullWidth>{setoptions[index]}</Button>
+                    <Button style={{ backgroundColor: "#f6f8FA", color: "#277FFe", textTransform: "capitalize",boxShadow:"none",margin: "10px 10px 10px 0px", "&:hover": { backgroundColor: "transparent" } }} variant="contained" fullWidth>{setoptions[index]}</Button>
 
                 </Grid>
             ))}

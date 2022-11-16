@@ -135,7 +135,6 @@
 import React from "react";
 import { useEffect } from "react";
 import {
-  Container,
   Grid,
   Typography,
 } from "@mui/material";
@@ -297,7 +296,7 @@ function App() {
       >
         {/* <Grid item container direction="column"> */}
         <Grid item md={12} >
-          <Typography style={{ marginLeft: "40px", marginTop: "50px", fontSize: "24px", fontFamily: "poppins", fontWeight: 500, opacity: "0.90" }}>Logged In As Nr.Afrin</Typography>
+          <Typography style={{ marginLeft: "60px", marginTop: "60px", fontSize: "24px", fontFamily: "poppins", fontWeight: 500, opacity: "0.90" }}>Logged In As Nr.Afrin</Typography>
         </Grid>
         <Grid container  item md={12} lg={12} xl={12} xs={12} sm={12}  sx={{ paddingLeft: "10px", marginBottom: "100px",display: { sm: "none", xs: "none", xl: "block", lg: "block", md: "block" } }} >
           <Slider {...settings}  >
@@ -308,9 +307,9 @@ function App() {
             ))}
           </Slider>
         </Grid>
-        <Grid item md={12} lg={12} xl={12} xs={12} sm={12} sx={{ paddingLeft: "10px",marginBottom: "100px", display: { sm: "block", xs: "block", xl: "none", lg: "none", md: "none" } }}>
+        <Grid item md={12} lg={12} xl={12} xs={12} sm={12} sx={{ paddingLeft: "10px" ,display: { sm: "block", xs: "block", xl: "none", lg: "none", md: "none" } }}>
           {Array.from(Array(TITLE.length)).map((_, index) => (
-            <Grid item xs={12} sm={12} md={12} lg={12} key={index}  sx={{ marginLeft:{xs:"none",sm:"200px"},paddingBottom:"10px"}} >
+            <Grid item xs={12} sm={12} md={12} lg={12} key={index}  sx={{paddingBottom:"10px",display:"flex",justifyContent:"center"}} >
               <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
             </Grid>
           ))}

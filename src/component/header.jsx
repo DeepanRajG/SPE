@@ -7,21 +7,17 @@ import logo from '../img/logo.png'
 import mic from '../img/mic.png'
 import text from '../img/text.png'
 import alert from '../img/alert.svg'
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import Profile from '../pages/profilePage.js'
 import { makeStyles }from "@material-ui/core";
 import noti from '../img/noti.png'
-import { withStyles } from '@material-ui/core/styles';
 import {
     Avatar,
     Grid,
     Backdrop,
     Typography,
-    Divider,CssBaseline,
-    AppBar
+    
 } from "@mui/material";
-import { styled } from '@mui/material/styles';
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(5),
@@ -61,24 +57,24 @@ class Header extends Component {
         <Grid container>
         <Grid item md={4} lg={5} xl={5} sm={6} xs={6}>
             <Grid item container sx={{padding:{md:"10px 0px 0px 50px",lg:"10px 0px 0px 50px",xl:"10px 0px 0px 50px",sm:"5px 20px 5px 20px",xs:"5px 20px 5px 20px"}}}  >
-                <Avatar src={logo} sx={{ width: "auto", height: 40,paddingRight:"10px"}} />
-                <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C" ,marginTop:"5px",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"none"} }}>Smart Patient Engagement</Typography>
-                <Typography sx={{ fontSize: "20px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C", textAlign: "center",marginTop:"5px", display:{xl:"none",lg:"none",md:"block"} }}>SPE</Typography>
+                <Avatar src={logo} sx={{ width: "auto", height: 30,paddingRight:"10px",marginTop:"5px"}} />
+                <Typography sx={{ fontSize: "24px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C" ,display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"none"} }}>Smart Patient Engagement</Typography>
+                <Typography sx={{ fontSize: "24px", fontFamily: "Copperplate Gothic", fontWeight: '500', color: "#0D224C", textAlign: "center",display:{xl:"none",lg:"none",md:"block"} }}>SPE</Typography>
             </Grid>
             </Grid>
             <Grid item md={8} lg={7} xl={7} sm={6} xs={6}>
-            <Grid item  container sx={{justifyContent:"flex-end",padding:"0px 20px 0px 20px"}} >
+            <Grid item  container sx={{justifyContent:"flex-end",padding:"0px 50px 0px 20px"}} >
             <img
                       alt="some value"
                     component="img"
                        src={bar}
                       style={{ paddingLeft: "10px"}}
                      />
-             <Avatar src={alert} style={{ width: 25, height: 25,padding:"15px 0px 10px 10px" }} />
+             <Avatar src={alert} style={{ width: 25, height: 25,padding:"15px 10px 10px 10px" }} />
              <Grid sx={{display:{sm:"none",xs:"none",xl:"flex",lg:"flex",md:"flex"}}}>
             <Grid display={this.props.displayP}>
                    <Typography
-                      style={{ color: "#FA273E", marginTop: "15px", paddingLeft: "10px",fontSize: "15px", fontFamily: "poppins", color: "#FA273E"}}
+                      style={{ color: "#FA273E", marginTop: "15px", paddingRight: "10px",fontSize: "15px", fontFamily: "poppins", color: "#FA273E"}}
                       variant="h6"
                       // className={classes.logo}
                    >
@@ -171,7 +167,7 @@ class Header extends Component {
                      <KeyboardArrowDownRoundedIcon sx={{ marginTop:"10px" ,padding: '10px 0px',cursor:"pointer",display:{sm:"none",xs:"none",xl:"block",lg:"block",md:"block"} }} onClick={() => this.setState({  count: this.state.count =true })}></KeyboardArrowDownRoundedIcon>
             </Grid>
             </Grid>
-        <Backdrop   sx={{ color: '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        <Backdrop   sx={{ color: '#fff',padding:"134px 53px 0px 0px",zIndex: (theme) => theme.zIndex.drawer + 1 }}
             open={this.state.count}
             onClick={() => this.setState({ count: this.state.count =false })}
         >

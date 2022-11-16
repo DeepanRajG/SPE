@@ -76,12 +76,12 @@ function SampleNextArrow(props) {
            
            }}> 
          <Grid item style={{display:"flex",justifyContent:"flex-start"}}>
-           <Typography style={{marginLeft:"40px",marginTop:"40px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.90"}}>Logged In As Dr.Rakin</Typography>
+           <Typography style={{marginLeft:"60px",marginTop:"60px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.90"}}>Logged In As Dr.Rakin</Typography>
          </Grid>
-         <Grid container item sx={{display:"flex",justifyContent:"center"}}>
+         <Grid container item sx={{display:"flex",justifyContent:"center",paddingBottom:{xs:"360px",sm:"360px",xl:"0px"}}}>
            
            {Array.from(Array(TITLE.length)).map((_, index) => (
-             <Grid item  md={3} lg={3} xl={2} key={index} sx={{marginRight:{xl:"50px",lg:"50px",md:"50px",xs:"0px",sm:"30px"},paddingBottom:{sm:"none",xs:"none"}}}>
+             <Grid item  md={3} lg={3} xl={2} key={index} sx={{marginRight:{xl:"50px",lg:"50px",md:"50px",sm:"50px"},paddingBottom:{sm:"0px",xs:"0px"}}}>
                <Cardd title={TITLE} int={index} images={LOGO}  optionName={options1} optionsLength={options1.length} optionsAll={[options,options1,options2]} />
              </Grid>
            ))}

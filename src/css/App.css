@@ -75,3 +75,14 @@ html,body{
   padding: 0px;
   height:100vh;
 }
+.login_img{
+  display: grid;
+    place-items: start ; 
+}
+
+@media screen and (max-width:1200px) {
+  .login_img{
+    display: grid;
+    place-items: center; 
+  }
+}

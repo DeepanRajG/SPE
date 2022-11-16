@@ -230,7 +230,7 @@ return (
         <Grid item md={12} lg={12} xl={12} xs={12} sm={12} sx={{ padding: "10px", alignSelf: "center", marginBottom: "100px", display: { sm: "block", xs: "block", xl: "none", lg: "none", md: "none" } }}>
           {Array.from(Array(TITLE.length)).map((_, index) => (
             <Grid item xs={12} sm={12} md={12} lg={12} key={index} sx={{ marginLeft: "0px", alignSelf: "center",padding:"10px"}} >
-              <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
+              <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} navigate={"/SPE/enter"}/>
             </Grid>
           ))}
         </Grid>

@@ -7,7 +7,8 @@ import Login from "../pages/loginPage";
 import Entertainment from '../pages/entertainmentPage';
 import Head from '../component/headerr';
 import Ent from '../pages/Enter';
-import Samp from '../pages/Sam';
+import SmallC from '../pages/Sam';
+import {BigC} from '../pages/Sam';
 import Entertainn from '../pages/entertainmob';
 const App = () => {
     localStorage.setItem("tenantid","1e4c8e40-a7f8-46de-9ac7-cedde81aa046")
@@ -24,9 +25,9 @@ const App = () => {
       <Route path="/SPE/login" element={<Login/>} />
       <Route path="/SPE/enter" element={<Entertainment/>} />
       <Route path="/SPE/ent" element={<Ent/>} />
-      <Route path="/SPE/sample" element={<Samp/>} />
+      {/* <Route path="/SPE/big" element={<BigC/>}/> */}
+      <Route path="/SPE/small" element={<SmallC/>}/>
     </Routes>
-  
   );
 };
 export default App;

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import { ThemeProvider } from '@emotion/react';
 import {theme} from './Theme.js';
+import "./css/App.css"
  ReactDOM.render
 (
   <React.StrictMode>

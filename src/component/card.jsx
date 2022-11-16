@@ -5,23 +5,20 @@ import {
   Box,
   Card,
   CardContent, Typography,
-  Collapse,Button,MenuItem,Menu
+  Collapse,MenuItem,Menu
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 //import Expand from '../img/expand.png';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import Option from "./option";
 import Expand from "../img/expand.png";
-import statistics from "../img/statistics.png";
-import Small from "./option";
-import { textAlign } from "@mui/system";
+
 
 export const Cardd = (props) => {
   const navigate = useNavigate();
   const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
-    return <IconButton {...other} />;
+    return <IconButton {...other}  />;
   })(({ theme, expand }) => ({
     transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
     transition: theme.transitions.create('transform', {
@@ -101,25 +98,26 @@ export const Cardd = (props) => {
             width: 70, alignSelf: "center",
           }} />
         </Grid>
-        <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "20px" }}>{props.title[props.int]}</Grid>
+        <Grid sx={{ textAlign: "center", fontWeight: "500", marginTop: "13px",paddingLeft:"13px" }}>{props.title[props.int]}</Grid>
       </CardContent>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse  in={expanded} timeout="auto" unmountOnExit>
         <Option OptionList={props.optionsAll} cardint={props.int}></Option>
       </Collapse>
-      <ExpandMore sx={{ padding: "0px" }}
+      <ExpandMore style={{ marginLeft:"10px"}}
+      sx={{"&:hover":{background:"none"}}}
         expand={expanded}
         onClick={handleExpandClick}
         aria-expanded={expanded}
         aria-label="show more">
-        {show? <Grid ><Box component="img" sx={{ height: "auto", width: "20px", marginTop: "10px" }} src={Expand} /></Grid> : null}
+        {show? <Grid ><Box component="img" sx={{ height: "auto", width: "20px", marginTop: "10px"}} src={Expand} /></Grid> : null}
       </ExpandMore>
   
     </Card>
         <Grid sx={{ display: { lg: "none", xl: "none",md:"none" } }}>
-        <Card sx={{width:"360px",maxWidth:{xs:"360px",sm:"450px"},alignSelf:"center",height:"auto",borderRadius:"20px",display:"flex",flexDirection:{xs:"row",sm:"row"}}}>
+        <Card sx={{width:"360px",maxWidth:{xs:"360px",sm:"450px"},alignSelf:"center",border:"1px solid #DDE4EA",boxShadow:"0",height:"auto",borderRadius:"8px",display:"flex",flexDirection:{xs:"row",sm:"row"}}}>
         <Grid container direction="row" sx={{padding:"10px 0px"}}>
             <Grid item xs={5} sm={5} sx={{display:"flex",justifyContent:"flex-start",paddingLeft:"10px"}}>
-            <Box component="img" width="30%" height="auto" sx={{padding:"20px",backgroundColor:"#f3f5f7",borderRadius:"20px"}} src={props.images[props.int]}  />
+            <Box component="img" width="30%" height="auto" sx={{padding:"20px",backgroundColor:"#f3f5f7",borderRadius:"8px"}} src={props.images[props.int]}  />
             </Grid>
             <Grid item xs={5} sm={5} sx={{alignSelf:"center",paddingLeft:"10px"}}>
             <Typography sx={{fontSize:{xs:"16px",sm:"22px"}}} >{props.title[props.int]}</Typography>

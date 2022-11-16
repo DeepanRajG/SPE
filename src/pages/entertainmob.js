@@ -1,13 +1,10 @@
 import React from "react";
 import {
-  Container,
-  Grid,
-  Box,
-  Avatar,
+ Grid,Avatar,
   Typography,
 } from "@mui/material";
 import net from "../img/netflx.png";
-import disney from "../img/disney.png";
+
  const Entertainn = () => {
 //     const onclickyoutube =()=>{
 //       window.open(props.url[props.int]);
