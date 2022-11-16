@@ -17,15 +17,16 @@ display: none;
 }
 .TextField-without-height fieldset{
    height:"60px";
+  
 }
 .TextField-without-border-radius fieldset{
     border-radius: 50px;
     height:53px;
+    border-width: 2px;
+    border-color:#DDE4EA;
     
   }
-  .TextField :hover fieldset {
-    border-color: 'white',
-  }
+
   input[type=password]::-ms-reveal,
   input[type=password]::-ms-clear {
     display: none;
@@ -44,8 +45,8 @@ display: none;
     
   }
   .slick-list {
-    padding-top: 20px!important;
-
+    padding-top: 10px!important;
+    margin-right:0px !important;
   }
 
 
@@ -67,7 +68,6 @@ display: none;
 }
 #user{
   -webkit-text-fill-color: #324D70;
-
 }
 html,body{
   width: 100%; 
@@ -84,5 +84,11 @@ html,body{
   .login_img{
     display: grid;
     place-items: center; 
+  }
+}
+
+@media screen and (max-width:376px) {
+  #root{
+    width: fit-content;
   }
 }

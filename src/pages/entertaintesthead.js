@@ -23,9 +23,9 @@ const [value, setValue] = useState(0)
 <Grid container maxWidth="deviceWidth" sx={{marginTop:"10px"}}>
         <Grid container item xl={7} lg={6} md={4}  direction="row" sx={{padding:"10px ",paddingBottom:"0px"}} maxWidth="deviceWidth">
           <Grid>
-            <WestIcon sx={{ margin:{xl:"10px 10px 10px 20px",lg:"10px 10px 10px 20px",md:"10px 10px 10px 20px"}}} onClick={previous} />
+            <WestIcon sx={{ margin:{xl:"10px 18px 10px 32px",lg:"10px 10px 10px 20px",md:"10px 10px 10px 20px"}}} onClick={previous} />
           </Grid>
-          <Grid sx={{margin:{xl:"10px 10px 10px 0px"}}}>
+          <Grid sx={{margin:{xl:"8px 10px 10px 0px",md:"8px 10px 10px 0px"}}}>
             <Typography
               style={{
                 fontWeight: 600,
@@ -38,7 +38,7 @@ const [value, setValue] = useState(0)
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xl={5} lg={6} md={8}  sx={{padding:"10px 0px 10px 90px",paddingBottom:"0px",display:"flex",justifyContent:"flex-end"}}>
+        <Grid item xl={5} lg={6} md={8}  sx={{padding:"10px 30px 10px 0px",paddingBottom:"0px",display:"flex",justifyContent:"flex-end"}}>
             <Tabs value={value} onChange={handleChange} TabIndicatorProps={{style: {backgroundColor:'black'}}}  classes={{indicator: classes.customStyleOnActiveTab}}>
             <Tab  sx={{minWidth:"40px",textTransform:"capitalize"}}  label={<span className={ value === 0 ? classes.activeTab  : classes.customStyleOnTab}>All</span>} />
             <Tab sx={{minWidth:"50px",textTransform:"capitalize"}}  label={<span className={ value === 1 ? classes.activeTab : classes.customStyleOnTab}>Movies</span>} />
@@ -53,16 +53,16 @@ const [value, setValue] = useState(0)
     }
     const useStyles = makeStyles({
       customStyleOnTab:{
-        fontSize:'15px !important',
+        fontSize:'20px !important',
         color:'black !important',
         opacity:"0.70"
       },
       customStyleOnActiveTab:{
-        fontSize:'15px !important',
+        fontSize:'20px !important',
         color:'black !important',
       },
       activeTab:{
-        fontSize:'16px',
+        fontSize:'21px',
         fontWeight:'400 !important',
         color:'black !important',fontWeight:"bold !important"
       }

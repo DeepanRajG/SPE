@@ -26,7 +26,7 @@ const [value, setValue] = useState(0)
 <Grid container sx={{marginTop:"10px"}}>
         <Grid container item xl={7} lg={6} md={4}  direction="row" sx={{padding:"10px ",paddingBottom:"0px"}} >
           <Grid>
-            <WestIcon sx={{ margin:{xl:"10px 10px 10px 20px",lg:"10px 10px 10px 20px",md:"10px 10px 10px 20px"}}} onClick={previous} />
+            <WestIcon sx={{ margin:{xl:"10px 10px 10px 15px",lg:"10px 10px 10px 20px",md:"10px 10px 10px 20px"}}} onClick={previous} />
           </Grid>
           <Grid sx={{padding:{xl:"10px 10px 0px 0px",lg:"20px 10px 0px 0px",md:"20px 10px 0px 0px"}}}>
             <Typography

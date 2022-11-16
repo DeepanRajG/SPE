@@ -98,9 +98,9 @@ export default function BasicMenu() {
         <Grid container maxWidth="device-width" >
         <Grid container direction="row" item xs={10} sm={10}>
         <Grid>
-            <WestIcon sx={{margin:{sm:"10px 10px 10px 0px",xs:"10px 10px 10px 10px",}}} onClick={previous} />
+            <WestIcon sx={{margin:{sm:"10px 10px 10px 27px",xs:"10px 10px 10px 20px",}}} onClick={previous} />
           </Grid>
-          <Grid sx={{margin:{xs:"10px 10px 0px 0px",sm:"10px 10px 0px 0px"}}}>
+          <Grid sx={{margin:{xs:"10px 10px 0px 0px",sm:"10px 10px 10px 0px"}}}>
             <Typography
               style={{
                 fontWeight: 700,
@@ -120,7 +120,7 @@ export default function BasicMenu() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{marginLeft:"80px"}}
+        sx={{marginLeft:"80px",color:"black"}}
       >
         <MenuIcon />
       </Button>

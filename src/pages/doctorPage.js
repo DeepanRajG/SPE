@@ -65,20 +65,22 @@ function SampleNextArrow(props) {
     );
   }
   return (
+    <>
+     <Header name ="Rakin" profile={Rakin} displayP="none"/>
     <Grid maxWidth="device-width" position="static" style={{ height: "100%" }}>
-    <Header name ="Rakin" profile={Rakin} displayP="none"/>
+   
        <Grid  container 
          style={{bg_image,marginTop:{xs:"80px",sm:"80px"}}}
          sx={{
-           backgroundImage: `url(./image/background.png)`,
-           backgroundSize: "cover",
-           backgroundPosition: "center",height:"100vh"
-           
+           backgroundImage: `url(./image/doctorbg.png)`,
+           backgroundSize: "cover ",
+           backgroundPosition: "top center ",height:"100vh",
+           backgroundRepeat:"no-repeat",
            }}> 
          <Grid item style={{display:"flex",justifyContent:"flex-start"}}>
            <Typography style={{marginLeft:"60px",marginTop:"60px",fontSize:"24px",fontFamily:"poppins",fontWeight:500,opacity:"0.90"}}>Logged In As Dr.Rakin</Typography>
          </Grid>
-         <Grid container item sx={{display:"flex",justifyContent:"center",paddingBottom:{xs:"360px",sm:"360px",xl:"0px"}}}>
+         <Grid container item sx={{display:"flex",justifyContent:"center",marginBottom:"180px"}}>
            
            {Array.from(Array(TITLE.length)).map((_, index) => (
              <Grid item  md={3} lg={3} xl={2} key={index} sx={{marginRight:{xl:"50px",lg:"50px",md:"50px",sm:"50px"},paddingBottom:{sm:"0px",xs:"0px"}}}>
@@ -88,6 +90,10 @@ function SampleNextArrow(props) {
          </Grid>
        </Grid>
      </Grid>
+     </>
   );
 }
+
 export default App;
+
+

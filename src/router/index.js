@@ -5,7 +5,7 @@ import Page from "../pages/page.js";
 import Admin from "../pages/adminPage";
 import Login from "../pages/loginPage";
 import Entertainment from '../pages/entertainmentPage';
-import Head from '../component/headerr';
+
 import Ent from '../pages/Enter';
 import SmallC from '../pages/Sam';
 import {BigC} from '../pages/Sam';
@@ -16,7 +16,7 @@ const App = () => {
   
     <Routes> 
          <Route path="/SPE/test" element={<Entertainn/>} />
-      <Route path="/SPE/head" element={<Head/>}/>
+     
       <Route path="*" element={<Login/>} />
       <Route path="/SPE" element={<Launch/>} />
       <Route path="/SPE/launch" element={<Launch/>} />

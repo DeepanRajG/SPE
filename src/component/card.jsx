@@ -81,7 +81,7 @@ export const Cardd = (props) => {
           </ExpandMore>
         </Grid>
       </Card> */}
-      <Card sx={{ display: { sm: "none", xs: "none",xl:"block",md:"block",lg:"block"},width:"240px", height: "auto", borderRadius: "20px", textAlign: "center", cursor: "pointer", boxShadow: "0px 3px 40px #00000029", padding:"10px 25px 10px 11px ", margin: "10px 0px 50px 0px " }}      >
+      <Card sx={{ display: { sm: "none", xs: "none",xl:"block",md:"block",lg:"block"},width:"240px", height: "auto", borderRadius: "20px", textAlign: "center", cursor: "pointer", boxShadow: {md:"0px 3px 40px #00000029",xl:"0px 3px 40px #00000029",lg:"0px 3px 40px #00000029"}, padding:"10px 25px 10px 11px ", margin: "10px 0px 50px 0px ",border:{sm:"2px solid grey",xs:"2px solid grey",md:"none",xl:"none",lg:"none"} }}      >
       <CardContent sx={{ paddingBottom: "0px" }}>
         <Grid onClick={cardclk}
           style={{

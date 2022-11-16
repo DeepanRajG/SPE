@@ -151,6 +151,7 @@ import "../index.css";
 import { Container, Grid} from "@mui/material";
 import { makeAPIpost } from '../component/api.js';
 import Header from "../component/header";
+import PropagateLoader from "react-spinners/PropagateLoader";
 import Entertainhead from './entertaintesthead.js';
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -165,6 +166,7 @@ function Entertaincomp() {
   const matchess = useMediaQuery(theme.breakpoints.down("sm"));
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const isMobilee = useMediaQuery(theme.breakpoints.down("sm"));
+    
   let [LOGO, putdat] = React.useState("Loading");
   let [URL, puturl] = React.useState("Loading");
   let logo = []
@@ -202,7 +204,7 @@ function Entertaincomp() {
         {!matches && <Entertainhead />}
         {matches && <Menu />}
       </Grid>
-      <Grid container  spacing={2}  style={{padding: " 50px 50px 0px 30px"}}>
+      <Grid container  spacing={2}  sx={{padding: {xl:" 60px 50px 0px 44px",md:" 60px 40px 0px 44px",sm:" 0px 30px 0px 30px",xs:"20px"}}}>
         {Array.from(Array(9)).map((_, index) => (
           <Grid item md={4} lg={3} xl={3} sm={6} key={index} >
             {!matchess && <Entertain src={LOGO} int={index} url={URL} />}

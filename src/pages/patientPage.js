@@ -15,12 +15,21 @@ import Header from "../component/header";
 import { makeAPIpost } from '../component/api.js';
 import { Cardd } from "../component/card.jsx"
 export default  function Patient(props) {
-    let cardname=[]
-    let cardlogo=[]
-    let [LOGO, putlogo] = React.useState("");
-    let [TITLE, puttitle] = React.useState("");
-    let [OPTION, putoption] = React.useState("");
-  let [STATUS, putstatus] = React.useState("");
+  
+  let options = []
+  let cardname=[]
+  let cardlogo=[]
+  let cardurl=[]
+  let data=[]
+  let status=[]
+
+
+  let [value,setvalue]=React.useState({})
+  let [LOGO, putlogo] = React.useState("");
+  let [TITLE, puttitle] = React.useState("");
+  let [URL, puturl] = React.useState("");
+  let [OPTION, putoption] = React.useState("");
+ let [STATUS, putstatus] = React.useState("");
     useEffect(() => {
         const getData = async () => {
             let inputdata=props.inputarray
@@ -42,22 +51,37 @@ export default  function Patient(props) {
         }
         console.log(responseData)
         const raw2 = {
-          "db_name": "ipmo",
-          "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] return doc",
-      }
-      console.log(raw2);
-      const url2 = process.env.REACT_APP_QUERY_URL
-        let response = await makeAPIpost(raw2, url2)
-        console.log(response);
-        for (let i = 0; i < response.length; i++) {
-          let enter=response[i].apptype
-          console.log(enter)
+            "db_name": "ipmo",
+            "query": "for doc in spe_application filter doc.rep_id IN ["+array.map(x => "'" + x + "'").toString()+"] sort doc.dfltsequence Collect apptype= doc.apptype into grps return {apptype:apptype,grps:grps[*].doc}",
         }
-        putlogo(cardlogo)
-        puttitle(cardname)
-      }
-        getData();
-      }, [])
+        const url2 = process.env.REACT_APP_QUERY_URL
+          let response = await makeAPIpost(raw2, url2)
+          for (let i = 0; i < response.length; i++) {
+              data[i]= response[i]
+          }
+          for (let i = 0; i < cardname.length; i++) {
+              try {
+                  const index = data.findIndex(object => {
+                      return object.apptype === cardname[i];
+                    });
+                    let optionData =response[index]
+                    let optiondata=[]
+                    for (let j = 0; j < optionData.grps.length; j++) {
+                      optiondata.push(optionData.grps[j].appname) 
+                      options[i]=optiondata
+                    }
+              } catch (error) {
+                 // console.log(error)
+              }
+          }
+          putlogo(cardlogo)
+          puttitle(cardname)
+          puturl(cardurl)
+          putoption(options)
+          putstatus(status)
+        }
+          getData();
+        }, [])
     const settings = {
         dots: false,
         slidesToShow: 5,
@@ -103,7 +127,7 @@ export default  function Patient(props) {
         return (
           <div
             className={className}
-            style={{ ...style, background: "#00000029",display:"flex",justifyContent:"center",marginRight:"30px",borderRadius:"5px",padding:"25px 8px"}}
+            style={{ ...style, background: "#00000029",display:"flex",justifyContent:"center",marginRight:"20px",borderRadius:"5px",padding:"25px 8px"}}
             onClick={onClick}
           />
         );
@@ -144,9 +168,10 @@ return (
                                 backgroundImage: `url(image/headerbackground.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                margin:{xl:"10px 10px 10px 50px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
-                                height: "310px",
-                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
+                                
+                                margin:{xl:"10px 10px 0px 48px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
+                                height: "318px",
+                                maxWidth:{xs:"95%",sm:"97%",md:"92%",lg:"93%",xl:"94%"},
 
                                 borderRadius: "20px"
                             }} >
@@ -154,7 +179,7 @@ return (
                                     <Grid direction="column">
                                         <Grid item md={3}>
                                         <Typography sx={{ fontSize:{xl:"29px",lg:"25px",md:"23px",sm:"20px",xs:"20px"}, color: "white", fontWeight: "700", padding: "80px 0px 0px 50px", fontFamily: "poppins" }}>Making the Gold Standard of Integrated Healthcare Solutions</Typography>
-                                            <Grid sx={{padding: "20px 0px 0px 50px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "155px", height: "40px", fontFamily: "poppins", color: "#277FFE", marginLeft: "5px", borderRadius: "5px" }}>View More</Button></Grid>
+                                            <Grid sx={{padding: "25px 0px 0px 45px",}}><Button type="contained" sx={{ backgroundColor: "#ffffff", textTransform: "capitalize", width: "155px", height: "40px", fontFamily: "poppins", color: "#277FFE", marginLeft: "5px", borderRadius: "5px" }}>View More</Button></Grid>
                                     </Grid>
                                     </Grid>
                                 </Grid>
@@ -164,9 +189,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                margin: "10px 10px 10px 50px",
-                                height: "310px",
-                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
+                                margin:{xl:"10px 10px 0px 48px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
+                                height: "318px",
+                                maxWidth:{xs:"95%",sm:"97%",md:"92%",lg:"93%",xl:"94%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -175,9 +200,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                margin: "10px 10px 10px 50px",
-                                height: "310px",
-                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
+                                margin:{xl:"10px 10px 0px 48px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
+                                height: "318px",
+                                maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"93%",xl:"94%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -186,9 +211,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                margin: "10px 10px 10px 50px",
-                                height: "310px",
-                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
+                                margin:{xl:"10px 10px 0px 48px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
+                                height: "318px",
+                                maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"93%",xl:"94%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -197,9 +222,9 @@ return (
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 paddingLeft: "30px",
-                                margin: "10px 10px 10px 50px",
-                                height: "310px",
-                                width: "98%",maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"95%",xl:"96%"},
+                                margin:{xl:"10px 10px 10px 48px",lg:"10px 10px 10px 50px",md:"10px 10px 10px 40px",sm:"10px 10px 10px 10px",xs:"10px 10px 10px 10px"},
+                                height: "318px",
+                                maxWidth:{xs:"95%",sm:"100%",md:"92%",lg:"93%",xl:"94%"},
                                 borderRadius: "20px"
                             }} >
                             </Grid>
@@ -218,19 +243,19 @@ return (
               </Slider> 
                        
                     </Grid> */}
-                    <Grid container  item md={12} lg={12} xl={12} xs={12} sm={12}  sx={{ paddingLeft: "10px", marginBottom: "100px", display: { sm: "none", xs: "none", xl: "block", lg: "block", md: "block" } }} >
+                    <Grid container  item md={12} lg={12} xl={12} xs={12} sm={12}  sx={{ paddingLeft: "38px",paddingRight:"40px", display: { sm: "none", xs: "none", xl: "block", lg: "block", md: "block" } }} >
           <Slider {...settings}  >
             {Array.from(Array(TITLE.length)).map((_, index) => (
               <Grid item xs={12} sm={12} md={12} lg={12} key={index} sx={{ marginLeft: "10px", alignSelf: "center" }} >
-                <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
+                <Cardd title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
               </Grid>
             ))}
           </Slider>
         </Grid>
-        <Grid item md={12} lg={12} xl={12} xs={12} sm={12} sx={{ padding: "10px", alignSelf: "center", marginBottom: "100px", display: { sm: "block", xs: "block", xl: "none", lg: "none", md: "none" } }}>
+        <Grid item md={12} lg={12} xl={12} xs={12} sm={12} sx={{ padding: "10px", alignSelf: "center", display: { sm: "block", xs: "block", xl: "none", lg: "none", md: "none" } }}>
           {Array.from(Array(TITLE.length)).map((_, index) => (
             <Grid item xs={12} sm={12} md={12} lg={12} key={index} sx={{ marginLeft: "0px", alignSelf: "center",padding:"10px"}} >
-              <Cardd sx={{ padding: "10px 25px 15px 11px" }} title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} navigate={"/SPE/enter"}/>
+              <Cardd  title={TITLE} url={URL} int={index} images={LOGO} status={STATUS} optionsAll={OPTION} />
             </Grid>
           ))}
         </Grid>

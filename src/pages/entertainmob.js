@@ -12,13 +12,13 @@ import net from "../img/netflx.png";
 //    }
    return (
     // <Container fixed marginLeft="0%" maxWidth="deviceWidth" style={{ height: "10%", padding: "0px" }}>
-        <Grid container direction="column" spacing={1} justifyContent= "center" marginLeft="0px" >
-            <Grid item sm={3} xs={3} style={{ alignItems: "center", justifyContent: "center" ,display:"flex",flexDirection:"column"}}>
+        <Grid container direction="column" spacing={2} justifyContent= "center" marginLeft="0px" >
+            <Grid item sm={3} xs={3}  style={{ alignItems: "center", justifyContent: "center" ,display:"flex",flexDirection:"column"}}>
                 <Grid >
                     <Avatar style={{ width: "50px", height: "auto" }} src={net} />
                 </Grid>
                 <Grid>
-                    <Typography style={{ paddingTop: "20px" }} >Netflix</Typography>
+                    <Typography style={{ paddingTop: "20px" }} >netflix</Typography>
                 </Grid>
             </Grid>
         </Grid>
